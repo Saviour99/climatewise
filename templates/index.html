@@ -1,0 +1,1659 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateWISE YOUTH - Championing Sustainable Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <img src="../static/images/climatewiseyouth.png" width="70px" alt="ClimateWISE Logo">
+                <div class="brandname">
+                    <div class="brand-name1">Climate<span style="color: var(--primary-blue);">WISE</span></div>
+                    <div class="brand-name1">YOUTH</div>
+                    <div class="brand-name1">ORGANIZATION</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About CYO
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('about')">Who We Are</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('team')">Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            Thematic Areas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Climate Resilience and Adaptation</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Water, Sanitation and Hygiene (WASH)</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Environmental Sustainability, Circular Economy and Waste Management</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Youth Empowerment and Capacity Building</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Climate Education and Public Awareness</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('')">Research, Innovation, and Policy Advocacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('projects')">Projects and Impacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('media')">Media</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('news')">News & Updates</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('publications')">Publications</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            Get In Touch
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('contact')">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('volunteer')">Become a Volunteer</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('partners')">Become a Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-donate" onclick="showPage('donate')">Contribute</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>Championing Climate-Resilient and Sustainable Communities</h1>
+                <p>We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
+                <button class="btn btn-light btn-lg btn1" onclick="showPage('')">Join Us</button>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="stat-box">
+                            <h2>0+</h2>
+                            <p>Communities Reached</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-box">
+                            <h2>50+</h2>
+                            <p>Volunteers & Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container-fluid">
+                <h2 class="section-title">Who We Are</h2>
+                <p class="text-center mb-5" style="max-width: 900px; margin: 0 auto; line-height: 1.9;">
+                    We are a dynamic non-profit, non-governmental organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities. Through education, capacity building, and skills training, we are empowering communities to take charge of their own development and create a brighter future for themselves and future generations.
+                </p>
+
+                <div class="row card-divider">
+                    <div class="col-md-6">
+                        <div class="first-card">
+                            <img src="../static/images/air pollution.jpg" width="450" alt="Smoke image">
+                        </div>
+                    </div>
+                    <div class="col-md-6 second-card">
+                        <div class="second-card-divider">
+                            <h3>We Are For the People</h3>
+                            <p>Our programs focus on empowering youth, women, and vulnerable groups, equipping them to contribute to resilient communities and sustainable livelihoods.</p>
+                        </div>
+                        <div class="second-card-divider">
+                            <h3>We Are For Sustainable Development</h3>
+                            <p>As a non-profit organization, we address environmental, social, and economic challenges through evidence-based projects, community engagement, and youth-led action.</p>
+                        </div>
+                        <div class="second-card-divider">
+                            <h3>We Are For the Environment</h3>
+                            <p>We promote climate-resilient practices, conservation, and sustainable management of natural resources to protect communities and ecosystems.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-users"></i>
+                                <h3>We Are For The People</h3>
+                                <p>Our focus is centered on vulnerable groups, such as women and youth, as we strive to create a thriving African community that operates within a circular economy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>We Are For Sustainable Development</h3>
+                                <p>We empower communities to take charge of their own development and build a brighter future for themselves and future generations.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="fas fa-tree"></i>
+                                <h3>We Are For The Environment</h3>
+                                <p>We are committed to promoting sustainable development that prioritizes the well-being of communities and the preservation of natural resources.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            -->
+            </div>
+        </section>
+
+        <!-- Thematic Areas Preview -->
+        <section class="thematic-areas">
+            <div class="container">
+                <h2 class="section-title">Thematic Areas</h2>
+                <div class="row">
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Climate Resilience and Adaptation</h5>
+                                <p class="card-text">ClimateWISE Youth Organization (CYO) reinforces community resilience against climate shocks, including floods, droughts, and extreme weather events. </p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Water, Sanitation and Hygiene (WASH)</h5>
+                                <p class="card-text">CYO champions access to safe water, improved sanitation, and hygiene education as a foundation for public health and ...</p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Environmental Sustainability, Circular Economy and Waste Management</h5>
+                                <p class="card-text">CYO promotes sustainable production and consumption through waste reduction, ...</p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Youth Empowerment and Capacity Building</h5>
+                                <p class="card-text">CYO empowers young people to lead sustainable change through education, mentorship, and skills development.</p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Climate Education and Public Awareness</h5>
+                                <p class="card-text">CYO raises awareness and builds knowledge on climate change, environmental stewardship, and sustainable development ...</p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Research, Innovation, and Policy Advocacy</h5>
+                                <p class="card-text">CYO undertakes applied research, pilot projects, and advocacy to develop innovative solutions for pressing environmental and ...</p>
+                                <button class="btn btn-sm btn-donate" onclick="showPage('thematic')">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section mt-5" style="background-color: var(--light-cl);">
+            <div class="container">
+                <h2 class="section-title">Projects and Impacts</h2>
+                <p class="section-subtitle text-center" style="line-height: 1.9;">One Step At A Time - Here is a glimpse at some of our initiatives:</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Project">
+                            <div class="project-card-body">
+                                <h5>Youth WASH Initiative</h5>
+                                <p>Improving access to safe water and hygiene education in underserved communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Elephants">
+                            <div class="project-card-body">
+                                <h5>Climate Resilience Labs</h5>
+                                <p>Community-led projects addressing flood management, agroforestry, and disaster preparedness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Waste">
+                            <div class="project-card-body">
+                                <h5>Circular Economy Challenge</h5>
+                                <p>Youth-driven innovation competitions promoting waste reuse and sustainable practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button class="btn btn-hero" onclick="showPage('projects')">View All Projects</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-subtitle text-center" style="line-height: 1.9;">What People Say</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Mr.Eric Eyram Lumor" class="testimonial-img">
+                            <p>"CYO is set to strengthen community’s resilience against climate shocks and inspire young people to take leadership roles in sustainability."</p>
+                            <h6>Mr.Eric Eyram Lumor</h6>
+                            <small>Chief Executive Officer</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="Selina Ahenkorah" class="testimonial-img">
+                            <p>"The youth mentorship programs provide practical skills that continue to empower our young leaders."</p>
+                            <h6>Selina Ahenkorah</h6>
+                            <small>Co-founder</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Michael Wright Waters" class="testimonial-img">
+                            <p>"The impact CYO has had in our community is incredible. Their dedication to sustainable development and community empowerment is inspiring."</p>
+                            <h6>Mr. Saviour Assandoh</h6>
+                            <small>The Tech Guy</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Partner With Us</h3>
+                            <p>We believe collaboration drives impact. Whether you are an individual, organization, or business, there are multiple ways to engage:</p>
+                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Partner</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Volunteer With Us</h3>
+                            <p>Join hands with us to support youth-led and community-driven climate and WASH initiatives.</p>
+                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Volunteer</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>Make a Contribution</h3>
+                            <p>Your donation supports programs that advance climate resilience, safe water access, and sustainable livelihoods.</p>
+                            <button class="btn btn-cta" onclick="showPage('donate')">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="aboutPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>About CYO</h1>
+                <p>From awareness to action, we nurture a generation of change-makers, integrating environmental stewardship, climate resilience, and community empowerment into everyday life.</p>
+            </div>
+        </section>
+
+        <!--Who we are Section-->
+        <section class="about-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Who We Are</h2>
+                </div>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <p class="lead text-center" style="font-size: 1.2rem; line-height: 1.9; color: #000;">
+                            ClimateWISE Youth Organization (CYO) is a dynamic non-profit, youth-led organization committed to advancing climate resilience, water, sanitation, and hygiene (WASH), and sustainable development in communities. We focus on empowering youth, women, and vulnerable groups through education, capacity building, and skills development.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- WISE Cards -->
+                <div class="wise-cards">
+                    <div class="wise-card fade-in">
+                        <div class="wise-letter">W</div>
+                        <h3 class="wise-title">Water Security & WASH</h3>
+                        <p class="wise-desc">Ensuring communities have access to safe water, improved sanitation, and hygiene education.</p>
+                    </div>
+                    <div class="wise-card fade-in">
+                        <div class="wise-letter">I</div>
+                        <h3 class="wise-title">Innovation</h3>
+                        <p class="wise-desc">Promoting creative, technology-driven, and locally adapted solutions to environmental and development challenges.</p>
+                    </div>
+                    <div class="wise-card fade-in">
+                        <div class="wise-letter">S</div>
+                        <h3 class="wise-title">Sustainability</h3>
+                        <p class="wise-desc">Advancing long-term environmental stewardship, climate resilience, and circular economy practices.</p>
+                    </div>
+                    <div class="wise-card fade-in">
+                        <div class="wise-letter">E</div>
+                        <h3 class="wise-title">Education & Empowerment</h3>
+                        <p class="wise-desc">Equipping youth and vulnerable groups with knowledge, skills, and leadership to drive community transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Section -->
+        <section class="vision-mission">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 order-md-2">
+                        <h2 class="section-title text-center">Our Vision</h2>
+                        <p>We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800" alt="Vision" class="img-fluid rounded">
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6">
+                        <h2 class="section-title text-start">Our Mission</h2>
+                        <p>Our mission is to mobilize and equip youth and vulnerable groups to lead climate and WASH solutions that protect ecosystems, confront environmental injustices, and strengthen community resilience. </p>
+                        <p>We do this through education, community-based action, research, and partnerships that strengthen livelihoods, protect ecosystems, and build healthier, more resilient communities.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Mission" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section class="pillars-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Our Three Pillars</h2>
+                    <p class="lead mt-3">Building capacity through comprehensive approaches</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <div class="pillar-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="pillar-title">Education</h3>
+                            <p class="pillar-text">"Education is the most powerful tool you can use to change the world."</p>
+                            <p class="pillar-quote"><strong>– Nelson Mandela</strong></p>
+                            <p class="pillar-desc">We provide climate, WASH, and sustainability education to communities and youth, fostering awareness and actionable knowledge that transforms lives.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <div class="pillar-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="pillar-title">Capacity Building</h3>
+                            <p class="pillar-text">"The most authentic thing about us is our capacity to create, to overcome, to endure, to transform..."</p>
+                            <p class="pillar-quote"><strong>– Ben Okri</strong></p>
+                            <p class="pillar-desc">We design programs that strengthen community leadership, resilience, and problem-solving skills for real-world impact.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pillar-card">
+                            <div class="pillar-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="pillar-title">Skills Training</h3>
+                            <p class="pillar-text">"The future belongs to those who learn more skills and combine them creatively."</p>
+                            <p class="pillar-quote"><strong>– Robert Greene</strong></p>
+                            <p class="pillar-desc">We equip young people with practical skills in climate adaptation, water management, sustainable practices, and entrepreneurship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Focus section -->
+        
+        <section class="focus-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="focus1-card">
+                            <img src="../static/images/air pollution.jpg" width="450" alt="Smoke image">
+                        </div>
+                    </div>
+                    <div class="col-md-6 focus2-card">
+                        <div>
+                            <h2 class="focus">Our Focus</h2>
+                            <p class="text-start mb-3" style="max-width: 900px; margin: 0 auto; line-height: 1.9;">
+                                We create growth opportunities for marginalized communities, ensuring every project has a long-term, sustainable impact. Our core focus areas are:
+                            </p>
+                        </div>
+                        <div class="focus2-item">
+                            <h3>Improving lives:</h3>
+                            <p>
+                                Strengthening health, livelihoods, and opportunities for youth and vulnerable populations.
+                            </p>
+                        </div>
+                        <div class="focus2-item item">
+                            <h3>Protecting the environment:</h3>
+                            <p>
+                                Promoting climate-smart, sustainable, and WASH-centred practices.
+                            </p>
+                        </div>
+                        <div class="focus2-item">
+                            <h3>Leveraging technology:</h3>
+                            <p>
+                                Using innovation to enhance environmental management and community resilience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Our Core Values</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-heart"></i></div>
+                            <h4 class="value-title">Community Development</h4>
+                            <p class="value-desc">We empower communities to drive their own progress, equipping them with the knowledge and resources to effect meaningful change.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                            <h4 class="value-title">Sustainability</h4>
+                            <p class="value-desc">We champion responsible environmental practices that secure lasting benefits for communities and ecosystems.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                            <h4 class="value-title">Inclusivity</h4>
+                            <p class="value-desc">We ensure that all our programs are accessible, giving equal opportunity to every member of the community.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                            <h4 class="value-title">Collaboration</h4>
+                            <p class="value-desc">We work closely with communities, NGOs, and partners to maximize impact and create collective solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h4 class="value-title">Innovation</h4>
+                            <p class="value-desc">We develop creative approaches to address climate, WASH, and sustainability challenges.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h4 class="value-title">Integrity</h4>
+                            <p class="value-desc">We operate with transparency and ethics, ensuring fair and accountable project implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDG Section -->
+        <section class="sdg-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Our Commitment to the SDGs</h2>
+                    <p class="lead mt-3">Aligning our work with the United Nations Sustainable Development Goals</p>
+                </div>
+                <div class="sdg-grid">
+                    <div class="sdg-card">
+                        <div class="sdg-number">3</div>
+                        <h4 class="sdg-title">Good Health & Well-Being</h4>
+                        <p class="sdg-desc">Promoting healthy environments through safe sanitation, hygiene behaviour change, and pollution reduction.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">4</div>
+                        <h4 class="sdg-title">Quality Education</h4>
+                        <p class="sdg-desc">Building climate-aware citizens through sustainability education, research capacity, and youth leadership training.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">6</div>
+                        <h4 class="sdg-title">Clean Water & Sanitation</h4>
+                        <p class="sdg-desc">Advancing WASH access, water quality awareness, and resilient water management systems.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">11</div>
+                        <h4 class="sdg-title">Sustainable Cities & Communities</h4>
+                        <p class="sdg-desc">Supporting climate-smart communities with disaster-risk awareness, urban sustainability, and nature-based solutions.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">12</div>
+                        <h4 class="sdg-title">Responsible Consumption & Production</h4>
+                        <p class="sdg-desc">Promoting circular economy, sustainable lifestyle practices, and community-driven waste reduction.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">13</div>
+                        <h4 class="sdg-title">Climate Action</h4>
+                        <p class="sdg-desc">Driving grassroots climate advocacy, youth mobilization, and climate-resilient development.</p>
+                    </div>
+                    <div class="sdg-card">
+                        <div class="sdg-number">15</div>
+                        <h4 class="sdg-title">Life on Land</h4>
+                        <p class="sdg-desc">Supporting biodiversity conservation, tree-planting, and community land restoration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Teams Page -->
+    <div id="teamPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Meet Our Team</h1>
+                <p>A dedicated and multidisciplinary team committed to advancing climate resilience, WASH, circular economy initiatives, and sustainable development in communities. Each member brings deep expertise, a passion for social impact, and a focus on measurable outcomes aligned with the SDGs.</p>
+            </div>
+        </section>
+
+        <!-- Board Members Section -->
+        <section class="py-5">
+            <div class="container py-4">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Board Members</h2>
+                    <p class="section-description">
+                        Our Board provides strategic oversight, ensures transparency, and sets the long-term vision and policies for the organization. 
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="board-card">
+                            <div class="board-avatar">AO</div>
+                            <div class="board-content">
+                                <h3 class="board-name">Dr. Ama Osei</h3>
+                                <p class="board-role">Chairperson</p>
+                                <p class="board-bio">Environmental policy expert with over 15 years of experience in climate resilience and sustainable development projects across Africa. She provides strategic direction and governance, guiding CYO’s vision and ensuring alignment with international environmental and SDG standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="board-card">
+                            <div class="board-avatar">KM</div>
+                            <div class="board-content">
+                                <h3 class="board-name">Mr. Kwame Mensah</h3>
+                                <p class="board-role">Vice-Chairperson</p>
+                                <p class="board-bio">Specializes in development finance and organizational governance, advising on budgeting, financial oversight, sustainability planning, ensuring the organization operates with efficiency and accountability. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="board-card">
+                            <div class="board-avatar">LA</div>
+                            <div class="board-content">
+                                <h3 class="board-name">Ms. Linda Adomako</h3>
+                                <p class="board-role">Board Member</p>
+                                <p class="board-bio">Expert in WASH and circular economy strategies, ensuring sustainable resource management and water security measures, particularly in marginalized communities. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="board-card">
+                            <div class="board-avatar">DT</div>
+                            <div class="board-content">
+                                <h3 class="board-name">Prof. Daniel Tetteh</h3>
+                                <p class="board-role">Board Member</p>
+                                <p class="board-bio">Social development and education expert, providing guidance on youth engagement and capacity-building programs to strengthen CYO’s educational and outreach initiatives. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="board-card">
+                            <div class="board-avatar">EA</div>
+                            <div class="board-content">
+                                <h3 class="board-name">Ms. Esther Agyeman</h3>
+                                <p class="board-role">Board Member</p>
+                                <p class="board-bio">Focuses on community engagement and gender equity, ensuring inclusivity in program design and implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Team Section -->
+        <section class="py-5 executive">
+            <div class="container py-4">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Executive Team</h2>
+                    <p class="section-description">
+                        Responsible for operational management, program execution, and strategic growth of CYO.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="executive-card">
+                            <div class="executive-header">
+                                <div class="executive-avatar">EL</div>
+                                <h3 class="executive-name">Eric Eyram Kojo Lumor</h3>
+                                <p class="executive-role">Founder & Executive Director</p>
+                            </div>
+                            <div class="executive-body">
+                                <p class="executive-bio">Seasoned environmental scientist and quality assurance professional with expertise in WASH and climate resilience programs. Leads CYO's vision and ensures programs align with the SDGs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="executive-card">
+                            <div class="executive-header">
+                                <div class="executive-avatar">GA</div>
+                                <h3 class="executive-name">Godwin Ayitey Kini Ajavon</h3>
+                                <p class="executive-role">Co-Founder & Programs Manager</p>
+                            </div>
+                            <div class="executive-body">
+                                <p class="executive-bio">Manages program development, stakeholder collaboration, and project monitoring with experience in community mobilization and capacity-building, ensuring CYO’s initiatives reach target communities effectively and sustainably.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="executive-card">
+                            <div class="executive-header">
+                                <div class="executive-avatar">AN</div>
+                                <h3 class="executive-name">Amos Nortey</h3>
+                                <p class="executive-role">Projects & Research Manager</p>
+                            </div>
+                            <div class="executive-body">
+                                <p class="executive-bio">Leads research, project planning, and monitoring and evaluation with experience in environmental engineering and sustainability studies, he ensures that all projects are evidence-based, innovative, and measurable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Area Leads Section -->
+        <section class="py-5">
+            <div class="container py-4">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Area Leads</h2>
+                    <p class="section-description">
+                        Specialized leads focus on CYO's thematic areas, ensuring each program is implemented with technical expertise and local relevance.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-balance-scale"></i></div>
+                            <h3 class="lead-name">Dr. Priscilla Trovel</h3>
+                            <p class="lead-title">Health, Gender & Social Inclusion</p>
+                            <p class="lead-description">Ensures inclusivity across all programs, prioritizing the needs of women, youth, and vulnerable populations through gender-responsive strategies and inclusion frameworks for community initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3 class="lead-name">Saviour Assandoh</h3>
+                            <p class="lead-title">Digital Engagement & Media</p>
+                            <p class="lead-description">Manages digital communications, social media campaigns, and website content to enhance CYO's online visibility and youth engagement.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-tint"></i></div>
+                            <h3 class="lead-name">WASH & Circular Economy Lead<span class="new-badge">Open</span></h3>
+                            <p class="lead-title">Water, Sanitation & Sustainability</p>
+                            <p class="lead-description">Integrates WASH and circular economy programming, implementing community-based sustainable practices, water access initiatives, and waste management strategies, and resource efficiency projects. Works closely with communities and stakeholders to strengthen environmental sustainability while improving health and livelihoods.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-globe-americas"></i></div>
+                            <h3 class="lead-name">Climate Education Lead<span class="new-badge">Open</span></h3>
+                            <p class="lead-title">Public Awareness & Education</p>
+                            <p class="lead-description">Designs and implements climate education campaigns, school programs, and public awareness initiatives to raise knowledge of climate change and sustainability practices, and community adaptation strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-users"></i></div>
+                            <h3 class="lead-name">Youth Engagement Lead<span class="new-badge">Open</span></h3>
+                            <p class="lead-title">Volunteer & Leadership Development</p>
+                            <p class="lead-description">Mobilizes youth participation in programs, fosters innovation, and promotes leadership among young community members. This role ensures CYO’s projects are inclusive, dynamic, and youth-driven.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="lead-card">
+                            <div class="lead-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3 class="lead-name">Finance & Operations Lead<span class="new-badge">Open</span></h3>
+                            <p class="lead-title">Financial Planning & Management</p>
+                            <p class="lead-description">Oversees budgeting, financial planning, compliance, and operational efficiency to ensure effective resource management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Thematic Areas Page -->
+    <div id="thematicPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Thematic Areas</h1>
+                <p>Each area is designed to address specific facets of community growth</p>
+            </div>
+        </section>
+
+        <section class="thematic-areas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Socio-Economic">
+                            <div class="thematic-card-body">
+                                <h4>Socio-Economic Empowerment</h4>
+                                <p>Green Growth Africa (GGA) fosters socio-economic empowerment in Africa by addressing poverty, unemployment, and financial exclusion. In Ghana, where poverty was 23.4% in 2017, GGA works to create opportunities for vulnerable groups, particularly women and youth.</p>
+                                <p>Through skills training, capacity building, and entrepreneurship programs, we help communities achieve financial independence and sustainable livelihoods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" alt="Agriculture">
+                            <div class="thematic-card-body">
+                                <h4>Agriculture and Biodiversity</h4>
+                                <p>Green Growth Africa promotes sustainable agriculture and biodiversity conservation through research, advocacy and capacity building on emerging agricultural trends and species management.</p>
+                                <p>We work with farming communities to implement climate-smart agricultural practices, preserve indigenous crop varieties, and promote sustainable land management techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Environment">
+                            <div class="thematic-card-body">
+                                <h4>Environment and Climate Change</h4>
+                                <p>Africa is severely faced with the stiffening effects of the triple planetary crises of climate change, biodiversity loss and pollution needing urgent conservation and climate action.</p>
+                                <p>GGA implements climate adaptation and mitigation strategies, promotes renewable energy, and advocates for policies that protect our environment and combat climate change.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Circular Economy">
+                            <div class="thematic-card-body">
+                                <h4>Circular Economy</h4>
+                                <p>Green Growth Africa champions the transition to a circular economy by promoting waste reduction, recycling, and sustainable production. Through innovation and education, GGA empowers communities to rethink waste management.</p>
+                                <p>We facilitate the development of circular economy models that transform waste into resources, creating economic opportunities while reducing environmental impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Ecotourism">
+                            <div class="thematic-card-body">
+                                <h4>Ecotourism and Community Development</h4>
+                                <p>Green Growth Africa (GGA) promotes ecotourism in Ghana as a sustainable way to boost local economies while preserving biodiversity. Ecotourism creates opportunities for communities to benefit from natural resources without depleting them.</p>
+                                <p>We work with local communities to develop tourism initiatives that celebrate culture, protect wildlife, and generate sustainable income.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Page -->
+    <div id="projectsPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Projects and Impacts</h1>
+                <p>Each project represents a tangible step toward building resilient, sustainable communities and empowering youth to drive positive change.</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Accra">
+                            <div class="project-card-body">
+                                <h5>Socio-Economic Empowerment Accra Project</h5>
+                                <p>Accra's high population density presents a number of challenges, including issues related to waste management, unemployment, and poverty. This project addresses these challenges through skills training and entrepreneurship development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Fisheries">
+                            <div class="project-card-body">
+                                <h5>Fisheries Empowerment Project (FEP Ghana)</h5>
+                                <p>Fishing has played a significant role in Ghana's economy and continues to be an important source of livelihood. This project empowers fishing communities with sustainable practices and value addition techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Elephants">
+                            <div class="project-card-body">
+                                <h5>Saving The Forest Elephants Project (SFEP)</h5>
+                                <p>Conservation of forest elephants is a crucial issue owing to their significant importance to the ecosystem. This project works to reduce human-elephant conflict while preserving elephant populations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Coastal">
+                            <div class="project-card-body">
+                                <h5>Coastal Resilience & Sustainable Livelihood Initiative</h5>
+                                <p>Climate change remains one of the most pressing and transboundary triple planetary crises impacting the world. This project builds resilience in coastal communities through climate adaptation strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600" alt="Rising Roots">
+                            <div class="project-card-body">
+                                <h5>Rising Roots Project</h5>
+                                <p>Green Growth Africa seeks to harness the potential of young innovators and atypical entrepreneurs through mentorship, training, and access to resources for sustainable business development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Waste">
+                            <div class="project-card-body">
+                                <h5>Beyond Waste Initiative</h5>
+                                <p>Ghana's waste management faces considerable challenges, including inadequate infrastructure. This initiative promotes circular economy principles and transforms waste into valuable resources.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600" alt="Northern Ghana">
+                            <div class="project-card-body">
+                                <h5>The Northern Ghana Climate Resilience Project (NGCR)</h5>
+                                <p>This Project recognizes the urgent need to strengthen the resilience of rural communities in Northern Ghana against climate change impacts through sustainable agriculture and water management.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600" alt="Palm Oil">
+                            <div class="project-card-body">
+                                <h5>Palm Oil Value Addition Project (POVAP)</h5>
+                                <p>Palm oil production is a crucial income source for many farmers and stakeholders in rural areas. This project enhances value addition and promotes sustainable palm oil production practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Media Page -->
+    <div id="mediaPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Media</h1>
+                <p>Each image captures the dedication, creativity, and resilience of the youth and communities we serve. From WASH campaigns to climate adaptation projects, community clean-ups, and environmental education sessions, every picture reflects the impact of collective action and the progress toward sustainable, resilient communities.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resource news Page -->
+    <div id="newsPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>News & Updates</h1>
+                <p>Stay informed with the latest stories, insights, and developments in climate action, sustainability, and community resilience.</p>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Article 1 -->
+                        <article class="news-article">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div id="carousel1" class="carousel slide news-carousel" data-bs-ride="carousel">
+                                        <span class="featured-badge">Featured</span>
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop" alt="Women in leadership">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=600&fit=crop" alt="Community meeting">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop" alt="Climate action">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=600&fit=crop" alt="Women empowerment">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="news-content">
+                                        <div class="news-meta">
+                                            <span class="news-category">Climate Leadership</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> March 8, 2024</span>
+                                        </div>
+                                        <h2 class="news-title">Empowering Her Earth: Fostering Women's Resilience in Climate Leadership</h2>
+                                        <p class="news-excerpt">Published to commemorate International Women's Day 2024, this article highlights the critical role women play in climate action. Women lead change in communities, advancing WASH, climate resilience, and sustainable development despite societal and environmental challenges.</p>
+                                        <a href="#" class="read-more-btn">
+                                            Read Full Article
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="news-article">
+                            <div class="row g-0">
+                                <div class="col-lg-6 order-lg-2">
+                                    <div id="carousel2" class="carousel slide news-carousel" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=800&h=600&fit=crop" alt="Plastic pollution">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1591695267293-c8f5e4a8b7f8?w=800&h=600&fit=crop" alt="Recycling">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=600&fit=crop" alt="Waste management">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&h=600&fit=crop" alt="Sustainable solutions">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-lg-1">
+                                    <div class="news-content">
+                                        <div class="news-meta">
+                                            <span class="news-category">Circular Economy</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> November 15, 2024</span>
+                                        </div>
+                                        <h2 class="news-title">Tackling Plastic Waste: Strategies for Sustainable Solutions</h2>
+                                        <p class="news-excerpt">Plastic pollution is a growing global challenge, and communities served by CYO are no exception. This article outlines approaches to reduce, recycle, and manage plastic waste, integrating youth engagement, circular economy principles, and community-driven solutions.</p>
+                                        <a href="#" class="read-more-btn">
+                                            Read Full Article
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 3 -->
+                        <article class="news-article">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div id="carousel3" class="carousel slide news-carousel" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop" alt="Wetlands ecosystem">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&h=600&fit=crop" alt="Coastal conservation">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop" alt="Biodiversity">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop" alt="Water management">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="news-content">
+                                        <div class="news-meta">
+                                            <span class="news-category">Conservation</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> October 2, 2024</span>
+                                        </div>
+                                        <h2 class="news-title">Wetlands Not Wastelands: Conserving Coastal Ecosystems for Climate Resilience</h2>
+                                        <p class="news-excerpt">Wetlands are vital for biodiversity, water management, and community livelihoods. This article discusses the conservation of critical wetland areas, their role in climate mitigation, and strategies for community-led protection initiatives.</p>
+                                        <a href="#" class="read-more-btn">
+                                            Read Full Article
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <aside class="sidebar">
+                            <!-- Categories Widget -->
+                            <div class="sidebar-widget">
+                                <h3 class="widget-title">Categories</h3>
+                                <div class="category-item">
+                                    <a href="#">Climate Action</a>
+                                    <span class="category-count">12</span>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#">WASH Programs</a>
+                                    <span class="category-count">8</span>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#">Circular Economy</a>
+                                    <span class="category-count">6</span>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#">Youth Engagement</a>
+                                    <span class="category-count">15</span>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#">Community Stories</a>
+                                    <span class="category-count">10</span>
+                                </div>
+                            </div>
+
+                            <!-- Tags Widget -->
+                            <div class="sidebar-widget tags-widget">
+                                <h3 class="widget-title">Popular Tags</h3>
+                                <a href="#" class="tag">Climate Resilience</a>
+                                <a href="#" class="tag">Sustainability</a>
+                                <a href="#" class="tag">Water Security</a>
+                                <a href="#" class="tag">Youth Leadership</a>
+                                <a href="#" class="tag">SDGs</a>
+                                <a href="#" class="tag">Conservation</a>
+                                <a href="#" class="tag">Green Innovation</a>
+                                <a href="#" class="tag">Community Impact</a>
+                            </div>
+
+                            <!-- Newsletter Widget -->
+                            <div class="sidebar-widget newsletter-widget">
+                                <h3 class="widget-title">Stay Updated</h3>
+                                <p>Subscribe to our newsletter and never miss our latest news and updates.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Enter your email" required>
+                                    <button type="submit">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resource publications Page -->
+    <div id="publicationsPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Publications</h1>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Have questions or want to connect? We a`re here to listen and respond. Your engagement helps us create lasting impact in communities.</p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="feature-card">
+                            <h3>Send Us a Message</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-donate w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="feature-card mb-4">
+                            <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                            <p>Accra, Ghana</p>
+                        </div>
+
+                        <div class="feature-card mb-4">
+                            <h3><i class="fas fa-envelope"></i> Email Us</h3>
+                            <p>info@greengrowthafrica.org</p>
+                        </div>
+
+                        <div class="feature-card mb-4">
+                            <h3><i class="fas fa-phone"></i> Call Us</h3>
+                            <p>+233 XX XXX XXXX</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Partner With Us</h3>
+                            <p>Collaborate to drive positive change through strategic partnerships.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Volunteer With Us</h3>
+                            <p>Join our team of dedicated volunteers making a difference.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Career Opportunities</h3>
+                            <p>Explore opportunities to join our mission-driven team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Donate Page -->
+    <div id="donatePage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Make a Donation</h1>
+                <p>Your contribution makes a real difference</p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="feature-card">
+                            <h2 class="text-center mb-4">Support Our Mission</h2>
+                            <p class="text-center mb-5">Your donation makes a difference in the lives of individuals and communities. By contributing, you're actively backing initiatives for environmental protection and community empowerment.</p>
+
+                            <form id="donationForm">
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-bold">Select Amount</label>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount1" value="50" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount1">$50</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount2" value="100" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount2">$100</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount3" value="250" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount3">$250</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount4" value="500" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount4">$500</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount5" value="1000" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount5">$1000</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="radio" class="btn-check" name="amount" id="amount6" value="custom" autocomplete="off">
+                                                <label class="btn btn-outline-success w-100" for="amount6">Custom</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3" id="customAmountDiv" style="display: none;">
+                                    <label for="customAmount" class="form-label">Custom Amount ($)</label>
+                                    <input type="number" class="form-control" id="customAmount" placeholder="Enter amount">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="donorName" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="donorEmail" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="donorPhone">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donationPurpose" class="form-label">Donation Purpose (Optional)</label>
+                                    <select class="form-select" id="donationPurpose">
+                                        <option value="">General Fund</option>
+                                        <option value="education">Education Programs</option>
+                                        <option value="environment">Environmental Conservation</option>
+                                        <option value="agriculture">Agriculture & Food Security</option>
+                                        <option value="women">Women Empowerment</option>
+                                        <option value="youth">Youth Development</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="monthlyDonation">
+                                    <label class="form-check-label" for="monthlyDonation">
+                                        Make this a monthly donation
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-donate w-100 py-3">
+                                    <i class="fas fa-heart me-2"></i> Proceed to Payment
+                                </button>
+                            </form>
+
+                            <div class="text-center mt-4">
+                                <small class="text-muted">Your donation is secure and tax-deductible</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--secondary-green);"></i>
+                            <h5 class="mt-3">Secure Payment</h5>
+                            <p>Your donation is processed securely through encrypted channels.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--secondary-green);"></i>
+                            <h5 class="mt-3">100% Impact</h5>
+                            <p>Every dollar goes directly to supporting our programs and communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-file-invoice" style="font-size: 3rem; color: var(--secondary-green);"></i>
+                            <h5 class="mt-3">Tax Deductible</h5>
+                            <p>Receive a tax receipt for your charitable contribution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <a class="footer-brand" href="#" onclick="showPage('home')">
+                        <img src="../static/images/climatewiseyouth.png" width="70px" alt="ClimateWISE Logo">
+                        <div class="brandname">
+                            <div class="brand-name1">Climate<span style="color: var(--primary-blue);">WISE</span></div>
+                            <div class="brand-name1">YOUTH</div>
+                            <div class="brand-name1">ORGANIZATION</div>
+                        </div>
+                    </a>
+                    <p class="mt-3">A dynamic non-profit organization dedicated to catalyzing sustainable development in Africa's communities.</p>
+                </div>
+
+                <div class="col-md-2 footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')"><i class="fa fa-angle-right"></i> Home</a></li>
+                        <li><a href="#" onclick="showPage('about')"><i class="fa fa-angle-right"></i> About Us</a></li>
+                        <li><a href="#" onclick="showPage('thematic')"><i class="fa fa-angle-right"></i> Thematic Areas</a></li>
+                        <li><a href="#" onclick="showPage('projects')"><i class="fa fa-angle-right"></i> Projects and Impacts</a></li>
+                        <li><a href="#" onclick="showPage('donate')"><i class="fa fa-angle-right"></i> Make a Donation</a></li>
+                        <li><a href="#" onclick="showPage('contact')"><i class="fa fa-angle-right"></i> Volunteer</a></li>
+                        <li><a href="#" onclick="showPage('contact')"><i class="fa fa-angle-right"></i> Partner With Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer-section">
+                    <h5>Contact Information</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Kumasi, Ghana</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@climatewiseyouth.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +233 501587205</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer-section">
+                    <h5>Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy;  2025 ClimateWISE Youth Organization. All rights reserved. | Powered by DelaTech Consult</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Page Navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            const targetPage = document.getElementById(pageName + 'Page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            }
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would send to Flask backend
+            console.log('Contact Form Data:', formData);
+            
+            // Example Flask endpoint: fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Donation Form - Custom Amount Toggle
+        document.querySelectorAll('input[name="amount"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const customDiv = document.getElementById('customAmountDiv');
+                if (this.value === 'custom') {
+                    customDiv.style.display = 'block';
+                } else {
+                    customDiv.style.display = 'none';
+                }
+            });
+        });
+
+        // Donation Form Submission
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const selectedAmount = document.querySelector('input[name="amount"]:checked');
+            let amount = selectedAmount ? selectedAmount.value : null;
+            
+            if (amount === 'custom') {
+                amount = document.getElementById('customAmount').value;
+            }
+
+            const donationData = {
+                amount: amount,
+                name: document.getElementById('donorName').value,
+                email: document.getElementById('donorEmail').value,
+                phone: document.getElementById('donorPhone').value,
+                purpose: document.getElementById('donationPurpose').value,
+                monthly: document.getElementById('monthlyDonation').checked
+            };
+
+            // Here you would send to Flask backend for payment processing
+            console.log('Donation Data:', donationData);
+            
+            // Example Flask endpoint: fetch('/api/donate', { method: 'POST', body: JSON.stringify(donationData) })
+            
+            alert('Thank you for your generous donation! You will be redirected to our secure payment processor.');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.feature-card, .thematic-card, .project-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Counter Animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + '+';
+                }
+            }, 16);
+        }
+
+        // Animate stats when visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-box h2');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        animateCounter(stat, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Growth Africa - Championing Sustainable Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c2c;
+            --light-green: #8bc34a;
+            --dark-text: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-brand span {
+            font-weight: bold;
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            margin-left: 10px;
+        }
+
+        .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            padding: 0.8rem 1rem !important;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-green) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: var(--secondary-green);
+            transition: width 0.3s, left 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+            left: 10%;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border-radius: 8px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-bg);
+            color: var(--secondary-green);
+        }
+
+        .btn-donate-nav {
+            background-color: var(--secondary-green);
+            color: white !important;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem !important;
+            border: none;
+            transition: all 0.3s;
+            margin-left: 10px;
+        }
+
+        .btn-donate-nav:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(45, 80, 22, 0.75), rgba(45, 80, 22, 0.75)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600') center/cover;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero-section p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s;
+        }
+
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-green);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.3s;
+            animation: fadeInUp 1.4s;
+        }
+
+        .btn-hero:hover {
+            background-color: var(--light-green);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-box h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box p {
+            font-size: 1.2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 100%;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-card i {
+            font-size: 3.5rem;
+            color: var(--secondary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Image with Content Section */
+        .image-content-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Thematic Cards */
+        .thematic-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+
+        .thematic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .thematic-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .thematic-card-body {
+            padding: 30px;
+        }
+
+        .thematic-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .thematic-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .btn-read-more {
+            background-color: var(--secondary-green);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-read-more:hover {
+            background-color: var(--primary-green);
+            transform: translateX(5px);
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-card-body {
+            padding: 25px;
+        }
+
+        .project-card h5 {
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid var(--secondary-green);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-card h6 {
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-card small {
+            color: #888;
+        }
+
+        /* CTA Cards */
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .cta-card i {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .cta-card p {
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: var(--primary-green);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--light-green);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h5 {
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--light-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 40px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* Back to Top */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary-green);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            font-size: 1.3rem;
+        }
+
+        #backToTop:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-5px);
+        }
+
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+
+            .stat-box h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                height: 45px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Form Styles */
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 0.2rem rgba(74, 124, 44, 0.25);
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <i class="fas fa-envelope"></i> info@greengrowthafrica.org
+                    <a href="tel:+233"><i class="fas fa-phone ms-3"></i> +233 XX XXX XXXX</a>
+                </div>
+                <div>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="showPage('home')">
+                <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--secondary-green);"></i>
+                <span>Green Growth Africa</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('about')">Who We Are</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('team')">Our Team</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('partners')">Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('thematic')">Thematic Areas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('projects')">Our Projects</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('volunteer')">Volunteer With Us</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('partner')">Become a Partner</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('donate')">Donate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-donate-nav" onclick="showPage('donate')">Donate Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page-content active">
+        <section class="hero-section">
+            <div class="container">
+                <h1>Championing Sustainable Development</h1>
+                <p>We envision a future where every action, big or small, contributes to the well-being of both people and the environment.</p>
+                <button class="btn btn-hero" onclick="document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'})">Who We Are</button>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="stat-box">
+                            <h2 class="counter" data-target="500">0</h2>
+                            <p>Communities Reached</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-box">
+                            <h2 class="counter" data-target="250">0</h2>
+                            <p>Volunteers & Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section">
+            <div class="container">
+                <h2 class="section-title">Green Growth Africa</h2>
+                <p class="section-subtitle">
+                    We are a dynamic non-profit, non-governmental organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h3>We Are For The People</h3>
+                            <p>Our focus is centered on vulnerable groups, such as women and youth, as we strive to create a thriving African community that operates within a circular economy.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>We Are For Sustainable Development</h3>
+                            <p>As a non-profit organization, we empower communities to take charge of their own development and build a brighter future for themselves and future generations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-leaf"></i>
+                            <h3>We Are For The Environment</h3>
+                            <p>We are committed to promoting sustainable development that prioritizes the well-being of communities and the preservation of natural resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-content-section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 mb-4">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Community" class="content-img">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h3 style="color: var(--primary-green); font-size: 2rem; margin-bottom: 1rem;">We Are For The People</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8;">Our focus is centered on vulnerable groups, such as women and youth, as we strive to create a thriving African community that operates within a circular economy.</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-2 mb-4">
+                        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Environment" class="content-img">
+                    </div>
+                    <div class="col-md-6 order-md-1 mb-4">
+                        <h3 style="color: var(--primary-green); font-size: 2rem; margin-bottom: 1rem;">We Are For The Environment</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8;">We are committed to promoting sustainable development that prioritizes the well-being of communities and the preservation of natural resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Thematic Areas</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600" alt="Socio-Economic">
+                            <div class="thematic-card-body">
+                                <h4>Socio-Economic Empowerment</h4>
+                                <p>Green Growth Africa (GGA) fosters socio-economic empowerment in Africa by addressing poverty, unemployment, and financial exclusion...</p>
+                                <button class="btn btn-read-more" onclick="showPage('thematic')">Read More <i class="fas fa-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600" alt="Agriculture">
+                            <div class="thematic-card-body">
+                                <h4>Agriculture and Biodiversity</h4>
+                                <p>GGA promotes sustainable agriculture and biodiversity conservation through research, advocacy and capacity building...</p>
+                                <button class="btn btn-read-more" onclick="showPage('thematic')">Read More <i class="fas fa-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600" alt="Environment">
+                            <div class="thematic-card-body">
+                                <h4>Environment and Climate Change</h4>
+                                <p>Africa faces the effects of climate change, biodiversity loss and pollution needing urgent conservation action...</p>
+                                <button class="btn btn-read-more" onclick="showPage('thematic')">Read More <i class="fas fa-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">One Brick At A Time - Here is a sneakpeak at some of our current efforts to improve communities</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Project">
+                            <div class="project-card-body">
+                                <h5>Fisheries Empowerment Project (FEP Ghana)</h5>
+                                <p>Fishing has played a significant role in Ghana's economy and continues to be an important source of livelihood...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Elephants">
+                            <div class="project-card-body">
+                                <h5>Saving The Forest Elephants Project (SFEP)</h5>
+                                <p>Conservation of forest elephants is crucial owing to their significant importance to the ecosystem...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button class="btn btn-hero" onclick="showPage('projects')">View All Projects</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What People Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Hon. Richard Broni" class="testimonial-img">
+                            <p>"As the Municipal Chief Executive, I have had the privilege of working with GGA, and they are truly an exceptional organization dedicated to serving the community."</p>
+                            <h6>Hon. Richard Broni</h6>
+                            <small>Municipal Chief Executive</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="Selina Ahenkorah" class="testimonial-img">
+                            <p>"GGA's unwavering commitment to empowering women and promoting sustainable agriculture has been truly remarkable. Thank you for your exceptional work."</p>
+                            <h6>Selina Ahenkorah</h6>
+                            <small>Head of WOPA</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Michael Wright Waters" class="testimonial-img">
+                            <p>"The impact GGA has had in our community is incredible. Their dedication to sustainable development and community empowerment is inspiring."</p>
+                            <h6>Michael Wright Waters</h6>
+                            <small>Community Leader</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Partner With Us</h3>
+                            <p>We believe in the power of collaboration to drive positive change through strategic partnerships.</p>
+                            <button class="btn btn-cta" onclick="showPage('partner')">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Volunteer With Us</h3>
+                            <p>Volunteering is an opportunity to be directly involved in creating positive change in communities.</p>
+                            <button class="btn btn-cta" onclick="showPage('volunteer')">Get Involved</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cta-card">
+                            <i class="fas fa-heart"></i>
+                            <h3>Make a Donation</h3>
+                            <p>Your donation makes a difference in the lives of individuals and communities across Africa.</p>
+                            <button class="btn btn-cta" onclick="showPage('donate')">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="aboutPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>About Green Growth Africa</h1>
+                <p>Empowering Communities for a Sustainable Future</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 mb-4">
+                        <h2 style="color: var(--primary-green); font-size: 2.5rem; margin-bottom: 1.5rem;">Our Mission</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">We are a dynamic non-profit, non-governmental organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">Through education, capacity building, and skills training, we are empowering communities to take charge of their own development and create a brighter future for themselves and future generations.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Mission" class="content-img">
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 order-md-2 mb-4">
+                        <h2 style="color: var(--primary-green); font-size: 2.5rem; margin-bottom: 1.5rem;">Our Vision</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">We envision a future where every action, big or small, contributes to the well-being of both people and the environment. A thriving African community that operates within a circular economy.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">Our focus is centered on vulnerable groups, such as women and youth, creating sustainable pathways for development and growth.</p>
+                    </div>
+                    <div class="col-md-6 order-md-1 mb-4">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800" alt="Vision" class="content-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="feature-card">
+                            <i class="fas fa-globe-africa"></i>
+                            <h3>Sustainability</h3>
+                            <p>Promoting practices that preserve natural resources for future generations</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Focus</h3>
+                            <p>Empowering local communities to lead their own transformation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="feature-card">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Collaboration</h3>
+                            <p>Building strong partnerships for maximum positive impact</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="feature-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Innovation</h3>
+                            <p>Developing creative and sustainable solutions to challenges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TEAM PAGE -->
+    <div id="teamPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Our Team</h1>
+                <p>Meet the dedicated professionals driving sustainable change</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Leadership Team</h2>
+                <p class="section-subtitle">Our team of passionate leaders committed to creating sustainable impact across Africa</p>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Team" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1.5rem; object-fit: cover;">
+                            <h4 style="color: var(--primary-green);">Executive Director</h4>
+                            <p>Leading our mission to empower communities and promote sustainable development across Africa.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card">
+                            <img src="https://i.pravatar.cc/150?img=48" alt="Team" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1.5rem; object-fit: cover;">
+                            <h4 style="color: var(--primary-green);">Programs Director</h4>
+                            <p>Overseeing project implementation and ensuring effective community engagement strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card">
+                            <img src="https://i.pravatar.cc/150?img=27" alt="Team" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1.5rem; object-fit: cover;">
+                            <h4 style="color: var(--primary-green);">Communications Director</h4>
+                            <p>Managing stakeholder relationships and amplifying our impact stories to broader audiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PARTNERS PAGE -->
+    <div id="partnersPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Our Partners</h1>
+                <p>Together, we create lasting change</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Strategic Partners</h2>
+                <p class="section-subtitle">We work with organizations committed to sustainable development and community empowerment</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature-card">
+                            <h3 style="color: var(--primary-green);">Our Partnerships</h3>
+                            <p>Green Growth Africa collaborates with local and international organizations, government agencies, private sector partners, and community groups to maximize our impact and reach more communities across Africa.</p>
+                            <button class="btn btn-read-more mt-3" onclick="showPage('partner')">Become a Partner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- THEMATIC AREAS PAGE -->
+    <div id="thematicPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Thematic Areas</h1>
+                <p>Each area is meticulously designed to address specific facets of community growth</p>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Socio-Economic">
+                            <div class="thematic-card-body">
+                                <h4>Socio-Economic Empowerment</h4>
+                                <p>Green Growth Africa (GGA) fosters socio-economic empowerment in Africa by addressing poverty, unemployment, and financial exclusion. In Ghana, where poverty was 23.4% in 2017, GGA works to create opportunities for vulnerable groups, particularly women and youth.</p>
+                                <p>Through skills training, capacity building, and entrepreneurship programs, we help communities achieve financial independence and sustainable livelihoods. Our initiatives focus on providing access to resources, markets, and training that enable individuals to start and grow businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" alt="Agriculture">
+                            <div class="thematic-card-body">
+                                <h4>Agriculture and Biodiversity</h4>
+                                <p>Green Growth Africa promotes sustainable agriculture and biodiversity conservation through research, advocacy and capacity building on emerging agricultural trends, species management, and ecosystem preservation.</p>
+                                <p>We work with farming communities to implement climate-smart agricultural practices, preserve indigenous crop varieties, and promote sustainable land management techniques that enhance productivity while protecting biodiversity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Environment">
+                            <div class="thematic-card-body">
+                                <h4>Environment and Climate Change</h4>
+                                <p>Africa is severely faced with the stiffening effects of the triple planetary crises of climate change, biodiversity loss and pollution needing urgent conservation and climate action.</p>
+                                <p>GGA implements climate adaptation and mitigation strategies, promotes renewable energy solutions, and advocates for policies that protect our environment. We work with communities to build resilience against climate impacts while reducing greenhouse gas emissions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Circular Economy">
+                            <div class="thematic-card-body">
+                                <h4>Circular Economy</h4>
+                                <p>Green Growth Africa champions the transition to a circular economy by promoting waste reduction, recycling, and sustainable production. Through innovation and education, GGA empowers communities to rethink waste management.</p>
+                                <p>We facilitate the development of circular economy models that transform waste into resources, creating economic opportunities while reducing environmental impact. Our programs support waste management enterprises and recycling initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="thematic-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Ecotourism">
+                            <div class="thematic-card-body">
+                                <h4>Ecotourism and Community Development</h4>
+                                <p>Green Growth Africa (GGA) promotes ecotourism in Ghana as a sustainable way to boost local economies while preserving biodiversity. Ecotourism creates opportunities for communities to benefit from natural resources without depleting them.</p>
+                                <p>We work with local communities to develop tourism initiatives that celebrate culture, protect wildlife, and generate sustainable income. Our approach ensures that tourism benefits are distributed equitably within communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projectsPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Our Projects</h1>
+                <p>Each project is a step forward in building a better, more sustainable future</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Accra">
+                            <div class="project-card-body">
+                                <h5>Socio-Economic Empowerment (SEE) Accra Project</h5>
+                                <p>Accra's high population density presents challenges including environmental degradation, pollution, and social inequality. Green Growth Africa addresses these through skills training and entrepreneurship development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Fisheries">
+                            <div class="project-card-body">
+                                <h5>Fisheries Empowerment Project (FEP Ghana)</h5>
+                                <p>The fisheries sector has played a significant role in Ghana's economy. This project empowers fishing communities with sustainable practices, value addition techniques, and market access.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Elephants">
+                            <div class="project-card-body">
+                                <h5>Saving The Forest Elephants Project (SFEP)</h5>
+                                <p>The majestic forest elephant, a keystone species in Ghana's ecosystems, faces extinction. This project works to reduce human-elephant conflict while preserving elephant populations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Coastal">
+                            <div class="project-card-body">
+                                <h5>Coastal Resilience & Sustainable Livelihood Initiative (CRESLI)</h5>
+                                <p>Climate change impacts coastal communities severely. This project builds resilience through climate adaptation strategies, sustainable fishing practices, and alternative livelihoods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600" alt="Rising Roots">
+                            <div class="project-card-body">
+                                <h5>Rising Roots Project</h5>
+                                <p>Green Growth Africa seeks to harness the potential of young innovators and atypical entrepreneurs through mentorship, training, and access to resources for sustainable business development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Waste">
+                            <div class="project-card-body">
+                                <h5>Beyond Waste Initiative</h5>
+                                <p>Ghana's waste management faces challenges including inadequate infrastructure. This initiative promotes circular economy principles and transforms waste into valuable resources.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600" alt="Northern Ghana">
+                            <div class="project-card-body">
+                                <h5>The Northern Ghana Climate Resilience Project (NGCR)</h5>
+                                <p>The Northern part of Ghana is recognized as the food basket but is heavily affected by climatic factors. This project strengthens resilience through sustainable agriculture and water management.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600" alt="Palm Oil">
+                            <div class="project-card-body">
+                                <h5>Palm Oil Value Addition Project (POVAP)</h5>
+                                <p>Palm oil production is crucial income for many farmers. This project enhances value addition and promotes sustainable palm oil production practices while protecting biodiversity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" alt="Social Protection">
+                            <div class="project-card-body">
+                                <h5>Promoting Social Protection for All (SPA)</h5>
+                                <p>Green Growth Africa recognises the importance of women's economic empowerment and the potential it holds for sustainable development and social protection initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VOLUNTEER PAGE -->
+    <div id="volunteerPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Volunteer With Us</h1>
+                <p>Contribute to projects that make a tangible difference in communities</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h2 style="color: var(--primary-green); font-size: 2.3rem; margin-bottom: 1.5rem;">Join Our Volunteer Network</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">We believe in the power of individuals coming together to drive positive change, and we invite you to be a part of this impactful journey.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">By volunteering with us, you become an essential catalyst for sustainable development, environmental conservation, and community empowerment across Africa.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">Fill out the form and embark on a journey of purposeful volunteering with Green Growth Africa Network. Your dedication can be the spark that ignites positive transformation.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="feature-card">
+                            <h3 style="color: var(--primary-green);">Volunteer Application</h3>
+                            <form id="volunteerForm">
+                                <div class="mb-3">
+                                    <label for="volName" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="volName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="volEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="volEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="volPhone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="volPhone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="volArea" class="form-label">Area of Interest *</label>
+                                    <select class="form-select" id="volArea" required>
+                                        <option value="">Select Area</option>
+                                        <option value="education">Education & Training</option>
+                                        <option value="environment">Environmental Conservation</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="community">Community Development</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="volMessage" class="form-label">Why do you want to volunteer?</label>
+                                    <textarea class="form-control" id="volMessage" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-read-more w-100">Submit Application</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PARTNER PAGE -->
+    <div id="partnerPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Become a Partner</h1>
+                <p>Together, we can create lasting impact across Africa</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h2 style="color: var(--primary-green); font-size: 2.3rem; margin-bottom: 1.5rem;">Partner With Us</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">We believe in the power of collaboration to drive positive change. Whether you are an individual, organization, or business, there are various ways you can contribute to our goals.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">Our partnerships enable us to expand our reach, share knowledge, and create sustainable solutions that benefit communities across Africa.</p>
+                        
+                        <h4 style="color: var(--primary-green); margin-bottom: 1rem;">Partnership Benefits:</h4>
+                        <ul style="font-size: 1.05rem; line-height: 2;">
+                            <li>Strategic collaboration on impactful projects</li>
+                            <li>Brand visibility and recognition</li>
+                            <li>Corporate social responsibility fulfillment</li>
+                            <li>Access to networks and communities</li>
+                            <li>Regular impact reports and updates</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="feature-card">
+                            <h3 style="color: var(--primary-green);">Partnership Inquiry</h3>
+                            <form id="partnerForm">
+                                <div class="mb-3">
+                                    <label for="orgName" class="form-label">Organization Name *</label>
+                                    <input type="text" class="form-control" id="orgName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orgContact" class="form-label">Contact Person *</label>
+                                    <input type="text" class="form-control" id="orgContact" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orgEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="orgEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orgPhone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="orgPhone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="partnerType" class="form-label">Partnership Type *</label>
+                                    <select class="form-select" id="partnerType" required>
+                                        <option value="">Select Type</option>
+                                        <option value="corporate">Corporate Partnership</option>
+                                        <option value="ngo">NGO/Non-Profit</option>
+                                        <option value="government">Government Agency</option>
+                                        <option value="academic">Academic Institution</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="partnerMessage" class="form-label">Tell us about your organization</label>
+                                    <textarea class="form-control" id="partnerMessage" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-read-more w-100">Submit Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contactPage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with Green Growth Africa</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="feature-card">
+                            <h3 style="color: var(--primary-green); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subject *</label>
+                                    <input type="text" class="form-control" id="contactSubject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-read-more w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="feature-card mb-4">
+                            <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h4 style="color: var(--primary-green);">Our Location</h4>
+                            <p>Accra, Ghana<br>West Africa</p>
+                        </div>
+
+                        <div class="feature-card mb-4">
+                            <i class="fas fa-envelope" style="font-size: 2rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h4 style="color: var(--primary-green);">Email Us</h4>
+                            <p><a href="mailto:info@greengrowthafrica.org" style="color: var(--dark-text);">info@greengrowthafrica.org</a></p>
+                        </div>
+
+                        <div class="feature-card mb-4">
+                            <i class="fas fa-phone" style="font-size: 2rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h4 style="color: var(--primary-green);">Call Us</h4>
+                            <p>+233 XX XXX XXXX</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-share-alt" style="font-size: 2rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h4 style="color: var(--primary-green);">Follow Us</h4>
+                            <div class="social-icons" style="margin-top: 1rem;">
+                                <a href="#" style="color: var(--primary-green);"><i class="fab fa-facebook"></i></a>
+                                <a href="#" style="color: var(--primary-green);"><i class="fab fa-twitter"></i></a>
+                                <a href="#" style="color: var(--primary-green);"><i class="fab fa-instagram"></i></a>
+                                <a href="#" style="color: var(--primary-green);"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DONATE PAGE -->
+    <div id="donatePage" class="page-content">
+        <section class="hero-section" style="padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Make a Donation</h1>
+                <p>Your contribution creates real, lasting change</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="feature-card">
+                            <h2 class="text-center mb-4" style="color: var(--primary-green);">Support Our Mission</h2>
+                            <p class="text-center mb-5" style="font-size: 1.1rem;">Your donation makes a difference in the lives of individuals and communities. By contributing, you're actively backing initiatives for environmental protection and community empowerment across Africa.</p>
+
+                            <form id="donationForm">
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Select Amount</label>
+                                    <div class="row g-3">
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount1" value="50" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount1">$50</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount2" value="100" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount2">$100</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount3" value="250" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount3">$250</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount4" value="500" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount4">$500</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount5" value="1000" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount5">$1000</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="radio" class="btn-check" name="amount" id="amount6" value="custom" autocomplete="off">
+                                            <label class="btn btn-outline-success w-100" for="amount6">Custom</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3" id="customAmountDiv" style="display: none;">
+                                    <label for="customAmount" class="form-label">Custom Amount ($) *</label>
+                                    <input type="number" class="form-control" id="customAmount" placeholder="Enter amount">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorName" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="donorName" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="donorEmail" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donorPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="donorPhone">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="donationPurpose" class="form-label">Donation Purpose (Optional)</label>
+                                    <select class="form-select" id="donationPurpose">
+                                        <option value="">General Fund</option>
+                                        <option value="education">Education & Training Programs</option>
+                                        <option value="environment">Environmental Conservation</option>
+                                        <option value="agriculture">Agriculture & Food Security</option>
+                                        <option value="women">Women Empowerment</option>
+                                        <option value="youth">Youth Development</option>
+                                        <option value="climate">Climate Action</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="monthlyDonation">
+                                    <label class="form-check-label" for="monthlyDonation">
+                                        Make this a monthly recurring donation
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-read-more w-100 py-3" style="font-size: 1.1rem;">
+                                    <i class="fas fa-heart me-2"></i> Proceed to Secure Payment
+                                </button>
+                            </form>
+
+                            <div class="text-center mt-4">
+                                <small class="text-muted">🔒 Your donation is secure and tax-deductible</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt" style="font-size: 3.5rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Secure Payment</h5>
+                            <p>Your donation is processed securely through encrypted payment channels.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line" style="font-size: 3.5rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h5 style="color: var(--primary-green); margin-bottom: 1rem;">100% Impact</h5>
+                            <p>Every dollar goes directly to supporting our programs and empowering communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-file-invoice" style="font-size: 3.5rem; color: var(--secondary-green); margin-bottom: 1rem;"></i>
+                            <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Tax Deductible</h5>
+                            <p>Receive an official tax receipt for your charitable contribution immediately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section mb-4">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i> Green Growth Africa
+                    </div>
+                    <p style="margin-bottom: 1rem;">A dynamic non-profit organization dedicated to catalyzing sustainable development in Africa's communities.</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@greengrowthafrica.org</p>
+                    <p><i class="fas fa-phone me-2"></i> +233 XX XXX XXXX</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Accra, Ghana</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2 footer-section mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('thematic')">Thematic Areas</a></li>
+                        <li><a href="#" onclick="showPage('projects')">Our Projects</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer-section mb-4">
+                    <h5>Get Involved</h5>
+                    <ul>
+                        <li><a href="#" onclick="showPage('volunteer')">Volunteer With Us</a></li>
+                        <li><a href="#" onclick="showPage('partner')">Become a Partner</a></li>
+                        <li><a href="#" onclick="showPage('donate')">Make a Donation</a></li>
+                        <li><a href="#" onclick="showPage('team')">Join Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 footer-section mb-4">
+                    <h5>Our Focus</h5>
+                    <ul>
+                        <li><a href="#" onclick="showPage('thematic')">Socio-Economic Empowerment</a></li>
+                        <li><a href="#" onclick="showPage('thematic')">Climate Change</a></li>
+                        <li><a href="#" onclick="showPage('thematic')">Agriculture</a></li>
+                        <li><a href="#" onclick="showPage('thematic')">Circular Economy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2024 Green Growth Africa. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for a sustainable future</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Page Navigation System
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const targetPage = document.getElementById(pageName + 'Page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Close mobile menu
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+
+                // Update counters if on home page
+                if (pageName === 'home') {
+                    setTimeout(animateCounters, 500);
+                }
+            }
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/Hide Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+
+            // Navbar shadow on scroll
+            const navbar = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.feature-card, .thematic-card, .project-card, .testimonial-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Animate counters on page load
+            setTimeout(animateCounters, 1000);
+        });
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value
+            };
+
+            // Flask API endpoint: POST /api/contact
+            console.log('Contact Form Data:', formData);
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Volunteer Form Handler
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('volName').value,
+                email: document.getElementById('volEmail').value,
+                phone: document.getElementById('volPhone').value,
+                area: document.getElementById('volArea').value,
+                message: document.getElementById('volMessage').value
+            };
+
+            // Flask API endpoint: POST /api/volunteer
+            console.log('Volunteer Form Data:', formData);
+            
+            alert('Thank you for your interest in volunteering! We will contact you soon.');
+            this.reset();
+        });
+
+        // Partner Form Handler
+        document.getElementById('partnerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                orgName: document.getElementById('orgName').value,
+                contact: document.getElementById('orgContact').value,
+                email: document.getElementById('orgEmail').value,
+                phone: document.getElementById('orgPhone').value,
+                type: document.getElementById('partnerType').value,
+                message: document.getElementById('partnerMessage').value
+            };
+
+            // Flask API endpoint: POST /api/partner
+            console.log('Partner Form Data:', formData);
+            
+            alert('Thank you for your partnership inquiry! We will review and contact you shortly.');
+            this.reset();
+        });
+
+        // Donation Form - Custom Amount Toggle
+        document.querySelectorAll('input[name="amount"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const customDiv = document.getElementById('customAmountDiv');
+                if (this.value === 'custom') {
+                    customDiv.style.display = 'block';
+                    document.getElementById('customAmount').required = true;
+                } else {
+                    customDiv.style.display = 'none';
+                    document.getElementById('customAmount').required = false;
+                }
+            });
+        });
+
+        // Donation Form Handler
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const selectedAmount = document.querySelector('input[name="amount"]:checked');
+            let amount = selectedAmount ? selectedAmount.value : null;
+            
+            if (amount === 'custom') {
+                amount = document.getElementById('customAmount').value;
+            }
+
+            if (!amount) {
+                alert('Please select or enter a donation amount.');
+                return;
+            }
+
+            const donationData = {
+                amount: amount,
+                name: document.getElementById('donorName').value,
+                email: document.getElementById('donorEmail').value,
+                phone: document.getElementById('donorPhone').value,
+                purpose: document.getElementById('donationPurpose').value,
+                monthly: document.getElementById('monthlyDonation').checked
+            };
+
+            // Flask API endpoint: POST /api/donate
+            console.log('Donation Data:', donationData);
+            
+            alert('Thank you for your generous donation! Redirecting to secure payment processor...');
+            // In production, redirect to payment gateway
+        });
+
+        // Smooth Scroll for Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Loading indicator for forms
+        function showLoading(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '<span class="loading"></span> Processing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Enhanced form validation
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+    </script>
+</body>
+</html>
