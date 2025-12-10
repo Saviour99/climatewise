@@ -1157,6 +1157,168 @@ section.executive {
     border: 2px solid white;
 }
 
+/*Contact section*/
+.contact-section {
+    padding: 80px 0;
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+.contact-container {
+    background: #fafafa;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* Left Side - Form */
+.contact-form-side {
+    padding: 80px 60px;
+    background: #fafafa;
+}
+
+.contact-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.7;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #d0d0d0;
+    border-radius: 0;
+    padding: 12px 0;
+    font-size: 1rem;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: var(--primary-green);
+    background: transparent;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-send {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 16px 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.btn-send:hover {
+    background: var(--third-green);
+    color: var(--light-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 77, 46, 0.3);
+}
+
+ /* Right Side - Info */
+.contact-info-side {
+    margin-top: 30px;
+    margin-right: 50px;
+    background: var(--primary-green);
+    color: white;
+    padding: 80px 60px;
+    position: relative;
+}
+
+.info-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.info-icon {
+    width: 24px;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.info-text a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.info-text a:hover {
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 60px;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--light-bg);
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+
+
+
 /* Footer */
 footer {
     background-color: var(--light-bg);
