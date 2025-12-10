@@ -1172,6 +1172,10 @@ section.executive {
 }
 
 /* Left Side - Form */
+.contact-container {
+    margin-bottom: -80px;
+}
+
 .contact-form-side {
     padding: 80px 60px;
     background: #fafafa;
@@ -1242,8 +1246,9 @@ textarea.form-control {
 
  /* Right Side - Info */
 .contact-info-side {
-    margin-top: 30px;
-    margin-right: 50px;
+    margin-top: 90px;
+    margin-right: -280px;
+    margin-left: 60px;
     background: var(--primary-green);
     color: white;
     padding: 80px 60px;
@@ -1409,6 +1414,18 @@ i.fa-angle-right {
 }
 
 /* Responsive */
+@media (max-width: 991px) {
+    .contact-form-side,
+    .contact-info-side {
+        padding: 60px 40px;
+    }
+
+    .contact-title,
+    .info-title {
+        font-size: 2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2rem;
@@ -1424,6 +1441,43 @@ i.fa-angle-right {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-form-side,
+    .contact-info-side {
+        padding: 40px 30px;
+    }
+
+    .contact-title,
+    .info-title {
+        font-size: 2rem;
+    }
+
+    .info-title {
+        margin-bottom: 50px;
+    }
+
+    .info-item {
+        margin-bottom: 35px;
+    }
+
+    .social-links {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-side,
+    .contact-info-side {
+        padding: 30px 20px;
+    }
+
+    .btn-send {
+        width: 100%;
     }
 }
 
