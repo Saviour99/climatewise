@@ -66,16 +66,18 @@ body {
 .dropdown-menu {
     border: none;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    border-radius: 0px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .dropdown-item {
     padding: 10px 20px;
     transition: background-color 0.3s;
+    border-bottom: 1px solid var(--primary-green);
 }
 
 .dropdown .dropdown-menu {
-    border: none;
     border-radius: none;
     box-shadow: none;
 }
@@ -83,7 +85,6 @@ body {
 .dropdown-item:hover {
     background-color: var(--light-bg);
     color: var(--primary-green);
-    border-bottom: 3px solid var(--primary-green);
 }
 
 .btn-donate {
@@ -959,6 +960,11 @@ section.executive {
 
  /* Responsive */
 @media (max-width: 992px) {
+    .card-divider .second-card {
+        margin-left: 0px;
+        padding: 10px 20px;
+    }
+
     .news-content {
         padding: 40px 30px;
     }
@@ -1321,13 +1327,163 @@ textarea.form-control {
 }
 
 
+/*volunteer & partners section*/
+.volunteer-section, 
+.partner-section
+ {
+    padding: 80px 0;
+    min-height: 100vh;
+}
 
+.volunteer-container,
+.partner-container
+{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Left Side - Content */
+.volunteer-content,
+.partner-content
+{
+    margin-top: 30px;
+    padding-right: 60px;
+}
+
+.volunteer-title, 
+.partner-title
+{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 35px;
+    line-height: 1.2;
+}
+
+.volunteer-text,
+.partner-text
+{
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.volunteer-content .learn-more-btn,
+.partner-content .learn-more-btn
+{
+    display: inline-block;
+    padding: 15px 45px;
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.volunteer-content .learn-more-btn:hover,
+.partner-content .learn-more-btn:hover
+{
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 77, 46, 0.3);
+}
+
+/* Right Side - Form */
+.volunteer-form-container,
+.partner-form-container
+{
+    width: 470px;
+    background: var(--light-bg);
+    padding: 40px 45px;
+    border-radius: 12px;
+    margin-left: 80px;
+}
+
+.volunteer-form-container .form-title,
+.partner-form-container .form-title
+{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 35px;
+    line-height: 1.3;
+}
+
+.volunteer-form-container .form-group,
+.partner-form-container .form-group
+{
+    margin-bottom: 25px;
+}
+
+.volunteer-form-container .form-control,
+.partner-form-container .form-control
+{
+    border: none;
+    border-bottom: 2px solid #b0b0b0;
+    border-radius: 0;
+    padding: 12px 0;
+    font-size: 1rem;
+    background: var(--light-cl);
+    transition: border-color 0.3s;
+    padding-left: 10px;
+}
+
+.volunteer-form-container .form-control:focus,
+.partner-form-container .form-control:focus
+{
+    box-shadow: none;
+    border-bottom-color: var(--primary-green);
+    background: var(--light-cl);
+}
+
+.volunteer-form-container .form-control::placeholder,
+.partner-form-container .form-control::placeholder
+{
+    color: #999;
+}
+
+.volunteer-form-container textarea.form-control,
+.partner-form-container textarea.form-control
+{
+    min-height: 100px;
+    resize: vertical;
+}
+
+.volunteer-form-container .btn-send,
+.partner-form-container .btn-send
+{
+    width: 100%;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    margin-top: 15px;
+}
+
+.volunteer-form-container .btn-send:hover,
+.partner-form-container .btn-send:hover
+{
+    background: #153d24;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 77, 46, 0.3);
+}
 
 
 /* Footer */
 footer {
-    background-color: var(--light-bg);
-    color: black;
+    background-color: var(--primary-green);
+    color: var(--light-cl);
     padding: 60px 0 20px;
 }
 
@@ -1363,13 +1519,13 @@ footer {
 }
 
 .footer-section ul li a {
-    color: black;
+    color: var(--light-cl);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: var(--primary-green);
+    color: var(--light-bg);
 }
 
 .social-icons a {
@@ -1379,28 +1535,17 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--primary-green);
+    color: var(--light-bg);
+}
+
+.social-icons i {
+    color: var(--light-cl);
 }
 
 .social-icons i:hover {
-    color: var(--primary-green);
+    color: var(--light-bg);
 }
 
-i.fa-facebook-f {
-    color: blue;
-}
-
-i.fa-twitter {
-    color: rgb(57, 57, 252);
-}
-
-i.fa-instagram {
-    color: red;
-}
-
-i.fa-linkedin-in {
-    color: blue;
-}
 
 i.fa-angle-right {
     font-size: 10px;
@@ -1415,6 +1560,45 @@ i.fa-angle-right {
 
 /* Responsive */
 @media (max-width: 991px) {
+    .navbar-nav {
+        align-items: flex-start !important;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        text-align: left;
+        padding-left: 0;
+    }
+    
+    /* Make dropdown menu full width */
+    .dropdown-menu {
+        width: 100%;
+        position: static !important;
+        transform: none !important;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        padding: 0 !important;
+    }
+    
+    /* Extend dropdown item borders */
+    .dropdown-item {
+        padding: 12px 0;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .dropdown-item:last-child {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    /* Align donate button to left */
+    .btn-donate {
+        margin-left: 0;
+        margin-top: 10px;
+    }
     .contact-form-side,
     .contact-info-side {
         padding: 60px 40px;
@@ -1422,6 +1606,19 @@ i.fa-angle-right {
 
     .contact-title,
     .info-title {
+        font-size: 2.5rem;
+    }
+
+    .volunteer-content,
+    .partner-content
+    {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .volunteer-title,
+    .partner-title
+    {
         font-size: 2.5rem;
     }
 }
@@ -1468,6 +1665,30 @@ i.fa-angle-right {
     .social-links {
         margin-top: 40px;
     }
+
+    .volunteer-section,
+    .partner-section
+    {
+        padding: 50px 0;
+    }
+
+    .volunteer-title,
+    .partner-title
+    {
+        font-size: 2rem;
+    }
+
+    .volunteer-form-container,
+    .partner-form-container
+    {
+        padding: 40px 30px;
+    }
+
+    .volunteer-form-container .form-title,
+    .partner-form-container .form-title
+    {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1478,6 +1699,31 @@ i.fa-angle-right {
 
     .btn-send {
         width: 100%;
+    }
+
+    .volunteer-section,
+    .partner-section
+    {
+        padding: 40px 0;
+    }
+
+    .volunteer-title,
+    .partner-title
+    {
+        font-size: 1.8rem;
+    }
+
+    .volunteer-form-container,
+    .partner-form-container
+    {
+        padding: 30px 20px;
+    }
+
+    .volunteer-section .learn-more-btn,
+    .partner-section .learn-more-btn
+    {
+        width: 100%;
+        text-align: center;
     }
 }
 
