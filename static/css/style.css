@@ -20,6 +20,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -27,6 +32,8 @@ body {
     background-color: white !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 1rem 0;
+    font-size: 1.03rem;
+    font-weight: 600;
 }
 
 .navbar .container-fluid {
@@ -106,6 +113,28 @@ body {
 }
 
 /* Hero Section */
+
+#homePage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://freeconvertonline.com/embed/mp4-to-gif?w=1600') center/cover;
+    color: white;
+    padding: 120px 0;
+    text-align: start;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+#homePage .hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .hero-section {
     background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
                 url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600') center/cover;
@@ -123,7 +152,7 @@ body {
 }
 
 .hero-section h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
@@ -137,14 +166,17 @@ body {
 }
 
 .btn1 {
-    padding: 12px 35px;
-    font-weight: 500;
-}
-
-.btn1:hover {
     background-color: transparent;
     border: 2px solid white;
     color: white;
+    padding: 12px 35px;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.btn1:hover {
+    background-color: white;
+    color: var(--secondary-green);
 }
 
 /* Stats Section */
@@ -184,14 +216,26 @@ body {
 }
 
 .card-divider {
-    width: 100%;
     background-color: var(--primary-green);
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: -80px;
 }
 
-.first-card {
+.focus-section {
+    background-color: var(--primary-green);
+    color: var(--light-cl);
+}
+
+.first-card,
+.focus1-card 
+{
     margin-left: -13px;
+}
+
+.first-card img,
+.focus1-card img
+{
+    width: 450px;
 }
 
 .second-card {
@@ -200,6 +244,17 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: -95px;
+}
+
+.focus2-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -95px;
+}
+
+.focus2-item h3{
+    font-size: 18px;
 }
 
 .feature-card {
@@ -362,28 +417,6 @@ body {
     line-height: 1.7;
 }
 
-/*Focus section*/
-.focus {
-    font-size: 2.5rem;
-}
-
-.focus-section {
-    background-color: var(--primary-green);
-}
-
-.focus2-card {
-    margin-left: -50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--light-bg);
-}
-
-.focus2-item.item {
-    margin-left: -70px;
-}
-
 /* Values Section */
 .values-section {
     padding: 80px 0;
@@ -473,7 +506,6 @@ body {
     color: #666;
     line-height: 1.7;
 }
-
 
 /*Teams section*/
 .board-card {
@@ -960,9 +992,23 @@ section.executive {
 
  /* Responsive */
 @media (max-width: 992px) {
-    .card-divider .second-card {
+    body {
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .first-card img,
+    .focus1-card img    
+    {
+        width: 110%;
+    }
+
+    .card-divider .second-card,
+    .focus2-card
+    {
         margin-left: 0px;
         padding: 10px 20px;
+        width: 100%;
     }
 
     .news-content {
@@ -1253,8 +1299,8 @@ textarea.form-control {
  /* Right Side - Info */
 .contact-info-side {
     margin-top: 90px;
-    margin-right: -280px;
-    margin-left: 60px;
+    margin-right: 0;
+    margin-left: 0;
     background: var(--primary-green);
     color: white;
     padding: 80px 60px;
@@ -1398,11 +1444,12 @@ textarea.form-control {
 .volunteer-form-container,
 .partner-form-container
 {
-    width: 470px;
+    width: 100%;
+    max-width: 470px;
     background: var(--light-bg);
     padding: 40px 45px;
     border-radius: 12px;
-    margin-left: 80px;
+    margin-left: auto;
 }
 
 .volunteer-form-container .form-title,
@@ -1646,7 +1693,11 @@ i.fa-angle-right {
 
     .contact-form-side,
     .contact-info-side {
-        padding: 40px 30px;
+        padding: 40px 50px;
+    }
+
+    .contact-info-side {
+        border-bottom: 1px solid var(--light-bg);
     }
 
     .contact-title,
