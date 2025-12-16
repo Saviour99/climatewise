@@ -119,21 +119,49 @@ html {
 }
 
 /* Hero Section */
-
-#homePage .hero-section {
-    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
-                url('https://freeconvertonline.com/embed/mp4-to-gif?w=1600') center/cover;
+#homePage .hero-section1 {
+    position: relative;
     color: white;
     padding: 120px 0;
     text-align: start;
-    height: 700px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 115px;
+    overflow: hidden;
 }
 
-#homePage .hero-section p {
+/* Video background */
+#homePage .hero-section1 .hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Green overlay (replaces the gradient in background) */
+#homePage .hero-section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 80, 22, 0.7);
+    z-index: -1;
+}
+
+/* Make sure container content is on top */
+#homePage .hero-section1 .container {
+    position: relative;
+    z-index: 1;
+}
+
+#homePage .hero-section1 p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     max-width: 800px;
@@ -157,7 +185,9 @@ html {
     margin-top: 50px;
 }
 
-.hero-section h1 {
+.hero-section1 h1,
+.hero-section h1
+{
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
@@ -1597,9 +1627,14 @@ textarea.form-control {
 
 
 /* donation Content */
+.donatepage {
+    margin-top: 30px;
+}
+
 .donation-section {
     padding: 80px 0;
     background: var(--light-bg);
+    margin-top: 50px;
 }
 
 .donation-form-container {
@@ -1607,20 +1642,21 @@ textarea.form-control {
     border-radius: 16px;
     padding: 50px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 .form-section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--brand-color);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 3px solid var(--primary-green);
 }
 
 /* Amount Selection */
 .amount-selection {
-    margin-bottom: 70px;
+    margin-bottom: 0;
 }
 
 .amount-buttons {
@@ -1631,11 +1667,11 @@ textarea.form-control {
 }
 
 .amount-btn {
-    padding: 4px;
+    padding: 4px 6px;
     border: 2px solid var(--light-bg);
     background: var(--light-cl);
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--dark-text);
     cursor: pointer;
@@ -1656,6 +1692,7 @@ textarea.form-control {
 
 .custom-amount {
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .custom-amount label {
@@ -1681,8 +1718,8 @@ textarea.form-control {
 
 .amount-input {
     width: 100%;
-    padding: 4px 5px 4px 62px;
-    font-size: 1.2rem;
+    padding: 4px 6px 4px 60px;
+    font-size: 1rem;
     border: 2px solid var(--light-bg);
     border-radius: 12px;
     font-weight: 500;
@@ -1694,18 +1731,17 @@ textarea.form-control {
     border-color: var(--primary-green);
 }
 
-
 /* Personal Information */
 .star {
     color: red;
 }
 
 .personal-info {
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .form-label {
@@ -1713,11 +1749,12 @@ textarea.form-control {
     color: var(--dark-text);
     margin-bottom: 8px;
     display: block;
+    font-size: 0.95rem;
 }
 
 .form-control {
     width: 100%;
-    padding: 8px 10px;
+    padding: 5px 7px;
     border: 2px solid var(--light-bg);
     border-radius: 10px;
     font-size: 1rem;
@@ -1731,11 +1768,13 @@ textarea.form-control {
 
 .form-select {
     width: 100%;
-    padding: 8px 10px;
+    padding: 5px 7px;
     border: 2px solid var(--light-bg);
     border-radius: 10px;
     font-size: 1rem;
     transition: border-color 0.3s;
+    background: white;
+    cursor: pointer;
 }
 
 .form-select:focus {
@@ -1755,47 +1794,22 @@ textarea.form-control {
     margin-bottom: 40px;
 }
 
-.payment-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.payment-option {
-    padding: 25px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
+.payment-info {
     text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
+    padding: 30px;
+    background: #e8f5e1;
+    border-radius: 12px;
 }
 
-.payment-option:hover {
-    border-color: var(--primary-green);
-    background: var(--light-bg);
-}
-
-.payment-option.active {
-    border-color: var(--primary-green);
-    background: var(--light-bg);
-}
-
-.payment-option i {
-    font-size: 2.5rem;
-    color: var(--primary-green);
-    margin-bottom: 10px;
-}
-
-.payment-option span {
-    display: block;
-    font-weight: 600;
-    color: var(--dark-text);
+.payment-info img {
+    margin-bottom: 15px;
 }
 
 /* Checkbox */
 .checkbox-group {
-    margin: 25px 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-group input[type="checkbox"] {
@@ -1803,32 +1817,35 @@ textarea.form-control {
     height: 17px;
     margin-right: 10px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .checkbox-group label {
     font-size: 0.95rem;
     color: #666;
     cursor: pointer;
+    margin: 0;
 }
 
 /* Submit Button */
 .submit-btn {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background: var(--primary-green);
     color: white;
-    border: 1px solid var(--primary-green);
+    border: 2px solid var(--primary-green);
     border-radius: 10px;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
 }
 
 .submit-btn:hover {
-    border: 2px solid var(--primary-green);
+    background: transparent;
     color: var(--primary-green);
-    background-color: transparent;
-    padding: -20px;
+    border: 2px solid var(--primary-green);
 }
 
 
@@ -1903,39 +1920,6 @@ textarea.form-control {
     font-weight: 600;
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-    .donation-form-container {
-        padding: 40px 30px;
-    }
-
-    .impact-sidebar {
-        margin-top: 40px;
-        position: static;
-    }
-}
-
-@media (max-width: 768px) {
-    .donation-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .amount-buttons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .payment-options {
-        grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .frequency-buttons {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Footer */
 footer {
@@ -2078,6 +2062,18 @@ i.fa-angle-right {
     {
         font-size: 2.5rem;
     }
+     
+    .donation-form-container {
+        padding: 40px 30px;
+    }
+    
+    .amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2087,6 +2083,12 @@ i.fa-angle-right {
 
     .hero-section p {
         font-size: 1.1rem;
+    }
+
+    .main-content {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 20px;
     }
 
     .stat-box h2 {
@@ -2150,6 +2152,28 @@ i.fa-angle-right {
     {
         font-size: 1.5rem;
     }
+    .donation-form-container {
+        padding: 30px 20px;
+    }
+    
+    .form-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .amount-btn {
+        font-size: 1rem;
+        padding: 12px 8px;
+    }
+    
+    .submit-btn {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2185,6 +2209,11 @@ i.fa-angle-right {
     {
         width: 100%;
         text-align: center;
+    }
+
+    .amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 }
 
