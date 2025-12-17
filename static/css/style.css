@@ -65,6 +65,10 @@ html {
     transition: color 0.3s;
 }
 
+.nav-link:focus {
+    box-shadow: none;
+}
+
 .nav-link:hover {
     color: var(--primary-green) !important;
     border-bottom: 3px solid var(--primary-green);
@@ -169,13 +173,78 @@ html {
     margin-right: 0;
 }
 
-.hero-section {
+#aboutPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.6), rgba(45, 80, 22, 0.6)), 
+                url('https://images.unsplash.com/photo-1599747645972-73c841de6e9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXBhbnklMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D') center/cover;
+    
+    height: 500px;
+}
+
+#teamPage .hero-section {
     background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
-                url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600') center/cover;
+                url('https://images.unsplash.com/photo-1739298061707-cefee19941b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b2ZmaWNlJTIwdGVhbSUyMGJsYWNrJTIwcGVvcGxlfGVufDB8fDB8fHww') center/cover;
+    
+    height: 550px;
+}
+
+#climatePage .hero-section,
+#youthPage .hero-section,
+#educationPage .hero-section,
+#waterPage .hero-section,
+#environmentPage .hero-section,
+#researchPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.4), rgba(45, 80, 22, 0.4)), 
+                url('https://images.unsplash.com/photo-1657650505255-65ec65adb8aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgxfHxjbGltYXRlJTIwb3JnYW5pc2F0aW9uJTIwcGxhbnxlbnwwfHwwfHx8MA%3D%3D') center/cover;
+    
+    height: 550px;
+}
+
+#projectsPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://plus.unsplash.com/premium_photo-1681131451273-c7605c51e06e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2xpbWF0ZSUyMHByb2plY3RzfGVufDB8fDB8fHww') center/cover;
+    
+    height: 550px;
+}
+
+#mediaPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://media.istockphoto.com/id/2053337498/photo/asian-business-people-team-brainstorm-meeting-in-sustainable-office-at-night-using-computer.webp?a=1&b=1&s=612x612&w=0&k=20&c=TRHypdS9JoKG9wfFb4sfMJhg6S4b2wj2lzrTDkNcYd4=') center/cover;
+    
+    height: 550px;
+}
+
+#newsPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://media.istockphoto.com/id/1457288094/photo/environment-target-of-green-business-business-development-strategies-with-environmental.webp?a=1&b=1&s=612x612&w=0&k=20&c=Npj6m3w4qJNrOWaD3RA8hxhHKY1BNA4twll4_B53ne0=') center/cover;
+    
+    height: 550px;
+}
+
+#publicationsPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://images.unsplash.com/photo-1646559768375-2b319a0c233e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGNsaW1hdGUlMjBwcm9qZWN0c3xlbnwwfHwwfHx8MA%3D%3D') center/cover;
+    
+    height: 550px;
+}
+
+#volunteerPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://plus.unsplash.com/premium_photo-1661486805746-4bda55e185d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGNsaW1hdGUlMjBjaGFuZ2UlMjBtZW1iZXJzaGlwJTIwZm9yJTIwYmxhY2slMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D') center/cover;
+    
+    height: 550px;
+}
+
+#partnersPage .hero-section {
+    background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), 
+                url('https://plus.unsplash.com/premium_photo-1723809616710-32afb9dcd0ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGJsYWNrJTIwcGVvcGxlJTIwaW4lMjBzdWl0fGVufDB8fDB8fHww') center/cover;
+    
+    height: 550px;
+}
+
+.hero-section {
     color: white;
     padding: 120px 0;
     text-align: center;
-    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,6 +282,11 @@ html {
 .btn1:hover {
     background-color: white;
     color: var(--secondary-green);
+}
+
+.btn-hero:focus {
+    outline: none;
+    border: none;
 }
 
 /* Stats Section */

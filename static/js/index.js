@@ -105,3 +105,16 @@ document.getElementById('donateBtn').addEventListener('click', function() {
     alert('Processing payment via Paystack...');
     // Add Paystack integration here
 });
+
+function waterPage() {
+    // Hide all page content
+    document.querySelectorAll('.page-content').forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Show waterPage
+    document.getElementById('waterPage').classList.add('active');
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}

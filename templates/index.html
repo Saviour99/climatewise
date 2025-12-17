@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/x-twitter?f=brands&s=solid">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Navigation -->
@@ -89,10 +90,10 @@
         <!-- Hero Section -->
         <section class="hero-section1">
             <video autoplay muted loop playsinline class="hero-video-bg">
-                <source src="../static/video/hero.mp4" type="video/mp4">
+                <source src="../static/videos/hero.mp4" type="video/mp4">
                 Your browser is not supported
             </video>
-            
+
             <div class="container">
                 <h1>Championing Climate-Resilient and Sustainable Communities</h1>
                 <p class="new">We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
@@ -290,7 +291,7 @@
                         <div class="testimonial-card">
                             <img src="https://i.pravatar.cc/150?img=12" alt="Mr.Eric Eyram Lumor" class="testimonial-img">
                             <p>"CYO is set to strengthen community’s resilience against climate shocks and inspire young people to take leadership roles in sustainability."</p>
-                            <h6>Mr.Eric Eyram Lumor</h6>
+                            <h6>Eric Eyram Lumor</h6>
                             <small>Chief Executive Officer</small>
                         </div>
                     </div>
@@ -306,7 +307,7 @@
                         <div class="testimonial-card">
                             <img src="https://i.pravatar.cc/150?img=33" alt="Michael Wright Waters" class="testimonial-img">
                             <p>"The impact CYO has had in our community is incredible. Their dedication to sustainable development and community empowerment is inspiring."</p>
-                            <h6>Mr. Saviour Assandoh</h6>
+                            <h6>Saviour Assandoh</h6>
                             <small>The Tech Guy</small>
                         </div>
                     </div>
@@ -323,7 +324,7 @@
                             <i class="fas fa-handshake"></i>
                             <h3>Partner With Us</h3>
                             <p>We believe collaboration drives impact. Whether you are an individual, organization, or business, there are multiple ways to engage:</p>
-                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Partner</button>
+                            <button class="btn btn-cta" onclick="showPage('partners')">Become a Partner</button>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -331,7 +332,7 @@
                             <i class="fas fa-hands-helping"></i>
                             <h3>Volunteer With Us</h3>
                             <p>Join hands with us to support youth-led and community-driven climate and WASH initiatives.</p>
-                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Volunteer</button>
+                            <button class="btn btn-cta" onclick="showPage('volunteer')">Become a Volunteer</button>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -468,13 +469,12 @@
         </section>
 
         <!--Focus section -->
-        
         <section class="focus-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="focus1-card">
-                            <img src="../static/images/air pollution.jpg" alt="Smoke image">
+                            <img src="https://images.unsplash.com/photo-1702734696488-fee1f8753a72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGFjY3JhJTIwZmxvb2R8ZW58MHx8MHx8fDA%3D" alt="Smoke image">
                         </div>
                     </div>
                     <div class="col-md-6 focus2-card">
@@ -831,27 +831,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -896,27 +896,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -961,27 +961,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1027,27 +1027,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1093,27 +1093,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1159,27 +1159,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
@@ -1190,80 +1190,6 @@
             </div>
         </section>
     </div>
-
-
-
-<!--
-    <div id="thematicPage" class="page-content">
-        <section class="hero-section" style="padding: 100px 0 60px;">
-            <div class="container">
-                <h1>Thematic Areas</h1>
-                <p>Each area is designed to address specific facets of community growth</p>
-            </div>
-        </section>
-
-        <section class="thematic-areas">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Socio-Economic">
-                            <div class="thematic-card-body">
-                                <h4>Socio-Economic Empowerment</h4>
-                                <p>Green Growth Africa (GGA) fosters socio-economic empowerment in Africa by addressing poverty, unemployment, and financial exclusion. In Ghana, where poverty was 23.4% in 2017, GGA works to create opportunities for vulnerable groups, particularly women and youth.</p>
-                                <p>Through skills training, capacity building, and entrepreneurship programs, we help communities achieve financial independence and sustainable livelihoods.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" alt="Agriculture">
-                            <div class="thematic-card-body">
-                                <h4>Agriculture and Biodiversity</h4>
-                                <p>Green Growth Africa promotes sustainable agriculture and biodiversity conservation through research, advocacy and capacity building on emerging agricultural trends and species management.</p>
-                                <p>We work with farming communities to implement climate-smart agricultural practices, preserve indigenous crop varieties, and promote sustainable land management techniques.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Environment">
-                            <div class="thematic-card-body">
-                                <h4>Environment and Climate Change</h4>
-                                <p>Africa is severely faced with the stiffening effects of the triple planetary crises of climate change, biodiversity loss and pollution needing urgent conservation and climate action.</p>
-                                <p>GGA implements climate adaptation and mitigation strategies, promotes renewable energy, and advocates for policies that protect our environment and combat climate change.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Circular Economy">
-                            <div class="thematic-card-body">
-                                <h4>Circular Economy</h4>
-                                <p>Green Growth Africa champions the transition to a circular economy by promoting waste reduction, recycling, and sustainable production. Through innovation and education, GGA empowers communities to rethink waste management.</p>
-                                <p>We facilitate the development of circular economy models that transform waste into resources, creating economic opportunities while reducing environmental impact.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Ecotourism">
-                            <div class="thematic-card-body">
-                                <h4>Ecotourism and Community Development</h4>
-                                <p>Green Growth Africa (GGA) promotes ecotourism in Ghana as a sustainable way to boost local economies while preserving biodiversity. Ecotourism creates opportunities for communities to benefit from natural resources without depleting them.</p>
-                                <p>We work with local communities to develop tourism initiatives that celebrate culture, protect wildlife, and generate sustainable income.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    -->
 
     <!-- Projects Page -->
     <div id="projectsPage" class="page-content">
@@ -1393,11 +1319,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Climate Leadership</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> March 8, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> November 11, 2024</span>
                                         </div>
-                                        <h2 class="news-title">Empowering Her Earth: Fostering Women's Resilience in Climate Leadership</h2>
-                                        <p class="news-excerpt">Published to commemorate International Women's Day 2024, this article highlights the critical role women play in climate action. Women lead change in communities, advancing WASH, climate resilience, and sustainable development despite societal and environmental challenges.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Women-led Climate Solutions for Resilient Communities</h2>
+                                        <p class="news-excerpt">Climate change disproportionately impacts women, who face increased burdens in food security, resource management, and household resilience. Inclusive leadership is essential for effective climate solutions, with women leading preparedness efforts in disaster-prone regions. Community-driven adaptation plans can yield high returns, empowering women to drive sustainable solutions against climate challenges worldwide.</p>
+                                        <a href="https://businessfightspoverty.org/women-led-climate-solutions-for-resilient-communities/#:~:text=This%20article%20highlights%20the%20critical%20role%20of%20women%E2%80%99s,strengthen%20resilience%20and%20foster%20equitable%20climate%20response%20worldwide" target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
@@ -1443,11 +1369,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Circular Economy</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> November 15, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> September 15, 2025</span>
                                         </div>
-                                        <h2 class="news-title">Tackling Plastic Waste: Strategies for Sustainable Solutions</h2>
-                                        <p class="news-excerpt">Plastic pollution is a growing global challenge, and communities served by CYO are no exception. This article outlines approaches to reduce, recycle, and manage plastic waste, integrating youth engagement, circular economy principles, and community-driven solutions.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Reviewing Sustainable Solutions to Plastic Waste: Strategies for a Cleaner Planet</h2>
+                                        <p class="news-excerpt">Plastic waste increases due to widespread use. Disposed plastic turns into waste, worsening pollution. Plastic does not biodegrade easily; it can take over 500 years to decompose, leading to environmental accumulation and crisis. Ramifications of plastic waste are significant, causing extensive harm. Plastic waste is a pressing environmental concern, requiring efforts from all sectors. There are various causes, consequences, and solutions to reduce plastic waste. Potential solutions for plastic pollution include the R4 framework: Reuse, Reduce, Replace, and Recycle. Each product has its own end-of-life stage; certain components can be salvaged for reuse. Waste materials are recovered and repurposed through recycling. Plastic recycling aids in diminishing pollution and conserving resources.</p>
+                                        <a href="https://www.envsciarch.com/volume4issue2/reviewing-sustainable-solutions-to-plastic-waste%3A-strategies-for-a-cleaner-planet#:~:text=Utilizing%20bioplastics%20from%20renewable%20sources%20is%20a%20sustainable,advocating%20for%20circular%20economy%20practices%20are%20pivotal%20measures." target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
@@ -1493,11 +1419,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Conservation</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> October 2, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> February 2, 2025</span>
                                         </div>
-                                        <h2 class="news-title">Wetlands Not Wastelands: Conserving Coastal Ecosystems for Climate Resilience</h2>
-                                        <p class="news-excerpt">Wetlands are vital for biodiversity, water management, and community livelihoods. This article discusses the conservation of critical wetland areas, their role in climate mitigation, and strategies for community-led protection initiatives.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Coastal Wetlands Conservation on the Global Stage</h2>
+                                        <p class="news-excerpt">The Pew Charitable Trusts works with nations around the world to build global recognition of the critical role of coastal wetlands—mangroves, seagrasses, and salt marshes—in carbon sequestration, climate resilience, and biodiversity protection.</p>
+                                        <a href="https://www.pew.org/en/research-and-analysis/articles/2025/02/03/coastal-wetlands-conservation-on-the-global-stage#:~:text=The%20Pew%20Charitable%20Trusts%20works%20with%20nations%20around,marshes%E2%80%94in%20carbon%20sequestration%2C%20climate%20resilience%2C%20and%20biodiversity%20protection." target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
