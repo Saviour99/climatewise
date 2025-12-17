@@ -1421,11 +1421,11 @@ section.executive {
     line-height: 1.7;
 }
 
-.form-group {
+.contact-form-side .form-group {
     margin-bottom: 30px;
 }
 
-.form-control {
+.contact-form-side .form-control {
     border: none;
     border-bottom: 2px solid #d0d0d0;
     border-radius: 0;
@@ -1435,17 +1435,17 @@ section.executive {
     transition: border-color 0.3s;
 }
 
-.form-control:focus {
+.contact-form-side .form-control:focus {
     box-shadow: none;
     border-bottom-color: var(--primary-green);
     background: transparent;
 }
 
-.form-control::placeholder {
+.contact-form-side .form-control::placeholder {
     color: #999;
 }
 
-textarea.form-control {
+.contact-form-side textarea.form-control {
     min-height: 120px;
     resize: vertical;
 }
@@ -1472,7 +1472,7 @@ textarea.form-control {
  /* Right Side - Info */
 .contact-info-side {
     margin-top: 90px;
-    margin-right: 0;
+    margin-right: -100px;
     margin-left: 0;
     background: var(--primary-green);
     color: white;
