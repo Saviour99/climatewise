@@ -2354,6 +2354,10 @@ i.fa-angle-right {
 }
 
 @media (max-width: 576px) {
+    .hero-section1 h1 {
+        font-size: 0.7rem;
+    }
+
     .contact-form-side,
     .contact-info-side {
         padding: 30px 20px;
