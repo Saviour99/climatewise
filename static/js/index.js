@@ -41,7 +41,7 @@ document.getElementById('continueBtn').addEventListener('click', function() {
         // remove amount and personal information section
         document.getElementById('amount-per-info').style.display = 'none';
         // Show payment section
-        document.getElementById('paymentSection').style.display = 'block';
+        document.getElementById('paymentSection').style.display = 'flex';
         // Smooth scroll to payment section
         document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
@@ -117,6 +117,23 @@ function showPage(pageName) {
     const targetPage = document.getElementById(pageName + 'Page');
     if (targetPage) {
         targetPage.classList.add('active');
+    }
+
+    // Reset donate page when it's shown
+    if(pageName === 'donate') {
+        const paymentSection = document.getElementById('paymentSection');
+        const amountPerInfo = document.getElementById('amount-per-info');
+        
+        if(paymentSection) {
+            paymentSection.classList.add('hidden');
+        }
+        if(amountPerInfo) {
+            amountPerInfo.classList.remove('hidden');
+            amountPerInfo.style.display = 'flex';
+        }
+        document.getElementById('donationForm').reset();
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('customAmountSection').style.display = 'none';
     }
     
     // FORCE remove active from EVERYTHING first
@@ -300,4 +317,33 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+// Show preloader
+function showPreloader() {
+  const overlay = document.querySelector('.loading-overlay');
+  if (overlay) {
+    overlay.style.display = 'flex';
+  }
+}
 
+// Hide preloader
+function hidePreloader() {
+  const overlay = document.querySelector('.loading-overlay');
+  if (overlay) {
+    overlay.style.display = 'none';
+  }
+}
+
+// Show preloader only on initial page load
+let hasLoadedOnce = false;
+
+if (!hasLoadedOnce) {
+  showPreloader();
+}
+
+// Hide preloader when page is fully loaded
+window.addEventListener('load', () => {
+  hidePreloader();
+  hasLoadedOnce = true;
+});
+
+hidePreloader();

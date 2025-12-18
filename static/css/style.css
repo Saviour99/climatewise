@@ -2079,7 +2079,10 @@ i.fa-angle-right {
     text-align: center;
 }
 
-/* From Uiverse.io by satyamchaudharydev */ 
+.hidden {
+    display: none !important;
+}
+
 .loading {
  --speed-of-animation: 0.9s;
  --gap: 6px;
@@ -2091,9 +2094,33 @@ i.fa-angle-right {
  display: flex;
  justify-content: center;
  align-items: center;
- width: 100px;
+ width: 300px;
  gap: 6px;
- height: 100px;
+ height: 200px;
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 10000;
+ background: var(--light-bg);
+ padding: 80px;
+ border-radius: 15px;
+ box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.loading-overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(255, 255, 255, 0.7);
+ z-index: 9999;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .loading span {
