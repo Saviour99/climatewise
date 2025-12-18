@@ -1870,6 +1870,11 @@ section.executive {
 }
 
 /* Payment Methods */
+.donation-form-container {
+    margin-top: 18px;
+    margin-bottom: -40px;
+}
+
 .payment-methods {
     margin-bottom: 40px;
 }
@@ -2118,9 +2123,20 @@ i.fa-angle-right {
  height: 100%;
  background: rgba(255, 255, 255, 0.7);
  z-index: 9999;
- display: flex;
+ display: none;
  justify-content: center;
  align-items: center;
+}
+
+.deappear {
+    animation: vanish 1s forwards;
+}
+
+@keyframes vanish {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 .loading span {

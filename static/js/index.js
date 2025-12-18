@@ -28,6 +28,7 @@ document.getElementById('continueBtn').addEventListener('click', function() {
     // Check if custom button is active and custom amount is empty
     const customBtn = document.getElementById('customBtn');
     const customAmount = document.getElementById('customAmount');
+    const paymentSection = document.getElementById('paymentSection');
     
     if(customBtn.classList.contains('active') && !customAmount.value) {
         alert('Please enter a custom amount');
@@ -47,6 +48,11 @@ document.getElementById('continueBtn').addEventListener('click', function() {
     } else {
         // Show validation messages
         form.reportValidity();
+    }
+
+    if (paymentSection){
+        paymentSection.classList.remove("hidden")
+        paymentSection.style.display = "flex";
     }
 });
 
@@ -242,8 +248,6 @@ document.getElementById('customAmount').addEventListener('input', function() {
 });
 
 
-
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -317,33 +321,10 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
-// Show preloader
-function showPreloader() {
-  const overlay = document.querySelector('.loading-overlay');
-  if (overlay) {
-    overlay.style.display = 'flex';
-  }
-}
-
-// Hide preloader
-function hidePreloader() {
-  const overlay = document.querySelector('.loading-overlay');
-  if (overlay) {
-    overlay.style.display = 'none';
-  }
-}
-
-// Show preloader only on initial page load
-let hasLoadedOnce = false;
-
-if (!hasLoadedOnce) {
-  showPreloader();
-}
-
 // Hide preloader when page is fully loaded
-window.addEventListener('load', () => {
-  hidePreloader();
-  hasLoadedOnce = true;
-});
+window.addEventListener('Load', vanish);
 
-hidePreloader();
+function vanish() {
+    const overlay = document.querySelector('.loading-overlay');
+    overlay.classList.add("disappear");  
+}
