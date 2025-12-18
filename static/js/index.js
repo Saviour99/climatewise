@@ -105,3 +105,199 @@ document.getElementById('donateBtn').addEventListener('click', function() {
     alert('Processing payment via Paystack...');
     // Add Paystack integration here
 });
+
+
+// Page Navigation
+function showPage(pageName) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page-content');
+    pages.forEach(page => page.classList.remove('active'));
+    
+    // Show selected page
+    const targetPage = document.getElementById(pageName + 'Page');
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
+    
+    // FORCE remove active from EVERYTHING first
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Now ONLY add active to the parent dropdown
+    // Changed pageId to pageName throughout
+    if(pageName === 'about' || pageName === 'team') {
+        document.getElementById('aboutDropdown').classList.add('active');
+    } 
+    else if(pageName === 'climate' || pageName === 'water' || pageName === 'environment' || 
+            pageName === 'youth' || pageName === 'education' || pageName === 'research') {
+        document.getElementById('thematicDropdown').classList.add('active');
+    } 
+    else if(pageName === 'news' || pageName === 'publications') {
+        document.getElementById('resourcesDropdown').classList.add('active');
+    } 
+    else if(pageName === 'contact' || pageName === 'volunteer' || pageName === 'partners') {
+        document.getElementById('touchDropdown').classList.add('active');
+    }
+    else if(pageName === 'home') {
+        document.querySelector('.nav-link[onclick*="home"]').classList.add('active');
+    }
+    else if(pageName === 'projects') {
+        document.querySelector('.nav-link[onclick*="projects"]').classList.add('active');
+    }
+    else if(pageName === 'media') {
+        document.querySelector('.nav-link[onclick*="media"]').classList.add('active');
+    }
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Close mobile menu if open
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+    }
+    
+    return false;
+}
+
+// Set active state on page load
+document.addEventListener('DOMContentLoaded', function() {
+    showPage('home');
+});
+
+
+// Scroll to Top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/Hide Back to Top Button
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'flex';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+
+// Contact Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    // Here you would send to Flask backend
+    console.log('Contact Form Data:', formData);
+    
+    // Example Flask endpoint: fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
+    
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
+});
+
+// Amount button selection
+document.querySelectorAll('.amount-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('customAmount').value = '';
+    });
+});
+
+// Custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+    if(this.value) {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    }
+});
+
+
+
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// Animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all cards for animation
+document.querySelectorAll('.feature-card, .thematic-card, .project-card, .testimonial-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// Counter Animation
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start) + '+';
+        }
+    }, 16);
+}
+
+// Animate stats when visible
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-box h2');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                animateCounter(stat, target);
+            });
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+
