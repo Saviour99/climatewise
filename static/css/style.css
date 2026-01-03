@@ -993,8 +993,6 @@ section.executive {
     margin: 0;
 }
 
-
-
  /* News Content */
 .news-content {
     padding: 50px;
@@ -1933,8 +1931,6 @@ section.executive {
     border: 2px solid var(--primary-green);
 }
 
-
-
 /* Impact Sidebar */
 .impact-sidebar {
     background: white;
@@ -2004,7 +2000,6 @@ section.executive {
     color: #666;
     font-weight: 600;
 }
-
 
 /* Footer */
 footer {
@@ -2356,10 +2351,6 @@ i.fa-angle-right {
 @media (max-width: 576px) {
     .hero-section1 h1 {
         font-size: 2.2rem;
-    }
-
-    .hero-section1 p.new {
-        font-size: 0.1rem;
     }
 
     .hero-section1 button {
