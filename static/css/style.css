@@ -202,7 +202,7 @@ html {
     background: linear-gradient(rgba(45, 80, 22, 0.4), rgba(45, 80, 22, 0.4)), 
                 url('https://images.unsplash.com/photo-1657650505255-65ec65adb8aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgxfHxjbGltYXRlJTIwb3JnYW5pc2F0aW9uJTIwcGxhbnxlbnwwfHwwfHx8MA%3D%3D') center/cover;
     
-    height: 750px;
+    height: 550px;
 }
 
 #projectsPage .hero-section {
@@ -2364,6 +2364,15 @@ i.fa-angle-right {
 
     .hero-section1 button {
         margin-bottom: 2rem;
+    }
+
+    #climatePage .hero-section,
+    #youthPage .hero-section,
+    #educationPage .hero-section,
+    #waterPage .hero-section,
+    #environmentPage .hero-section,
+    #researchPage .hero-section {
+        height: 750px;
     }
 
     .contact-form-side,
