@@ -5,7 +5,7 @@ from app import app
 @app.route("/")
 @app.route("/home")
 def homepage():
-    return render_template("home.html")
+    return render_template("public/home.html")
 
 @app.route("/about/who-we-are")
 def about():

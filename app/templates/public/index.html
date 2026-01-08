@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fontawesome.com/icons/x-twitter?f=brands&s=solid">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Navigation -->
@@ -15,7 +16,7 @@
             <a class="navbar-brand" href="#" onclick="showPage('home')">
                 <img src="../static/images/climatewiseyouth.png" width="70px" alt="ClimateWISE Logo">
                 <div class="brandname">
-                    <div class="brand-name1">Climate<span style="color: var(--primary-blue);">WISE</span></div>
+                    <div class="brand-name1">ClimateWISE</div>
                     <div class="brand-name1">YOUTH</div>
                     <div class="brand-name1">ORGANIZATION</div>
                 </div>
@@ -26,58 +27,58 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                        <a class="nav-link active" href="#" onclick="showPage('home');">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
                             About CYO
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="showPage('about')">Who We Are</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('team')">Our Team</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('about'); return false;">Who We Are</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('team'); return false;">Our Team</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="thematicDropdown" role="button" data-bs-toggle="dropdown">
                             Thematic Areas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="showPage('climate')">Climate Resilience and Adaptation</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('water')">Water, Sanitation and Hygiene (WASH)</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('environment')">Environmental Sustainability, Circular Economy and Waste Management</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('youth')">Youth Empowerment and Capacity Building</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('education')">Climate Education and Public Awareness</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('research')">Research, Innovation, and Policy Advocacy</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('climate'); return false;">Climate Resilience and Adaptation</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('water'); return false;">Water, Sanitation and Hygiene (WASH)</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('environment'); return false;">Environmental Sustainability, Circular Economy and Waste Management</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('youth'); return false;">Youth Empowerment and Capacity Building</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('education'); return false;">Climate Education and Public Awareness</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('research'); return false;">Research, Innovation, and Policy Advocacy</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('projects')">Projects and Impacts</a>
+                        <a class="nav-link" href="#" onclick="showPage('projects'); return false;">Projects and Impacts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('media')">Media</a>
+                        <a class="nav-link" href="#" onclick="showPage('media'); return false;">Media</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown">
                             Resources
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="showPage('news')">News & Updates</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('publications')">Publications</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('news'); return false;">News & Updates</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('publications'); return false;">Publications</a></li>
                             
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="touchDropdown" role="button" data-bs-toggle="dropdown">
                             Get In Touch
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="showPage('contact')">Contact Us</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('volunteer')">Become a Volunteer</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showPage('partners')">Become a Partners</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('contact'); return false;">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('volunteer'); return false;">Become a Volunteer</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('partners'); return false;">Become a Partners</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <button class="btn-donate" onclick="showPage('donate')">Contribute</button>
+                        <button class="btn-donate" onclick="showPage('donate'); return false;">Contribute</button>
                     </li>
                 </ul>
             </div>
@@ -87,13 +88,15 @@
     <!-- Home Page -->
     <div id="homePage" class="page-content active">
         <!-- Hero Section -->
-        <section class="hero-section">
+        <section class="hero-section1">
             <video autoplay muted loop playsinline class="hero-video-bg">
-                <source src="https://cdn.pixabay.com/video/2020/06/15/42607-432951441_large.mp4" type="video/mp4">
+                <source src="../static/videos/hero.mp4" type="video/mp4">
+                Your browser is not supported
             </video>
+
             <div class="container">
                 <h1>Championing Climate-Resilient and Sustainable Communities</h1>
-                <p class="new">We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
+                <p>We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
                 <button class="btn btn-light btn-lg btn1" onclick="showPage('volunteer')">Join Us</button>
             </div>
         </section>
@@ -123,7 +126,7 @@
             <div class="container-fluid">
                 <h2 class="section-title">Who We Are</h2>
                 <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 900px; margin: 0 auto; line-height: 1.7;">
-                    We are a dynamic non-profit, non-governmental organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities. Through education, capacity building, and skills training, we are empowering communities to take charge of their own development and create a brighter future for themselves and future generations.
+                    We are a youth-led organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities. Through education, capacity building, and skills training, we are empowering communities to take charge of their own development and create a brighter future for themselves and future generations.
                 </p>
 
                 <div class="row card-divider">
@@ -139,7 +142,7 @@
                         </div>
                         <div class="second-card-divider">
                             <h3>We Are For Sustainable Development</h3>
-                            <p>As a non-profit organization, we address environmental, social, and economic challenges through evidence-based projects, community engagement, and youth-led action.</p>
+                            <p>As a youth-led organization, we address environmental, social, and economic challenges through evidence-based projects, community engagement, and youth-led action.</p>
                         </div>
                         <div class="second-card-divider">
                             <h3>We Are For the Environment</h3>
@@ -286,28 +289,30 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="https://i.pravatar.cc/150?img=12" alt="Mr.Eric Eyram Lumor" class="testimonial-img">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="The founder's picture" class="testimonial-img">
                             <p>"CYO is set to strengthen community’s resilience against climate shocks and inspire young people to take leadership roles in sustainability."</p>
-                            <h6>Mr.Eric Eyram Lumor</h6>
-                            <small>Chief Executive Officer</small>
+                            <h6>Eric Eyram Kojo Lumor</h6>
+                            <small>Founder</small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="https://i.pravatar.cc/150?img=47" alt="Selina Ahenkorah" class="testimonial-img">
+                            <img src="https://i.pravatar.cc/150?img=65" alt="The co-founder's picture" class="testimonial-img">
                             <p>"The youth mentorship programs provide practical skills that continue to empower our young leaders."</p>
-                            <h6>Selina Ahenkorah</h6>
+                            <h6>Godwin Ayitey Kini Ajavon</h6>
                             <small>Co-founder</small>
                         </div>
                     </div>
+                    <!--
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="https://i.pravatar.cc/150?img=33" alt="Michael Wright Waters" class="testimonial-img">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="The Digital person picture" class="testimonial-img">
                             <p>"The impact CYO has had in our community is incredible. Their dedication to sustainable development and community empowerment is inspiring."</p>
-                            <h6>Mr. Saviour Assandoh</h6>
-                            <small>The Tech Guy</small>
+                            <h6>Saviour Assandoh</h6>
+                            <small>Digital Engagement & Media</small>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </section>
@@ -321,7 +326,7 @@
                             <i class="fas fa-handshake"></i>
                             <h3>Partner With Us</h3>
                             <p>We believe collaboration drives impact. Whether you are an individual, organization, or business, there are multiple ways to engage:</p>
-                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Partner</button>
+                            <button class="btn btn-cta" onclick="showPage('partners')">Become a Partner</button>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -329,7 +334,7 @@
                             <i class="fas fa-hands-helping"></i>
                             <h3>Volunteer With Us</h3>
                             <p>Join hands with us to support youth-led and community-driven climate and WASH initiatives.</p>
-                            <button class="btn btn-cta" onclick="showPage('contact')">Become a Volunteer</button>
+                            <button class="btn btn-cta" onclick="showPage('volunteer')">Become a Volunteer</button>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -363,7 +368,7 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-10">
                         <p class="text-center" style="font-size: 1.1rem; line-height: 1.7; color: #000;">
-                            ClimateWISE Youth Organization (CYO) is a dynamic non-profit, youth-led organization committed to advancing climate resilience, water, sanitation, and hygiene (WASH), and sustainable development in communities. We focus on empowering youth, women, and vulnerable groups through education, capacity building, and skills development.
+                            ClimateWISE Youth Organization (CYO) is a youth-led organization committed to advancing climate resilience, water, sanitation, and hygiene (WASH), and sustainable development in communities. We focus on empowering youth, women, and vulnerable groups through education, capacity building, and skills development.
                         </p>
                     </div>
                 </div>
@@ -466,13 +471,12 @@
         </section>
 
         <!--Focus section -->
-        
         <section class="focus-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="focus1-card">
-                            <img src="../static/images/air pollution.jpg" alt="Smoke image">
+                            <img src="https://images.unsplash.com/photo-1702734696488-fee1f8753a72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGFjY3JhJTIwZmxvb2R8ZW58MHx8MHx8fDA%3D" alt="Smoke image">
                         </div>
                     </div>
                     <div class="col-md-6 focus2-card">
@@ -829,27 +833,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -894,27 +898,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -959,27 +963,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1025,27 +1029,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1091,27 +1095,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('research')">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
                             </div>
@@ -1157,27 +1161,27 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('climate')">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('water')">
                                 <h3>Water, Sanitation and Hygiene (WASH)</h3>
                                 <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('environment')">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('youth')">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
                             </div>
 
-                            <div class="thematic-card1">
+                            <div class="thematic-card1" onclick="showPage('education')">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
                             </div>
@@ -1188,80 +1192,6 @@
             </div>
         </section>
     </div>
-
-
-
-<!--
-    <div id="thematicPage" class="page-content">
-        <section class="hero-section" style="padding: 100px 0 60px;">
-            <div class="container">
-                <h1>Thematic Areas</h1>
-                <p>Each area is designed to address specific facets of community growth</p>
-            </div>
-        </section>
-
-        <section class="thematic-areas">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Socio-Economic">
-                            <div class="thematic-card-body">
-                                <h4>Socio-Economic Empowerment</h4>
-                                <p>Green Growth Africa (GGA) fosters socio-economic empowerment in Africa by addressing poverty, unemployment, and financial exclusion. In Ghana, where poverty was 23.4% in 2017, GGA works to create opportunities for vulnerable groups, particularly women and youth.</p>
-                                <p>Through skills training, capacity building, and entrepreneurship programs, we help communities achieve financial independence and sustainable livelihoods.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" alt="Agriculture">
-                            <div class="thematic-card-body">
-                                <h4>Agriculture and Biodiversity</h4>
-                                <p>Green Growth Africa promotes sustainable agriculture and biodiversity conservation through research, advocacy and capacity building on emerging agricultural trends and species management.</p>
-                                <p>We work with farming communities to implement climate-smart agricultural practices, preserve indigenous crop varieties, and promote sustainable land management techniques.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Environment">
-                            <div class="thematic-card-body">
-                                <h4>Environment and Climate Change</h4>
-                                <p>Africa is severely faced with the stiffening effects of the triple planetary crises of climate change, biodiversity loss and pollution needing urgent conservation and climate action.</p>
-                                <p>GGA implements climate adaptation and mitigation strategies, promotes renewable energy, and advocates for policies that protect our environment and combat climate change.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800" alt="Circular Economy">
-                            <div class="thematic-card-body">
-                                <h4>Circular Economy</h4>
-                                <p>Green Growth Africa champions the transition to a circular economy by promoting waste reduction, recycling, and sustainable production. Through innovation and education, GGA empowers communities to rethink waste management.</p>
-                                <p>We facilitate the development of circular economy models that transform waste into resources, creating economic opportunities while reducing environmental impact.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="thematic-card">
-                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Ecotourism">
-                            <div class="thematic-card-body">
-                                <h4>Ecotourism and Community Development</h4>
-                                <p>Green Growth Africa (GGA) promotes ecotourism in Ghana as a sustainable way to boost local economies while preserving biodiversity. Ecotourism creates opportunities for communities to benefit from natural resources without depleting them.</p>
-                                <p>We work with local communities to develop tourism initiatives that celebrate culture, protect wildlife, and generate sustainable income.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    -->
 
     <!-- Projects Page -->
     <div id="projectsPage" class="page-content">
@@ -1391,11 +1321,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Climate Leadership</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> March 8, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> November 11, 2024</span>
                                         </div>
-                                        <h2 class="news-title">Empowering Her Earth: Fostering Women's Resilience in Climate Leadership</h2>
-                                        <p class="news-excerpt">Published to commemorate International Women's Day 2024, this article highlights the critical role women play in climate action. Women lead change in communities, advancing WASH, climate resilience, and sustainable development despite societal and environmental challenges.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Women-led Climate Solutions for Resilient Communities</h2>
+                                        <p class="news-excerpt">Climate change disproportionately impacts women, who face increased burdens in food security, resource management, and household resilience. Inclusive leadership is essential for effective climate solutions, with women leading preparedness efforts in disaster-prone regions. Community-driven adaptation plans can yield high returns,... </p>
+                                        <a href="https://businessfightspoverty.org/women-led-climate-solutions-for-resilient-communities/#:~:text=This%20article%20highlights%20the%20critical%20role%20of%20women%E2%80%99s,strengthen%20resilience%20and%20foster%20equitable%20climate%20response%20worldwide" target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
@@ -1441,11 +1371,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Circular Economy</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> November 15, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> September 15, 2025</span>
                                         </div>
-                                        <h2 class="news-title">Tackling Plastic Waste: Strategies for Sustainable Solutions</h2>
-                                        <p class="news-excerpt">Plastic pollution is a growing global challenge, and communities served by CYO are no exception. This article outlines approaches to reduce, recycle, and manage plastic waste, integrating youth engagement, circular economy principles, and community-driven solutions.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Reviewing Sustainable Solutions to Plastic Waste: Strategies for a Cleaner Planet</h2>
+                                        <p class="news-excerpt">Plastic waste increases due to widespread use. Disposed plastic turns into waste, worsening pollution. Plastic does not biodegrade easily; it can take over 500 years to decompose, leading to environmental accumulation and crisis. Ramifications of plastic waste are significant, causing extensive harm. </p>
+                                        <a href="https://www.envsciarch.com/volume4issue2/reviewing-sustainable-solutions-to-plastic-waste%3A-strategies-for-a-cleaner-planet#:~:text=Utilizing%20bioplastics%20from%20renewable%20sources%20is%20a%20sustainable,advocating%20for%20circular%20economy%20practices%20are%20pivotal%20measures." target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
@@ -1491,11 +1421,11 @@
                                     <div class="news-content">
                                         <div class="news-meta">
                                             <span class="news-category">Conservation</span>
-                                            <span class="news-date"><i class="far fa-calendar"></i> October 2, 2024</span>
+                                            <span class="news-date"><i class="far fa-calendar"></i> February 2, 2025</span>
                                         </div>
-                                        <h2 class="news-title">Wetlands Not Wastelands: Conserving Coastal Ecosystems for Climate Resilience</h2>
-                                        <p class="news-excerpt">Wetlands are vital for biodiversity, water management, and community livelihoods. This article discusses the conservation of critical wetland areas, their role in climate mitigation, and strategies for community-led protection initiatives.</p>
-                                        <a href="#" class="read-more-btn">
+                                        <h2 class="news-title">Coastal Wetlands Conservation on the Global Stage</h2>
+                                        <p class="news-excerpt">The Pew Charitable Trusts works with nations around the world to build global recognition of the critical role of coastal wetlands—mangroves, seagrasses, and salt marshes—in carbon sequestration, climate resilience, and biodiversity protection.</p>
+                                        <a href="https://www.pew.org/en/research-and-analysis/articles/2025/02/03/coastal-wetlands-conservation-on-the-global-stage#:~:text=The%20Pew%20Charitable%20Trusts%20works%20with%20nations%20around,marshes%E2%80%94in%20carbon%20sequestration%2C%20climate%20resilience%2C%20and%20biodiversity%20protection." target="_blank" class="read-more-btn">
                                             Read Full Article
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
@@ -1761,7 +1691,7 @@
                         <!-- Right Side - Form -->
                         <div class="col-lg-6">
                             <div class="partner-form-container">
-                                <h2 class="form-title">Embark On A Journey Of Purposeful partneship</h2>
+                                <h2 class="form-title">Embark On A Journey Of Purposeful partnership</h2>
                                 
                                 <form>
                                     <div class="form-group">
@@ -1892,7 +1822,7 @@
                 </div>
 
                 <!-- Second Row: Payment Method (Hidden initially) -->
-                <div class="row d-flex justify-content-center" id="paymentSection" style="display: none;">
+                <div class="row d-flex justify-content-center" id="paymentSection">
                     <div class="col-lg-6">
                         <div class="donation-form-container">
                             <!-- Payment Methods -->
@@ -1928,7 +1858,7 @@
                     <a class="footer-brand" href="#" onclick="showPage('home')">
                         <img src="../static/images/ClimateWISE-second-logo.png" width="70px" alt="ClimateWISE Logo">
                         <div class="brandname">
-                            <div class="brand-name1">Climate<span style="color: var(--primary-blue);">WISE</span></div>
+                            <div class="brand-name1">ClimateWISE</div>
                             <div class="brand-name1">YOUTH</div>
                             <div class="brand-name1">ORGANIZATION</div>
                         </div>
@@ -1961,21 +1891,31 @@
                 <div class="col-md-3 footer-section">
                     <h5>Social Media</h5>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/climatewiseyouth?igsh=emZnb2x4dzU4ZTdz" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/climatewise-youth-organization/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://whatsapp.com/channel/0029VbBqTHrK0IBouZDo7l1V" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://discord.com/invite/nHAbYv5CU" target="_blank"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy;  2025 ClimateWISE Youth Organization. All rights reserved. | Powered by DelaTech Consult</p>
+                <p>&copy;  <script>document.write(new Date().getFullYear())</script> ClimateWISE Youth Organization. All rights reserved. | Powered by DelaTech Consult</p>
             </div>
         </div>
     </footer>
+
+    <div class="loading-overlay">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button id="backToTop" onclick="scrollToTop()">
@@ -1984,158 +1924,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Page Navigation
-        function showPage(pageName) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active'));
-
-            // Show selected page
-            const targetPage = document.getElementById(pageName + 'Page');
-            if (targetPage) {
-                targetPage.classList.add('active');
-                window.scrollTo(0, 0);
-                
-                // Close mobile menu if open
-                const navbarCollapse = document.getElementById('navbarNav');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarCollapse.classList.remove('show');
-                }
-            }
-        }
-
-        // Scroll to Top
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Show/Hide Back to Top Button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.getElementById('backToTop');
-            if (window.pageYOffset > 300) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-
-        // Contact Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Here you would send to Flask backend
-            console.log('Contact Form Data:', formData);
-            
-            // Example Flask endpoint: fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-            
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        // Amount button selection
-        document.querySelectorAll('.amount-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                document.getElementById('customAmount').value = '';
-            });
-        });
-
-        // Custom amount input
-        document.getElementById('customAmount').addEventListener('input', function() {
-            if(this.value) {
-                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-            }
-        });
-
-
-
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards for animation
-        document.querySelectorAll('.feature-card, .thematic-card, .project-card, .testimonial-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Counter Animation
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start) + '+';
-                }
-            }, 16);
-        }
-
-        // Animate stats when visible
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-box h2');
-                    statNumbers.forEach(stat => {
-                        const target = parseInt(stat.textContent);
-                        animateCounter(stat, target);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-    </script>
     <script src="https://kit.fontawesome.com/99a02b1b56.js" crossorigin="anonymous"></script>
     <script src="../static/js/index.js"></script>
 </body>
