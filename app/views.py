@@ -2,8 +2,6 @@ from app import app
 from flask import render_template
 
 
-app = Flash(__name__)
-
 @app.route("/")
 @app.route("/home/")
 def homepage():
