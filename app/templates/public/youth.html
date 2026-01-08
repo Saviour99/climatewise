@@ -1,0 +1,68 @@
+{% extends 'public/base.html' %}
+{% block title %}Youth{% endblock %}
+{% block content %}
+    <!--youth section-->
+    <div id="youthPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Thematic Areas</h1>
+                <p>Each thematic area represents a strategic pillar of intervention designed to address critical and interconnected dimensions of community development. Together, these thematic areas form a holistic framework that integrates environmental sustainability, public health, youth leadership, and evidence-based decision-making. The approach recognizes that climate resilience, WASH, environmental management, and youth empowerment are mutually reinforcing and must be addressed simultaneously to achieve lasting and equitable impact at the community level.</p>
+            </div>
+        </section>
+
+         <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8">
+                        <div class="main-content">
+                            <p class="content-text">
+                                Youth empowerment is a cross-cutting priority and a core driver of CYO’s mission. Young people represent a significant proportion of the population and hold immense potential to lead transformative change when equipped with the right knowledge, skills, and opportunities. CYO invests in building the technical, leadership, and entrepreneurial capacities of youth to enable them to actively contribute to sustainable development and climate resilience.
+                            </p>
+                            <p class="content-text">
+                                Programs under this thematic area include climate literacy workshops, WASH technical trainings, environmental leadership bootcamps, mentorship schemes, and innovation challenges. These initiatives combine theory with hands-on learning, problem-solving, and community engagement. CYO fosters youth networks and platforms that enable peer learning, collaboration, and leadership development at the local and national levels.
+                            </p>
+                            <p class="content-text">
+                                By nurturing confident, skilled, and socially responsible young leaders, CYO strengthens community ownership of development initiatives and ensures the continuity and scalability of climate and environmental interventions over time.
+                            </p>
+                        </div>
+                    </div>        
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-title">Other Thematic Areas</h2>
+
+                            <div class="thematic-card1" onclick="showPage('climate')">
+                                <h3>Climate Resilience and Adaptation</h3>
+                                <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('water')">
+                                <h3>Water, Sanitation and Hygiene (WASH)</h3>
+                                <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('environment')">
+                                <h3>Environmental Sustainability & Circular Economy</h3>
+                                <p>CYO promotes sustainable production and consumption through waste reduction...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('education')">
+                                <h3>Climate Education and Public Awareness</h3>
+                                <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('research')">
+                                <h3>Research, Innovation, and Policy Advocacy</h3>
+                                <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'public/base.html' %}
+{% block title %}Water{% endblock %}
+{% block content %}
+     <!--Water section-->
+    <div id="waterPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Thematic Areas</h1>
+                <p>Each thematic area represents a strategic pillar of intervention designed to address critical and interconnected dimensions of community development. Together, these thematic areas form a holistic framework that integrates environmental sustainability, public health, youth leadership, and evidence-based decision-making. The approach recognizes that climate resilience, WASH, environmental management, and youth empowerment are mutually reinforcing and must be addressed simultaneously to achieve lasting and equitable impact at the community level.</p>
+            </div>
+        </section>
+
+         <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8">
+                        <div class="main-content">
+                            <p class="content-text">
+                                CYO recognizes access to safe water, adequate sanitation, and good hygiene practices as fundamental human rights and essential pillars of public health, dignity, and socioeconomic development. In many communities, inadequate WASH services contribute to waterborne diseases, poor educational outcomes, reduced productivity, and increased vulnerability to climate-induced water stress.
+                            </p>
+                            <p class="content-text">
+                                Under this thematic area, CYO supports the development and rehabilitation of community water supply systems, including boreholes, small-scale treatment systems, rainwater harvesting, and climate-resilient water infrastructure. Sanitation interventions focus on promoting improved household and communal sanitation facilities, ending open defecation, and supporting locally appropriate sanitation technologies.
+                            </p>
+                            <p class="content-text">
+                                Equally important is behavior change communication. CYO implements hygiene education campaigns targeting handwashing, safe water handling, menstrual hygiene management, and environmental sanitation. Youth are trained as WASH ambassadors to serve as peer educators and community mobilizers, ensuring sustainability beyond project lifespans. By integrating infrastructure development, education, and strong community participation, CYO aims to reduce disease burdens, improve resilience to water scarcity, and strengthen local systems for long-term WASH management.
+                            </p>
+                        </div>
+                    </div>        
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-title">Other Thematic Areas</h2>
+
+                            <div class="thematic-card1" onclick="showPage('climate')">
+                                <h3>Climate Resilience and Adaptation</h3>
+                                <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('environment')">
+                                <h3>Environmental Sustainability & Circular Economy</h3>
+                                <p>CYO promotes sustainable production and consumption through waste reduction...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('youth')">
+                                <h3>Youth Empowerment and Capacity Building</h3>
+                                <p>CYO empowers young people to lead sustainable change through education...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('education')">
+                                <h3>Climate Education and Public Awareness</h3>
+                                <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('research')">
+                                <h3>Research, Innovation, and Policy Advocacy</h3>
+                                <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

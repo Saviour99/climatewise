@@ -1,1 +1,188 @@
-teams
+{% extends 'public/base.html' %}
+{% block title %}Teams{% endblock %}
+{% block content %}
+<div id="teamPage" class="page-content active">
+    <section class="hero-section" style="padding: 100px 0 60px;">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p>A dedicated and multidisciplinary team committed to advancing climate resilience, WASH, circular economy initiatives, and sustainable development in communities. Each member brings deep expertise, a passion for social impact, and a focus on measurable outcomes aligned with the SDGs.</p>
+        </div>
+    </section>
+
+    <!-- Board Members Section -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="section-header text-center">
+                <h2 class="section-title">Board Members</h2>
+                <p class="section-description">
+                    Our Board provides strategic oversight, ensures transparency, and sets the long-term vision and policies for the organization. 
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="board-card">
+                        <div class="board-avatar">AO</div>
+                        <div class="board-content">
+                            <h3 class="board-name">Dr. Ama Osei</h3>
+                            <p class="board-role">Chairperson</p>
+                            <p class="board-bio">Environmental policy expert with over 15 years of experience in climate resilience and sustainable development projects across Africa. She provides strategic direction and governance, guiding CYO’s vision and ensuring alignment with international environmental and SDG standards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="board-card">
+                        <div class="board-avatar">KM</div>
+                        <div class="board-content">
+                            <h3 class="board-name">Mr. Kwame Mensah</h3>
+                            <p class="board-role">Vice-Chairperson</p>
+                            <p class="board-bio">Specializes in development finance and organizational governance, advising on budgeting, financial oversight, sustainability planning, ensuring the organization operates with efficiency and accountability. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="board-card">
+                        <div class="board-avatar">LA</div>
+                        <div class="board-content">
+                            <h3 class="board-name">Ms. Linda Adomako</h3>
+                            <p class="board-role">Board Member</p>
+                            <p class="board-bio">Expert in WASH and circular economy strategies, ensuring sustainable resource management and water security measures, particularly in marginalized communities. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="board-card">
+                        <div class="board-avatar">DT</div>
+                        <div class="board-content">
+                            <h3 class="board-name">Prof. Daniel Tetteh</h3>
+                            <p class="board-role">Board Member</p>
+                            <p class="board-bio">Social development and education expert, providing guidance on youth engagement and capacity-building programs to strengthen CYO’s educational and outreach initiatives. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="board-card">
+                        <div class="board-avatar">EA</div>
+                        <div class="board-content">
+                            <h3 class="board-name">Ms. Esther Agyeman</h3>
+                            <p class="board-role">Board Member</p>
+                            <p class="board-bio">Focuses on community engagement and gender equity, ensuring inclusivity in program design and implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Team Section -->
+    <section class="py-5 executive">
+        <div class="container py-4">
+            <div class="section-header text-center">
+                <h2 class="section-title">Executive Team</h2>
+                <p class="section-description">
+                    Responsible for operational management, program execution, and strategic growth of CYO.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="executive-card">
+                        <div class="executive-header">
+                            <div class="executive-avatar">EL</div>
+                            <h3 class="executive-name">Eric Eyram Kojo Lumor</h3>
+                            <p class="executive-role">Founder & Executive Director</p>
+                        </div>
+                        <div class="executive-body">
+                            <p class="executive-bio">Seasoned environmental scientist and quality assurance professional with expertise in WASH and climate resilience programs. Leads CYO's vision and ensures programs align with the SDGs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="executive-card">
+                        <div class="executive-header">
+                            <div class="executive-avatar">GA</div>
+                            <h3 class="executive-name">Godwin Ayitey Kini Ajavon</h3>
+                            <p class="executive-role">Co-Founder & Programs Manager</p>
+                        </div>
+                        <div class="executive-body">
+                            <p class="executive-bio">Manages program development, stakeholder collaboration, and project monitoring with experience in community mobilization and capacity-building, ensuring CYO’s initiatives reach target communities effectively and sustainably.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="executive-card">
+                        <div class="executive-header">
+                            <div class="executive-avatar">AN</div>
+                            <h3 class="executive-name">Amos Nortey</h3>
+                            <p class="executive-role">Projects & Research Manager</p>
+                        </div>
+                        <div class="executive-body">
+                            <p class="executive-bio">Leads research, project planning, and monitoring and evaluation with experience in environmental engineering and sustainability studies, he ensures that all projects are evidence-based, innovative, and measurable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Area Leads Section -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="section-header text-center">
+                <h2 class="section-title">Area Leads</h2>
+                <p class="section-description">
+                    Specialized leads focus on CYO's thematic areas, ensuring each program is implemented with technical expertise and local relevance.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3 class="lead-name">Dr. Priscilla Trovel</h3>
+                        <p class="lead-title">Health, Gender & Social Inclusion</p>
+                        <p class="lead-description">Ensures inclusivity across all programs, prioritizing the needs of women, youth, and vulnerable populations through gender-responsive strategies and inclusion frameworks for community initiatives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="lead-name">Saviour Assandoh</h3>
+                        <p class="lead-title">Digital Engagement & Media</p>
+                        <p class="lead-description">Manages digital communications, social media campaigns, and website content to enhance CYO's online visibility and youth engagement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-tint"></i></div>
+                        <h3 class="lead-name">WASH & Circular Economy Lead<span class="new-badge">Open</span></h3>
+                        <p class="lead-title">Water, Sanitation & Sustainability</p>
+                        <p class="lead-description">Integrates WASH and circular economy programming, implementing community-based sustainable practices, water access initiatives, and waste management strategies, and resource efficiency projects. Works closely with communities and stakeholders to strengthen environmental sustainability while improving health and livelihoods.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-globe-americas"></i></div>
+                        <h3 class="lead-name">Climate Education Lead<span class="new-badge">Open</span></h3>
+                        <p class="lead-title">Public Awareness & Education</p>
+                        <p class="lead-description">Designs and implements climate education campaigns, school programs, and public awareness initiatives to raise knowledge of climate change and sustainability practices, and community adaptation strategies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="lead-name">Youth Engagement Lead<span class="new-badge">Open</span></h3>
+                        <p class="lead-title">Volunteer & Leadership Development</p>
+                        <p class="lead-description">Mobilizes youth participation in programs, fosters innovation, and promotes leadership among young community members. This role ensures CYO’s projects are inclusive, dynamic, and youth-driven.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="lead-card">
+                        <div class="lead-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="lead-name">Finance & Operations Lead<span class="new-badge">Open</span></h3>
+                        <p class="lead-title">Financial Planning & Management</p>
+                        <p class="lead-description">Oversees budgeting, financial planning, compliance, and operational efficiency to ensure effective resource management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

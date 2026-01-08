@@ -1,1 +1,73 @@
-partner
+{% extends 'public/base.html' %}
+{% block title %}Partners{% endblock %}
+{% block content %}
+    <!-- Partner Page -->
+    <div id="partnersPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Become a Partner</h1>
+                <p>Collaborate with us to build sustainable, resilient communities.</p>
+            </div>
+        </section>
+
+        <section class="partner-section">
+            <div class="container">
+                <div class="partner-container">
+                    <div class="row align-items-start">
+                        <!-- Left Side - Content -->
+                        <div class="col-lg-6">
+                            <div class="partner-content">
+                                <h1 class="partner-title">Partnering for Impact</h1>
+                                
+                                <p class="partner-text">
+                                    Partnership with ClimateWISE Youth Organization is more than collaboration; it is a shared commitment to climate action, environmental stewardship, and community empowerment. Your expertise and resources help amplify our programs, strengthen local impact, and drive long-term change.
+                                </p>
+                                
+                                <p class="partner-text">
+                                    Fill out the form to embark on a journey of purposeful partnership. Your dedication can spark meaningful transformation.
+                                </p>
+                                
+                                <p class="partner-text">
+                                    Click the button below to explore the impactful initiatives we've successfully undertaken.
+                                </p>
+                                
+                                <a href="#" class="learn-more-btn">Learn More</a>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Form -->
+                        <div class="col-lg-6">
+                            <div class="partner-form-container">
+                                <h2 class="form-title">Embark On A Journey Of Purposeful partnership</h2>
+                                
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Organization/Institution Name">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Additional Comments or Questions"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-send">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

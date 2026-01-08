@@ -1,0 +1,102 @@
+{% extends 'public/base.html' %}
+{% block title %}Donation{% endblock %}
+{% block content %}
+    <!-- Donate Page -->
+    <div id="donatePage" class="page-content donatepage">
+        <!-- Donation Form Section -->
+        <section class="donation-section mt-5">
+            <div class="container">
+                <!-- First Row: Amount + Personal Info -->
+                <div class="row justify-content-center" id="amount-per-info">
+                    <div class="col-lg-10">
+                        <div class="donation-form-container">
+                            <form id="donationForm">
+                                <div class="row">
+                                    <!-- Left Column: Amount Selection -->
+                                    <div class="col-lg-6">
+                                        <div class="amount-selection">
+                                            <h2 class="form-section-title">Choose Your Donation Amount</h2>
+                                            <div class="amount-buttons">
+                                                <button type="button" class="amount-btn" data-amount="50">GH₵ 50</button>
+                                                <button type="button" class="amount-btn" data-amount="100">GH₵ 100</button>
+                                                <button type="button" class="amount-btn" data-amount="200">GH₵ 200</button>
+                                                <button type="button" class="amount-btn" data-amount="500">GH₵ 500</button>
+                                                <button type="button" class="amount-btn" data-amount="1000">GH₵ 1,000</button>
+                                                <button type="button" class="amount-btn" data-amount="custom" id="customBtn">Custom</button>
+                                            </div>
+                                            <div class="custom-amount" id="customAmountSection" style="display: none;">
+                                                <label>Or enter a custom amount</label>
+                                                <div class="amount-input-group">
+                                                    <span class="currency-symbol">GH₵</span>
+                                                    <input type="number" class="amount-input" id="customAmount" placeholder="Enter amount" min="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column: Personal Information -->
+                                    <div class="col-lg-6">
+                                        <div class="personal-info">
+                                            <h2 class="form-section-title">Personal Information</h2>
+                                            
+                                            <!-- Anonymous Donation Option -->
+                                            <div class="checkbox-group" style="margin-bottom: 25px; padding: 12px; background: #e8f5e1; border-radius: 10px;">
+                                                <input type="checkbox" id="anonymous" style="width: 17px; height: 17px;">
+                                                <label for="anonymous" style="font-size: 1rem; color: var(--dark-text); font-weight: 600;">
+                                                    <i class="fas fa-user-secret"></i> Make this an anonymous donation
+                                                </label>
+                                            </div>
+
+                                            <div id="donorInfoFields">
+                                                <div class="form-row">
+                                                    <div class="form-group">
+                                                        <label class="form-label">First Name <span class="star">*</span></label>
+                                                        <input type="text" class="form-control" id="firstName" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="form-label">Last Name <span class="star">*</span></label>
+                                                        <input type="text" class="form-control" id="lastName" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Email Address <span class="star">*</span></label>
+                                                    <input type="email" class="form-control" id="email" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Phone Number <span class="star">*</span></label>
+                                                    <input type="tel" class="form-control" id="phone" placeholder="+233" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Country <span class="star">*</span></label>
+                                                    <select class="form-select" id="country" required>
+                                                        <option value="">Select Country</option>
+                                                        <option value="GH" selected>Ghana</option>
+                                                        <option value="NG">Nigeria</option>
+                                                        <option value="KE">Kenya</option>
+                                                        <option value="ZA">South Africa</option>
+                                                        <option value="US">United States</option>
+                                                        <option value="GB">United Kingdom</option>
+                                                        <option value="other">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Continue Button -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" class="submit-btn" id="continueBtn">
+                                            Continue
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'public/base.html' %}
+{% block title %}Donation/Paystack{% endblock %}
+{% block content %}
+    <!-- Second Row: Payment Method (Hidden initially) -->
+    <div class="row d-flex justify-content-center" id="paymentSection">
+        <div class="col-lg-6">
+            <div class="donation-form-container">
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h2 class="form-section-title">Payment Method</h2>
+                    <div class="payment-info" style="text-align: center; padding: 30px; background: #e8f5e1; border-radius: 12px;">
+                        <img src="../static/images/paystack logo.png" alt="Paystack Logo" width="70">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--dark-text); margin-bottom: 10px;">Mobile Money via Paystack</h3>
+                        <p style="font-size: 1rem; color: #666; margin: 0;">Secure payment powered by Paystack. Supports MTN, Vodafone, AirtelTigo Mobile Money.</p>
+                    </div>
+                </div>
+
+                <!-- Donate Now Button -->
+                <button type="submit" class="submit-btn" id="donateBtn">
+                    Donate Now
+                </button>
+                
+                <div class="text-center mt-4">
+                    <small class="text-muted"><i class="fas fa-lock"></i> Your payment is secure</small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

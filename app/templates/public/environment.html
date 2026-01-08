@@ -1,0 +1,68 @@
+{% extends 'public/base.html' %}
+{% block title %}Environment{% endblock %}
+{% block content %}
+    <!--Environment section-->
+    <div id="environmentPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Thematic Areas</h1>
+                <p>Each area is designed to address specific facets of community growth.Each thematic area represents a strategic pillar of intervention designed to address critical and interconnected dimensions of community development. Together, these thematic areas form a holistic framework that integrates environmental sustainability, public health, youth leadership, and evidence-based decision-making. The approach recognizes that climate resilience, WASH, environmental management, and youth empowerment are mutually reinforcing and must be addressed simultaneously to achieve lasting and equitable impact at the community level.</p>
+            </div>
+        </section>
+
+         <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8">
+                        <div class="main-content">
+                            <p class="content-text">
+                                CYO advances environmental sustainability by promoting responsible production and consumption patterns and addressing the growing challenge of waste pollution. Poor waste management practices contribute to environmental degradation, flooding, public health risks, and greenhouse gas emissions. CYO adopts a circular economy approach that views waste as a resource and an opportunity for local economic development.
+                            </p>
+                            <p class="content-text">
+                                The organization implements community-based waste reduction, segregation, recycling, and upcycling initiatives, with a strong emphasis on youth participation and entrepreneurship. Programs support eco-innovation, skills training for waste collectors and recyclers, and the development of small green enterprises that convert plastic, organic waste, and other materials into marketable products. 
+                            </p>
+                            <p class="content-text">
+                                Behavioral change campaigns encourage households and businesses to reduce waste generation and adopt sustainable consumption habits. CYO also works in partnership with local authorities, private sector actors, and informal waste workers to strengthen waste management systems and policy implementation. Through these combined efforts, CYO contributes to cleaner environments, reduced pollution, job creation, and the development of regenerative local economies that balance environmental protection with social and economic benefits. 
+                            </p>
+                        </div>
+                    </div>        
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="sidebar-section">
+                            <h2 class="sidebar-title">Other Thematic Areas</h2>
+
+                            <div class="thematic-card1" onclick="showPage('climate')">
+                                <h3>Climate Resilience and Adaptation</h3>
+                                <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('water')">
+                                <h3>Water, Sanitation and Hygiene (WASH)</h3>
+                                <p>CYO champions access to safe water, improved sanitation, and hygiene education as...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('youth')">
+                                <h3>Youth Empowerment and Capacity Building</h3>
+                                <p>CYO empowers young people to lead sustainable change through education...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('education')">
+                                <h3>Climate Education and Public Awareness</h3>
+                                <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
+                            </div>
+
+                            <div class="thematic-card1" onclick="showPage('research')">
+                                <h3>Research, Innovation, and Policy Advocacy</h3>
+                                <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

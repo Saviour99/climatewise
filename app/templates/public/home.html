@@ -1,1 +1,267 @@
-Homepage
+{% extends 'public/base.html' %}
+{% block title %}ClimateWISE YOUTH - Championing Sustainable Development{% endblock %}
+{% block content %}
+<div id="homePage" class="page-content active">
+    <!-- Hero Section -->
+    <section class="hero-section1">
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="{{ url_for('static', filename='videos/hero.mp4') }}" type="video/mp4">
+            Your browser is not supported
+        </video>
+
+        <div class="container">
+            <h1>Championing Climate-Resilient and Sustainable Communities</h1>
+            <p>We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
+            <a href="{{ url_for('volunteer') }}" class="btn btn-light btn-lg btn1">Join Us</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="stat-box">
+                        <h2>0+</h2>
+                        <p>Communities Reached</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="stat-box">
+                        <h2>50+</h2>
+                        <p>Volunteers & Partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 900px; margin: 0 auto; line-height: 1.7;">
+                We are a youth-led organization dedicated to catalyzing socio-economic, environmental, and technological growth in Africa's rural and urban poor communities. Through education, capacity building, and skills training, we are empowering communities to take charge of their own development and create a brighter future for themselves and future generations.
+            </p>
+
+            <div class="row card-divider">
+                <div class="col-md-6">
+                    <div class="first-card">
+                        <img src="{{ url_for('static', filename='images/air pollution.jpg') }}" alt="Smoke image">
+                    </div>
+                </div>
+                <div class="col-md-6 second-card">
+                    <div class="second-card-divider">
+                        <h3>We Are For the People</h3>
+                        <p>Our programs focus on empowering youth, women, and vulnerable groups, equipping them to contribute to resilient communities and sustainable livelihoods.</p>
+                    </div>
+                    <div class="second-card-divider">
+                        <h3>We Are For Sustainable Development</h3>
+                        <p>As a youth-led organization, we address environmental, social, and economic challenges through evidence-based projects, community engagement, and youth-led action.</p>
+                    </div>
+                    <div class="second-card-divider">
+                        <h3>We Are For the Environment</h3>
+                        <p>We promote climate-resilient practices, conservation, and sustainable management of natural resources to protect communities and ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h3>We Are For The People</h3>
+                            <p>Our focus is centered on vulnerable groups, such as women and youth, as we strive to create a thriving African community that operates within a circular economy.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>We Are For Sustainable Development</h3>
+                            <p>We empower communities to take charge of their own development and build a brighter future for themselves and future generations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-tree"></i>
+                            <h3>We Are For The Environment</h3>
+                            <p>We are committed to promoting sustainable development that prioritizes the well-being of communities and the preservation of natural resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        -->
+        </div>
+    </section>
+
+    <!-- Thematic Areas Preview -->
+    <section class="thematic-areas">
+        <div class="container">
+            <h2 class="section-title">Thematic Areas</h2>
+            <div class="row">
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Climate Resilience and Adaptation</h5>
+                            <p class="card-text">ClimateWISE Youth Organization (CYO) reinforces community resilience against climate shocks, including floods, droughts, and extreme weather events. </p>
+                            <a href="{{ url_for('climate') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Water, Sanitation and Hygiene (WASH)</h5>
+                            <p class="card-text">CYO champions access to safe water, improved sanitation, and hygiene education as a foundation for public health and ...</p>
+                            <a href="{{ url_for('water') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Environmental Sustainability, Circular Economy and Waste Management</h5>
+                            <p class="card-text">CYO promotes sustainable production and consumption through waste reduction, ...</p>
+                            <a href="{{ url_for('environment') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Youth Empowerment and Capacity Building</h5>
+                            <p class="card-text">CYO empowers young people to lead sustainable change through education, mentorship, and skills development.</p>
+                            <a href="{{ url_for('youth') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Climate Education and Public Awareness</h5>
+                            <p class="card-text">CYO raises awareness and builds knowledge on climate change, environmental stewardship, and sustainable development ...</p>
+                            <a href="{{ url_for('education') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Research, Innovation, and Policy Advocacy</h5>
+                            <p class="card-text">CYO undertakes applied research, pilot projects, and advocacy to develop innovative solutions for pressing environmental and ...</p>
+                            <a href="{{ url_for('research') }}" class="btn btn-sm btn-donate">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section mt-5" style="background-color: var(--light-cl);">
+        <div class="container">
+            <h2 class="section-title">Projects and Impacts</h2>
+            <p class="section-subtitle text-center" style="line-height: 1.9;">One Step At A Time - Here is a glimpse at some of our initiatives:</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Project">
+                        <div class="project-card-body">
+                            <h5>Youth WASH Initiative</h5>
+                            <p>Improving access to safe water and hygiene education in underserved communities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Elephants">
+                        <div class="project-card-body">
+                            <h5>Climate Resilience Labs</h5>
+                            <p>Community-led projects addressing flood management, agroforestry, and disaster preparedness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Waste">
+                        <div class="project-card-body">
+                            <h5>Circular Economy Challenge</h5>
+                            <p>Youth-driven innovation competitions promoting waste reuse and sustainable practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ url_for('projects') }}" class="btn btn-hero">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <p class="section-subtitle text-center" style="line-height: 1.9;">What People Say</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="The founder's picture" class="testimonial-img">
+                        <p>"CYO is set to strengthen community’s resilience against climate shocks and inspire young people to take leadership roles in sustainability."</p>
+                        <h6>Eric Eyram Kojo Lumor</h6>
+                        <small>Founder</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://i.pravatar.cc/150?img=65" alt="The co-founder's picture" class="testimonial-img">
+                        <p>"The youth mentorship programs provide practical skills that continue to empower our young leaders."</p>
+                        <h6>Godwin Ayitey Kini Ajavon</h6>
+                        <small>Co-founder</small>
+                    </div>
+                </div>
+                <!--
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://i.pravatar.cc/150?img=33" alt="The Digital person picture" class="testimonial-img">
+                        <p>"The impact CYO has had in our community is incredible. Their dedication to sustainable development and community empowerment is inspiring."</p>
+                        <h6>Saviour Assandoh</h6>
+                        <small>Digital Engagement & Media</small>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="cta-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Partner With Us</h3>
+                        <p>We believe collaboration drives impact. Whether you are an individual, organization, or business, there are multiple ways to engage:</p>
+                        <a href="{{ url_for('partners') }}" class="btn btn-cta">Become a Partner</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cta-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Volunteer With Us</h3>
+                        <p>Join hands with us to support youth-led and community-driven climate and WASH initiatives.</p>
+                        <a href="{{ url_for('volunteer') }}" class="btn btn-cta">Become a Volunteer</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cta-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Make a Contribution</h3>
+                        <p>Your donation supports programs that advance climate resilience, safe water access, and sustainable livelihoods.</p>
+                        <a href="{{ url_for('donate') }}" class="btn btn-cta">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

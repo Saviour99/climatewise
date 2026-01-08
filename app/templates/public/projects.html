@@ -1,1 +1,69 @@
-project
+{% extends 'public/base.html' %}
+{% block title %}Projects & Impacts{% endblock %}
+{% block content %}
+    <!-- Projects Page -->
+    <div id="projectsPage" class="page-content">
+        <section class="hero-section" style="padding: 100px 0 60px;">
+            <div class="container">
+                <h1>Projects and Impacts</h1>
+                <p>Each project represents a tangible step toward building climate-resilient, sustainable communities.</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600" alt="SEE Accra">
+                            <div class="project-card-body">
+                                <h5>Youth WASH Initiative</h5>
+                                <p>Improving access to safe water and hygiene education in underserved communities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Fisheries">
+                            <div class="project-card-body">
+                                <h5>Climate Resilience Labs</h5>
+                                <p>Community-led projects addressing flood management, agroforestry, and disaster preparedness.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Elephants">
+                            <div class="project-card-body">
+                                <h5>Circular Economy Challenge</h5>
+                                <p>Youth-driven innovation competitions promoting waste reuse and sustainable practices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Coastal">
+                            <div class="project-card-body">
+                                <h5>Eco-Schools Program</h5>
+                                <p>Supporting schools to implement sustainable water, waste, and energy solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600" alt="Rising Roots">
+                            <div class="project-card-body">
+                                <h5>Community Climate Action Hubs</h5>
+                                <p>Empowering local youth to lead projects that reduce environmental risk and strengthen livelihoods.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
