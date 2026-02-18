@@ -1,6 +1,9 @@
 {% extends 'public/base.html' %}
 {% block title %}CYO Partners{% endblock %}
 {% block content %}
+
+    
+
     <!-- Partner Page -->
     <div id="partnersPage" class="page-content active">
         <section class="hero-section" style="padding: 100px 0 60px;">
@@ -40,7 +43,7 @@
                             <div class="partner-form-container">
                                 <h2 class="form-title">Embark On A Journey Of Purposeful partnership</h2>
                                 
-                                <form>
+                                <form action="/get-in-touch/partners/sending-details" method="post">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Name" name="part_name" required>
                                     </div>

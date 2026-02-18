@@ -85,6 +85,27 @@
         </div>
     </nav>
 
+    <!-- Flashing Messages -->
+    <div class="flashing" style="position: fixed; top: 120px; left: 0; right: 0; z-index: 1040; padding: 0 15px;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == "error" %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" style="float: right; margin-right: 5px;" data-bs-dismiss="alert"></button>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" style="float: right; margin-right: 5px;" data-bs-dismiss="alert"></button>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     <!-- Jinja Templating -->
     {% block content %}{% endblock %}
 
