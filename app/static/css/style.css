@@ -112,6 +112,7 @@ html {
     border: none;
     font-weight: 500;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
 .btn-donate:hover {
@@ -966,12 +967,14 @@ section.executive {
 }
 
 .thematic-card1 {
+    display: block;
     background: white;
     border: 1px solid var(--light-bg);
     padding: 15px;
     margin-bottom: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .thematic-card1:hover {

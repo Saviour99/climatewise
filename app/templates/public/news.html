@@ -1,8 +1,8 @@
 {% extends 'public/base.html' %}
-{% block title %}News & Updates{% endblock %}
+{% block title %}CYO - News & Updates{% endblock %}
 {% block content %}
     <!-- Resource news Page -->
-    <div id="newsPage" class="page-content">
+    <div id="newsPage" class="page-content active">
         <section class="hero-section" style="padding: 100px 0 60px;">
             <div class="container">
                 <h1>News & Updates</h1>
@@ -174,23 +174,23 @@
                             <div class="sidebar-widget">
                                 <h3 class="widget-title">Categories</h3>
                                 <div class="category-item">
-                                    <a href="#">Climate Action</a>
+                                    <a href="{{ url_for('climate') }}">Climate Action</a>
                                     <span class="category-count">12</span>
                                 </div>
                                 <div class="category-item">
-                                    <a href="#">WASH Programs</a>
+                                    <a href="{{ url_for('water') }}">WASH Programs</a>
                                     <span class="category-count">8</span>
                                 </div>
                                 <div class="category-item">
-                                    <a href="#">Circular Economy</a>
+                                    <a href="{{ url_for('environment') }}">Circular Economy</a>
                                     <span class="category-count">6</span>
                                 </div>
                                 <div class="category-item">
-                                    <a href="#">Youth Engagement</a>
+                                    <a href="{{ url_for('youth') }}">Youth Engagement</a>
                                     <span class="category-count">15</span>
                                 </div>
                                 <div class="category-item">
-                                    <a href="#">Community Stories</a>
+                                    <a href="{{ url_for('education') }}">Community Stories</a>
                                     <span class="category-count">10</span>
                                 </div>
                             </div>
@@ -198,14 +198,14 @@
                             <!-- Tags Widget -->
                             <div class="sidebar-widget tags-widget">
                                 <h3 class="widget-title">Popular Tags</h3>
-                                <a href="#" class="tag">Climate Resilience</a>
-                                <a href="#" class="tag">Sustainability</a>
-                                <a href="#" class="tag">Water Security</a>
-                                <a href="#" class="tag">Youth Leadership</a>
-                                <a href="#" class="tag">SDGs</a>
-                                <a href="#" class="tag">Conservation</a>
-                                <a href="#" class="tag">Green Innovation</a>
-                                <a href="#" class="tag">Community Impact</a>
+                                <a href="{{ url_for('climate') }}" class="tag">Climate Resilience</a>
+                                <a href="{{ url_for('environment') }}" class="tag">Sustainability</a>
+                                <a href="{{ url_for('water') }}" class="tag">Water Security</a>
+                                <a href="{{ url_for('youth') }}" class="tag">Youth Leadership</a>
+                                <a href="{{ url_for('teams') }}" class="tag">SDGs</a>
+                                <a href="{{ url_for('education') }}" class="tag">Conservation</a>
+                                <a href="{{ url_for('research') }}" class="tag">Green Innovation</a>
+                                <a href="{{ url_for('projects') }}" class="tag">Community Impact</a>
                             </div>
                         </aside>
                     </div>

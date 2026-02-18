@@ -1,9 +1,8 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
 
 
 @app.route("/")
-@app.route("/home")
 def home():
     return render_template("public/home.html")
 
@@ -35,7 +34,7 @@ def youth():
 def education():
     return render_template("public/education.html")
 
-@app.route("/thematic/research-innovation-and-policy advocacy")
+@app.route("/thematic/research-innovation-and-policy-advocacy")
 def research():
     return render_template("public/research.html")
 
@@ -55,21 +54,49 @@ def news():
 def publications():
     return render_template("public/publications.html")
 
-@app.route("/touch/contact-us")
+@app.route("/get-in-touch/contact-us", methods=["GET", "POST"])
 def contact():
-    return render_template("public/contact.html")
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        number = request.form["number"]
+        message = request.form["message"]
+        print(f"{name} \n {email} \n {number} \n {message}")
 
-@app.route("/touch/volunteers")
+    else:
+        return render_template("public/contact.html")
+
+@app.route("/get-in-touch/volunteers", methods=["GET", "POST"])
 def volunteer():
-    return render_template("public/volunteer.html")
+    if request.method == "POST":
+        vol_name = request.form["vol_name"]
+        vol_email = request.form["vol_email"]
+        vol_number = request.form["vol_number"]
+        vol_organization = request.form["vol_organization"]
+        vol_text = request.form["vol_text"]
+        print(f"{vol_name} \n {vol_email} \n {vol_organization} \n {vol_text}")
+    else:
+        return render_template("public/volunteer.html")
 
-@app.route("/touch/partners")
+@app.route("/get-in-touch/partners", methods=["GET", "POST"])
 def partners():
-    return render_template("public/partners.html")
+    if request.method == "POST":
+        part_name = request.form["part_name"]
+        part_email = request.form["part_email"]
+        part_number = request.form["part_number"]
+        part_organization = request.form["part_organization"]
+        part_text = request.form["part_text"]
+        print(f"{part_name} \n {part_email} \n {part_number} \n {part_organization} \n {part_text}")
+        
+    else:
+        return render_template("public/partners.html")
 
-@app.route("/donation")
+@app.route("/donation", methods=["GET", "POST"])
 def donate():
-    return render_template("public/donate.html")
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("public/donation.html")
 
 @app.route("/donation/paystack")
 def paystack():

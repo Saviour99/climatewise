@@ -1,8 +1,8 @@
 {% extends 'public/base.html' %}
-{% block title %}Water{% endblock %}
+{% block title %}CYO - Water, Sanitation and Hygiene (WASH){% endblock %}
 {% block content %}
      <!--Water section-->
-    <div id="waterPage" class="page-content">
+    <div id="waterPage" class="page-content active">
         <section class="hero-section" style="padding: 100px 0 60px;">
             <div class="container">
                 <h1>Thematic Areas</h1>
@@ -34,30 +34,30 @@
                         <div class="sidebar-section">
                             <h2 class="sidebar-title">Other Thematic Areas</h2>
 
-                            <div class="thematic-card1" onclick="showPage('climate')">
+                            <a href="{{ url_for('climate') }}" class="thematic-card1">
                                 <h3>Climate Resilience and Adaptation</h3>
                                 <p>ClimateWISE Youth Organization (CYO) reinforces community resilience against...</p>
-                            </div>
+                            </a>
 
-                            <div class="thematic-card1" onclick="showPage('environment')">
+                            <a href="{{ url_for('environment') }}" class="thematic-card1">
                                 <h3>Environmental Sustainability & Circular Economy</h3>
                                 <p>CYO promotes sustainable production and consumption through waste reduction...</p>
-                            </div>
+                            </a>
 
-                            <div class="thematic-card1" onclick="showPage('youth')">
+                            <a href="{{ url_for('youth') }}" class="thematic-card1">
                                 <h3>Youth Empowerment and Capacity Building</h3>
                                 <p>CYO empowers young people to lead sustainable change through education...</p>
-                            </div>
+                            </a>
 
-                            <div class="thematic-card1" onclick="showPage('education')">
+                            <a href="{{ url_for('education') }}" class="thematic-card1">
                                 <h3>Climate Education and Public Awareness</h3>
                                 <p>CYO raises awareness and builds knowledge on climate change, environmental stewardship...</p>
-                            </div>
+                            </a>
 
-                            <div class="thematic-card1" onclick="showPage('research')">
+                            <a href="{{ url_for('research') }}" class="thematic-card1">
                                 <h3>Research, Innovation, and Policy Advocacy</h3>
                                 <p>CYO undertakes applied research, pilot projects, and advocacy to develop innovative...</p>
-                            </div>
+                            </a>
 
                         </div>
                     </div>

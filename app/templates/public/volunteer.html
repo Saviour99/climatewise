@@ -1,8 +1,8 @@
 {% extends 'public/base.html' %}
-{% block title %}volunteer{% endblock %}
+{% block title %}CYO Volunteers{% endblock %}
 {% block content %}
     <!-- Volunteer Page -->
-    <div id="volunteerPage" class="page-content">
+    <div id="volunteerPage" class="page-content active">
         <section class="hero-section" style="padding: 100px 0 60px;">
             <div class="container">
                 <h1>Volunteer With Us</h1>
@@ -31,7 +31,7 @@
                                     Click the button below to explore the impactful initiatives we've successfully undertaken.
                                 </p>
                                 
-                                <a href="#" class="learn-more-btn">Learn More</a>
+                                <a href="{{ url_for('projects') }}" class="learn-more-btn">Learn More</a>
                             </div>
                         </div>
 
@@ -42,23 +42,23 @@
                                 
                                 <form>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name" required>
+                                        <input type="text" class="form-control" placeholder="Name" name="vol_name" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" required>
+                                        <input type="email" class="form-control" placeholder="Email" name="vol_email" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                        <input type="tel" class="form-control" placeholder="Phone Number" name="vol_number" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Organization/Institution Name">
+                                        <input type="text" class="form-control" placeholder="Organization/Institution Name" name="vol_organization">
                                     </div>
                                     
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Additional Comments or Questions"></textarea>
+                                        <textarea class="form-control" placeholder="Additional Comments or Questions" name="vol_text"></textarea>
                                     </div>
                                     
                                     <button type="submit" class="btn btn-send">Send</button>
