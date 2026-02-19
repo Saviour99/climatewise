@@ -91,7 +91,7 @@ def send_mail():
                 sender=os.getenv("USER_EMAIL"),
                 recipients=[os.getenv("USER_EMAIL"), "saviourb100@gmail.com"]
             )
-            msg.body = f"Message from: {name}\nEmail: {email}\Phone Number: {number}\nSubject: {subject}\n\nDescription: {message}"
+            msg.body = f"Message from: {name}\nEmail: {email}\nPhone Number: {number}\nSubject: {subject}\n\nDescription: {message}"
             
             # Send email in background thread
             Thread(target=send_async_email, args=(app, msg)).start()
@@ -107,7 +107,7 @@ def volunteer():
     return render_template("public/volunteer.html")
 
 
-@app.route("/get-in-touch/volunteers/sending-details", methods=["GET","POST"])
+@app.route("/get-in-touch/volunteers/sending-details", methods=["POST"])
 def send_details():
     if request.method == "POST":
         vol_name = request.form["vol_name"]
@@ -123,7 +123,7 @@ def send_details():
 def partners():
     return render_template("public/partners.html")
 
-@app.route("/get-in-touch/partners/sending-details", methods=["GET", "POST"])
+@app.route("/get-in-touch/partners/sending-details", methods=["POST"])
 def send_detail():
     if request.method == "POST":
         part_name = request.form["part_name"]
