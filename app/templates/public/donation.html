@@ -11,6 +11,8 @@
                     <div class="col-lg-10">
                         <div class="donation-form-container">
                             <form id="donationForm">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                                
                                 <div class="row">
                                     <!-- Left Column: Amount Selection -->
                                     <div class="col-lg-6">

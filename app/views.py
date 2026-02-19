@@ -1,5 +1,8 @@
 from flask import render_template, request, redirect, url_for, flash
-from app import app, mail
+from app import app, mail, db
+from app.models import ContactMessage, VolunteerApplication, PartnerApplication
+from app.utils import sanitize_text, sanitize_email, sanitize_phone
+from flask_wtf.csrf import CSRFError
 from flask_mail import Message
 import os
 from threading import Thread
@@ -72,11 +75,11 @@ def contact():
 @app.route("/get-in-touch/contact-us/sending-mail", methods=["GET", "POST"])
 def send_mail():
     if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        number = request.form["number"]
-        message = request.form["message"]
-        subject = "ClimateWISWE Youth Organization"
+        name = sanitize_text(request.form.get("name", ""))
+        email = sanitize_email(request.form.get("email", ""))
+        number = sanitize_phone(request.form.get("number", ""))
+        message = sanitize_text(request.form.get("message", ""))
+        subject = "ClimateWISE Youth Organization"
         print(f"{name} \n {email} \n {number} \n {message}")
 
         # Form Data Validation
@@ -95,9 +98,20 @@ def send_mail():
             
             # Send email in background thread
             Thread(target=send_async_email, args=(app, msg)).start()
+
+            #Save to the database
+            new_message = ContactMessage(
+                name=name,
+                email=email,
+                number=number,
+                message=message
+            )
+            db.session.add(new_message)
+            db.session.commit()
             
             flash("Message sent successfully!", category="success")
         except Exception as e:
+            db.session.rollback()
             print(f"Error sending email: {e}")
             flash("Failed to send message. Please try again later.", category="error")
         return redirect(url_for("contact"))
@@ -106,34 +120,77 @@ def send_mail():
 def volunteer():
     return render_template("public/volunteer.html")
 
-
 @app.route("/get-in-touch/volunteers/sending-details", methods=["POST"])
 def send_details():
-    if request.method == "POST":
-        vol_name = request.form["vol_name"]
-        vol_email = request.form["vol_email"]
-        vol_number = request.form["vol_number"]
-        vol_organization = request.form["vol_organization"]
-        vol_text = request.form["vol_text"]
-        print(f"{vol_name} \n{vol_email} \n{vol_organization} \n{vol_number} \n{vol_text}")
-        flash("Message sent successfully!", category="success")
+    vol_name = sanitize_text(request.form.get("vol_name", ""))
+    vol_email = sanitize_email(request.form.get("vol_email", ""))
+    vol_number = sanitize_phone(request.form.get("vol_number", ""))
+    vol_organization = sanitize_text(request.form.get("vol_organization", ""))
+    vol_text = sanitize_text(request.form.get("vol_text", ""))
+    print(f"{vol_name} \n{vol_email} \n{vol_organization} \n{vol_number} \n{vol_text}")
+
+    if not all([vol_name, vol_email, vol_number]):
+        flash("Name, email and phone number are required.", category="error")
         return redirect(url_for("volunteer"))
+
+    try:
+        #Save to the database
+        new_volunteer = VolunteerApplication(
+            name=vol_name,
+            email=vol_email,
+            number=vol_number,
+            organization=vol_organization,
+            message=vol_text
+        )
+        db.session.add(new_volunteer)
+        db.session.commit()
+
+        flash("Application sent successfully!", category="success")
+
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error: {e}")
+        flash("Something went wrong. Please try again later.", category="error")
+
+    return redirect(url_for("volunteer"))
 
 @app.route("/get-in-touch/partners")
 def partners():
     return render_template("public/partners.html")
 
 @app.route("/get-in-touch/partners/sending-details", methods=["POST"])
-def send_detail():
-    if request.method == "POST":
-        part_name = request.form["part_name"]
-        part_email = request.form["part_email"]
-        part_number = request.form["part_number"]
-        part_organization = request.form["part_organization"]
-        part_text = request.form["part_text"]
-        print(f"{part_name} \n{part_email} \n{part_number} \n{part_organization} \n{part_text}")
-        flash("Message sent successfully!", category="success")
+def send_detail():    
+    part_name = sanitize_text(request.form.get("part_name", ""))
+    part_email = sanitize_email(request.form.get("part_email", ""))
+    part_number = sanitize_phone(request.form.get("part_number", ""))
+    part_organization = sanitize_text(request.form.get("part_organization", ""))
+    part_text = sanitize_text(request.form.get("part_text", ""))
+    print(f"{part_name} \n{part_email} \n{part_number} \n{part_organization} \n{part_text}")
+    
+    if not all([part_name, part_email, part_number]):
+        flash("Name, email and phone number are required.", category="error")
         return redirect(url_for("partners"))
+
+    try:
+        #Save to the database
+        new_partner = PartnerApplication(
+            name=part_name,
+            email=part_email,
+            number=part_number,
+            organization=part_organization,
+            message=part_text
+        )
+        db.session.add(new_partner)
+        db.session.commit()
+
+        flash("Application sent successfully!", category="success")
+
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error sending email: {e}")
+        flash("Failed to send message. Please try again later.", category="error")
+
+    return redirect(url_for("partners"))
 
 @app.route("/donation", methods=["GET", "POST"])
 def donate():
@@ -145,3 +202,8 @@ def donate():
 @app.route("/donation/paystack")
 def paystack():
     return render_template("public/paystack.html")
+
+@app.errorhandler(CSRFError)
+def handle_csrf_error(e):
+    flash("Session expired. Please try submitting the form again.", category="error")
+    return redirect(request.referrer or url_for("home"))

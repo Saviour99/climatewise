@@ -14,6 +14,8 @@
                                 <p class="contact-subtitle">Have questions or want to connect? We're here to listen and respond. Your engagement helps us create lasting impact in communities.</p>
                                 
                                 <form  action="/get-in-touch/contact-us/sending-mail" method="post">
+                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                                    
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="name" placeholder="Name" required>
                                     </div>
