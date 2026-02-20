@@ -5,6 +5,7 @@ from app.utils import sanitize_text, sanitize_email, sanitize_phone
 from flask_wtf.csrf import CSRFError
 from flask_mail import Message
 import os
+import dotenv
 from threading import Thread
 
 
@@ -207,3 +208,11 @@ def paystack():
 def handle_csrf_error(e):
     flash("Session expired. Please try submitting the form again.", category="error")
     return redirect(request.referrer or url_for("home"))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html", 404)
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("500.html", 500)

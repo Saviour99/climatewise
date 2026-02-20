@@ -32,7 +32,7 @@ app.config['MAIL_USE_SSL'] = False
 # MySQL Database Configuration
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWRD')}"
-    f"@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
+    f"@{os.getenv('DB_HOST')}/{os.getenv('DB_NAM')}"
 )
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
