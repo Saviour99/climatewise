@@ -32,6 +32,15 @@ def get_unique_member_count() -> int:
     return len(volunteer_emails.union(partner_emails).all())
 
 
+    # result = db.session.execute(db.text("""
+    #     SELECT COUNT(*) FROM (
+    #         SELECT LOWER(email) AS email FROM volunteer_applications
+    #         UNION
+    #         SELECT LOWER(email) AS email FROM partner_applications
+    #     ) AS unique_members
+    # """))
+    # return result.scalar() or 0
+
 # ============================================================
 # PUBLIC ROUTES
 # ============================================================
@@ -171,6 +180,14 @@ def send_details():
         flash("Name, email and phone number are required.", category="error")
         return redirect(url_for("volunteer"))
 
+    # Check if email already registered as a volunteer
+    existing_volunteer = VolunteerApplication.query.filter(
+        db.func.lower(VolunteerApplication.email) == vol_email.lower()
+    ).first()
+    if existing_volunteer:
+        flash("This email is already registered as a volunteer.", category="error")
+        return redirect(url_for("volunteer"))
+
     try:
         new_volunteer = VolunteerApplication(
             name=vol_name,
@@ -205,6 +222,14 @@ def send_detail():
 
     if not all([part_name, part_number]) or not part_email:
         flash("Name, email and phone number are required.", category="error")
+        return redirect(url_for("partners"))
+
+    # Check if email already registered as a partner
+    existing_partner = PartnerApplication.query.filter(
+        db.func.lower(PartnerApplication.email) == part_email.lower()
+    ).first()
+    if existing_partner:
+        flash("This email is already registered as a partner.", category="error")
         return redirect(url_for("partners"))
 
     try:

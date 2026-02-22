@@ -72,6 +72,15 @@ def get_unique_member_count() -> int:
     all_unique = volunteer_emails.union(partner_emails).all()
     return len(all_unique)
 
+    # result = db.session.execute(db.text("""
+    #     SELECT COUNT(*) FROM (
+    #         SELECT LOWER(email) AS email FROM volunteer_applications
+    #         UNION
+    #         SELECT LOWER(email) AS email FROM partner_applications
+    #     ) AS unique_members
+    # """))
+    # return result.scalar() or 0
+
 
 def build_activity_feed(limit: int = 15) -> list:
     activities = []

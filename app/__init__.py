@@ -39,6 +39,20 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
 
-from app import models, views, utils, config, forms
+# ---- Custom template filters ----
+@app.template_filter('milestone')
+def milestone_filter(n):
+    milestones = [10, 50, 100, 150, 200, 250, 500, 1000, 2000]
+    n = int(n or 0)
+    if n < 10:
+        return str(n)
+    reached = 0
+    for m in milestones:
+        if n >= m:
+            reached = m
+        else:
+            break
+    return f"{reached}+"
 
+from app import models, views, utils, config, forms
 from app import admin_views

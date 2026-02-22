@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons/x-twitter?f=brands&s=solid">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <title>{% block title %}ClimateWISE YOUTH - Championing Sustainable Development{% endblock %}</title>
@@ -13,7 +12,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('home') }}"">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='images/climatewiseyouth.png') }}" width="70px" alt="ClimateWISE Logo">
                 <div class="brandname">
                     <div class="brand-name1">ClimateWISE</div>
@@ -26,60 +25,123 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
+
+                    <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+                        <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}"
+                           href="{{ url_for('home') }}">Home</a>
                     </li>
+
+                    <!-- About CYO -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.endpoint in ['about', 'teams'] %}active{% endif %}"
+                           href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
                             About CYO
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('about') }}">Who We Are</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('teams') }}">Our Team</a></li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'about' %}active{% endif %}"
+                                   href="{{ url_for('about') }}">Who We Are</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'teams' %}active{% endif %}"
+                                   href="{{ url_for('teams') }}">Our Team</a>
+                            </li>
                         </ul>
                     </li>
+
+                    <!-- Thematic Areas -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="thematicDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.endpoint in ['climate', 'water', 'environment', 'youth', 'education', 'research'] %}active{% endif %}"
+                           href="#" id="thematicDropdown" role="button" data-bs-toggle="dropdown">
                             Thematic Areas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('climate') }}">Climate Resilience and Adaptation</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('water') }}" >Water, Sanitation and Hygiene (WASH)</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('environment') }}">Environmental Sustainability, Circular Economy and Waste Management</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('youth') }}">Youth Empowerment and Capacity Building</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('education') }}">Climate Education and Public Awareness</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('research') }}">Research, Innovation, and Policy Advocacy</a></li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'climate' %}active{% endif %}"
+                                   href="{{ url_for('climate') }}">Climate Resilience and Adaptation</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'water' %}active{% endif %}"
+                                   href="{{ url_for('water') }}">Water, Sanitation and Hygiene (WASH)</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'environment' %}active{% endif %}"
+                                   href="{{ url_for('environment') }}">Environmental Sustainability, Circular Economy and Waste Management</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'youth' %}active{% endif %}"
+                                   href="{{ url_for('youth') }}">Youth Empowerment and Capacity Building</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'education' %}active{% endif %}"
+                                   href="{{ url_for('education') }}">Climate Education and Public Awareness</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'research' %}active{% endif %}"
+                                   href="{{ url_for('research') }}">Research, Innovation, and Policy Advocacy</a>
+                            </li>
                         </ul>
                     </li>
+
+                    <!-- Projects and Impacts -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('projects') }}">Projects and Impacts</a>
+                        <a class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}"
+                           href="{{ url_for('projects') }}">Projects and Impacts</a>
                     </li>
+
+                    <!-- Media -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('media') }}">Media</a>
+                        <a class="nav-link {% if request.endpoint == 'media' %}active{% endif %}"
+                           href="{{ url_for('media') }}">Media</a>
                     </li>
+
+                    <!-- Resources -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.endpoint in ['news', 'publications'] %}active{% endif %}"
+                           href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown">
                             Resources
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('news') }}">News & Updates</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('publications') }}">Publications</a></li>
-                            
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'news' %}active{% endif %}"
+                                   href="{{ url_for('news') }}">News & Updates</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'publications' %}active{% endif %}"
+                                   href="{{ url_for('publications') }}">Publications</a>
+                            </li>
                         </ul>
                     </li>
+
+                    <!-- Get In Touch -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="touchDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.endpoint in ['contact', 'volunteer', 'partners'] %}active{% endif %}"
+                           href="#" id="touchDropdown" role="button" data-bs-toggle="dropdown">
                             Get In Touch
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact Us</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('volunteer') }}">Become a Volunteer</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('partners') }}">Become a Partners</a></li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'contact' %}active{% endif %}"
+                                   href="{{ url_for('contact') }}">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'volunteer' %}active{% endif %}"
+                                   href="{{ url_for('volunteer') }}">Become a Volunteer</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {% if request.endpoint == 'partners' %}active{% endif %}"
+                                   href="{{ url_for('partners') }}">Become a Partner</a>
+                            </li>
                         </ul>
                     </li>
+
+                    <!-- Donate Button -->
                     <li class="nav-item">
-                        <a href="{{url_for('donate')}}" class="btn-donate">Contribute</a>
+                        <a href="{{ url_for('donate') }}"
+                           class="btn-donate {% if request.endpoint == 'donate' %}active{% endif %}">Contribute</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -106,7 +168,7 @@
         {% endwith %}
     </div>
 
-    <!-- Jinja Templating -->
+    <!-- Page Content -->
     {% block content %}{% endblock %}
 
     <!-- Footer -->
@@ -128,7 +190,7 @@
                 <div class="col-md-2 footer-section">
                     <h5>Quick Links</h5>
                     <ul>
-                        <li><a href="{{ url_for('home') }}" ><i class="fa fa-angle-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('home') }}"><i class="fa fa-angle-right"></i> Home</a></li>
                         <li><a href="{{ url_for('about') }}"><i class="fa fa-angle-right"></i> About Us</a></li>
                         <li><a href="{{ url_for('climate') }}"><i class="fa fa-angle-right"></i> Thematic Areas</a></li>
                         <li><a href="{{ url_for('projects') }}"><i class="fa fa-angle-right"></i> Projects and Impacts</a></li>
@@ -161,7 +223,7 @@
             </div>
 
             <div class="copyright">
-                <p>&copy;  <script>document.write(new Date().getFullYear())</script> ClimateWISE Youth Organization. All rights reserved. | Powered by DelaTech Consult</p>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> ClimateWISE Youth Organization. All rights reserved. | Powered by DelaTech Consult</p>
             </div>
         </div>
     </footer>
@@ -186,4 +248,4 @@
     <script src="https://kit.fontawesome.com/99a02b1b56.js" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
-</html> 
+</html>

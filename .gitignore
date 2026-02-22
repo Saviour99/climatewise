@@ -1,4 +1,5 @@
 .env
+.admin_lunch.py
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,flask,windows
