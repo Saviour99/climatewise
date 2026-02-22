@@ -1,1 +1,236 @@
-Admin Dashboard
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Dashboard | ClimateWISE Admin{% endblock %}
+{% block page_title %}Impact Dashboard{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- Impact Summary Cards -->
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-globe-africa"></i> Impact Overview
+        </h2>
+        <span class="section-badge live-badge"><span class="live-dot"></span> Live Data</span>
+    </div>
+
+    <div class="impact-cards-grid">
+        <!-- Volunteers -->
+        <div class="impact-card card-green" data-animate>
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+                <div class="card-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="card-trend up">
+                    <i class="fas fa-arrow-up"></i> Active
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-number" data-count="{{ total_volunteers }}">0</div>
+                <div class="card-label">Volunteers</div>
+                <div class="card-sub">Community changemakers</div>
+            </div>
+            <div class="card-progress">
+                <div class="progress-bar-fill" style="width: 70%"></div>
+            </div>
+        </div>
+
+        <!-- Partners -->
+        <div class="impact-card card-teal" data-animate>
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+                <div class="card-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="card-trend up">
+                    <i class="fas fa-arrow-up"></i> Growing
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-number" data-count="{{ total_partners }}">0</div>
+                <div class="card-label">Partners</div>
+                <div class="card-sub">Strategic collaborators</div>
+            </div>
+            <div class="card-progress">
+                <div class="progress-bar-fill" style="width: 45%"></div>
+            </div>
+        </div>
+
+        <!-- Total Members -->
+        <div class="impact-card card-earth" data-animate>
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-trend up">
+                    <i class="fas fa-arrow-up"></i> Total
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-number" data-count="{{ total_members }}">0</div>
+                <div class="card-label">Total Members</div>
+                <div class="card-sub">Volunteers + Partners</div>
+            </div>
+            <div class="card-progress">
+                <div class="progress-bar-fill" style="width: 85%"></div>
+            </div>
+        </div>
+
+        <!-- Donations -->
+        <div class="impact-card card-gold" data-animate>
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+                <div class="card-icon">
+                    <i class="fas fa-donate"></i>
+                </div>
+                <div class="card-trend up">
+                    <i class="fas fa-check-circle"></i> Verified
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-number currency" data-count="{{ total_donations_amount }}"></div>
+                <div class="card-label">Total Donations</div>
+                <div class="card-sub">Paystack verified only</div>
+            </div>
+            <div class="card-progress">
+                <div class="progress-bar-fill" style="width: 60%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analytics + Activity Feed -->
+<div class="dashboard-grid">
+
+    <!-- Charts Section -->
+    <section class="dashboard-section charts-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i> Analytics
+            </h2>
+            <div class="chart-tabs">
+                <button class="chart-tab active" data-target="donationsChart">Donations</button>
+                <button class="chart-tab" data-target="membersChart">Members</button>
+            </div>
+        </div>
+
+        <!-- Donations Line Chart -->
+        <div class="chart-wrapper" id="donationsChartWrap">
+            <canvas id="donationsChart"></canvas>
+        </div>
+
+        <!-- Members Pie Chart -->
+        <div class="chart-wrapper hidden" id="membersChartWrap">
+            <div class="pie-layout">
+                <canvas id="membersChart"></canvas>
+                <div class="pie-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background:#027729"></span>
+                        <span>Volunteers</span>
+                        <strong>{{ total_volunteers }}</strong>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background:#0096c7"></span>
+                        <span>Partners</span>
+                        <strong>{{ total_partners }}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Feed -->
+    <section class="dashboard-section activity-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-stream"></i> Recent Activity
+            </h2>
+            <button class="refresh-btn" id="refreshActivity" title="Refresh">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+
+        <div class="activity-feed" id="activityFeed">
+            {% for activity in recent_activities %}
+            <div class="activity-item" data-type="{{ activity.type }}">
+                <div class="activity-icon icon-{{ activity.type }}">
+                    {% if activity.type == 'volunteer' %}
+                        <i class="fas fa-user-plus"></i>
+                    {% elif activity.type == 'partner' %}
+                        <i class="fas fa-handshake"></i>
+                    {% elif activity.type == 'donation' %}
+                        <i class="fas fa-heart"></i>
+                    {% elif activity.type == 'message' %}
+                        <i class="fas fa-envelope"></i>
+                    {% endif %}
+                </div>
+                <div class="activity-body">
+                    <p class="activity-text">{{ activity.text }}</p>
+                    <span class="activity-time">
+                        <i class="fas fa-clock"></i>
+                        {{ activity.time_ago }}
+                    </span>
+                </div>
+                <div class="activity-badge badge-{{ activity.type }}">
+                    {{ activity.type | capitalize }}
+                </div>
+            </div>
+            {% else %}
+            <div class="activity-empty">
+                <i class="fas fa-leaf"></i>
+                <p>No recent activity yet.<br>Your community is growing!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+<!-- Quick Actions -->
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title"><i class="fas fa-bolt"></i> Quick Actions</h2>
+    </div>
+    <div class="quick-actions">
+        <a href="{{ url_for('admin_volunteers') }}" class="quick-action green">
+            <i class="fas fa-users"></i>
+            <span>View Volunteers</span>
+        </a>
+        <a href="{{ url_for('admin_partners') }}" class="quick-action teal">
+            <i class="fas fa-handshake"></i>
+            <span>View Partners</span>
+        </a>
+        <a href="{{ url_for('admin_donations') }}" class="quick-action gold">
+            <i class="fas fa-donate"></i>
+            <span>View Donations</span>
+        </a>
+        <a href="{{ url_for('admin_messages') }}" class="quick-action earth">
+            <i class="fas fa-envelope-open"></i>
+            <span>View Messages</span>
+        </a>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Pass Flask data to JS
+const dashboardData = {
+    donations: {
+        labels: {{ donation_labels | tojson }},
+        data: {{ donation_data | tojson }}
+    },
+    members: {
+        volunteers: {{ total_volunteers }},
+        partners: {{ total_partners }}
+    }
+};
+</script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Volunteers | ClimateWISE Admin{% endblock %}
+{% block page_title %}Volunteer Applications{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-hands-helping"></i> All Volunteers
+        </h2>
+        <span class="section-badge live-badge">
+            <span class="live-dot"></span>
+            {{ volunteers.total }} Registered
+        </span>
+    </div>
+
+    {% if volunteers.items %}
+    <div class="table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Organization</th>
+                    <th>Message</th>
+                    <th>Date Joined</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vol in volunteers.items %}
+                <tr>
+                    <td class="row-num">{{ loop.index + (volunteers.page - 1) * volunteers.per_page }}</td>
+                    <td>
+                        <div class="person-cell">
+                            <div class="person-avatar av-green">{{ vol.name[0].upper() }}</div>
+                            <span class="person-name">{{ vol.name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:{{ vol.email }}" class="table-link">{{ vol.email }}</a>
+                    </td>
+                    <td>
+                        <a href="tel:{{ vol.number }}" class="table-link">{{ vol.number }}</a>
+                    </td>
+                    <td>
+                        {% if vol.organization %}
+                            <span class="org-badge">{{ vol.organization }}</span>
+                        {% else %}
+                            <span class="no-data">—</span>
+                        {% endif %}
+                    </td>
+                    <td class="message-preview">
+                        {% if vol.message %}
+                            <span class="preview-text" title="{{ vol.message }}">
+                                {{ vol.message[:70] }}{% if vol.message|length > 70 %}…{% endif %}
+                            </span>
+                        {% else %}
+                            <span class="no-data">No message</span>
+                        {% endif %}
+                    </td>
+                    <td class="date-cell">
+                        <i class="fas fa-calendar-alt"></i>
+                        {{ vol.date_created.strftime('%b %d, %Y') }}
+                        <span class="date-time">{{ vol.date_created.strftime('%H:%M') }}</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if volunteers.pages > 1 %}
+    <div class="table-pagination">
+        <span class="pagination-info">
+            Showing {{ (volunteers.page - 1) * volunteers.per_page + 1 }}–{{ [volunteers.page * volunteers.per_page, volunteers.total] | min }} of {{ volunteers.total }}
+        </span>
+        <div class="pagination-btns">
+            {% if volunteers.has_prev %}
+            <a href="{{ url_for('admin.admin_volunteers', page=volunteers.prev_num) }}" class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            {% for p in volunteers.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                {% if p %}
+                <a href="{{ url_for('admin.admin_volunteers', page=p) }}"
+                   class="page-btn {% if p == volunteers.page %}active{% endif %}">{{ p }}</a>
+                {% else %}
+                <span class="page-ellipsis">…</span>
+                {% endif %}
+            {% endfor %}
+            {% if volunteers.has_next %}
+            <a href="{{ url_for('admin.admin_volunteers', page=volunteers.next_num) }}" class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="fas fa-hands-helping"></i></div>
+        <h3>No volunteer applications yet</h3>
+        <p>When people sign up to volunteer, their applications will appear here.</p>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}

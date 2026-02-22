@@ -1,0 +1,193 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Messages | ClimateWISE Admin{% endblock %}
+{% block page_title %}Contact Messages{% endblock %}
+
+{% block content %}
+
+<!-- Stats Bar -->
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-envelope"></i> All Messages
+        </h2>
+        <span class="section-badge live-badge">
+            <span class="live-dot"></span>
+            {{ messages.total }} Total
+        </span>
+    </div>
+
+    {% if messages.items %}
+    <div class="table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for msg in messages.items %}
+                <tr>
+                    <td class="row-num">{{ loop.index + (messages.page - 1) * messages.per_page }}</td>
+                    <td>
+                        <div class="person-cell">
+                            <div class="person-avatar">{{ msg.name[0].upper() }}</div>
+                            <span class="person-name">{{ msg.name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:{{ msg.email }}" class="table-link">{{ msg.email }}</a>
+                    </td>
+                    <td>
+                        <a href="tel:{{ msg.number }}" class="table-link">{{ msg.number }}</a>
+                    </td>
+                    <td class="message-preview">
+                        <span class="preview-text" title="{{ msg.message }}">
+                            {{ msg.message[:80] }}{% if msg.message|length > 80 %}…{% endif %}
+                        </span>
+                    </td>
+                    <td class="date-cell">
+                        <i class="fas fa-calendar-alt"></i>
+                        {{ msg.date_created.strftime('%b %d, %Y') }}
+                        <span class="date-time">{{ msg.date_created.strftime('%H:%M') }}</span>
+                    </td>
+                    <td>
+                        <button class="btn-view-msg" onclick="openMessage({{ loop.index0 }})"
+                            data-name="{{ msg.name }}"
+                            data-email="{{ msg.email }}"
+                            data-phone="{{ msg.number }}"
+                            data-message="{{ msg.message | e }}"
+                            data-date="{{ msg.date_created.strftime('%B %d, %Y at %H:%M') }}">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    {% if messages.pages > 1 %}
+    <div class="table-pagination">
+        <span class="pagination-info">
+            Showing {{ (messages.page - 1) * messages.per_page + 1 }}–{{ [messages.page * messages.per_page, messages.total] | min }} of {{ messages.total }}
+        </span>
+        <div class="pagination-btns">
+            {% if messages.has_prev %}
+            <a href="{{ url_for('admin.admin_messages', page=messages.prev_num) }}" class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            {% for p in messages.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                {% if p %}
+                <a href="{{ url_for('admin.admin_messages', page=p) }}"
+                   class="page-btn {% if p == messages.page %}active{% endif %}">{{ p }}</a>
+                {% else %}
+                <span class="page-ellipsis">…</span>
+                {% endif %}
+            {% endfor %}
+            {% if messages.has_next %}
+            <a href="{{ url_for('admin.admin_messages', page=messages.next_num) }}" class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="fas fa-envelope-open"></i></div>
+        <h3>No messages yet</h3>
+        <p>When visitors submit the contact form, their messages will appear here.</p>
+    </div>
+    {% endif %}
+</section>
+
+<!-- Message Detail Modal -->
+<div class="modal-overlay" id="msgModal" onclick="closeModal(event)">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeModalBtn()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+            <div class="modal-avatar" id="modalAvatar"></div>
+            <div class="modal-meta">
+                <h3 class="modal-name" id="modalName"></h3>
+                <span class="modal-date" id="modalDate"></span>
+            </div>
+        </div>
+        <div class="modal-contact-row">
+            <a class="modal-contact-item" id="modalEmail" href="#">
+                <i class="fas fa-envelope"></i>
+                <span></span>
+            </a>
+            <a class="modal-contact-item" id="modalPhone" href="#">
+                <i class="fas fa-phone"></i>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal-body">
+            <div class="modal-label">Message</div>
+            <p class="modal-message" id="modalMessage"></p>
+        </div>
+        <div class="modal-actions">
+            <a class="modal-reply-btn" id="modalReplyBtn" href="#">
+                <i class="fas fa-reply"></i> Reply via Email
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function openMessage(idx) {
+    const btn = document.querySelectorAll('.btn-view-msg')[idx];
+    const name = btn.dataset.name;
+    const email = btn.dataset.email;
+    const phone = btn.dataset.phone;
+    const message = btn.dataset.message;
+    const date = btn.dataset.date;
+
+    document.getElementById('modalAvatar').textContent = name[0].toUpperCase();
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalDate').textContent = date;
+
+    const emailEl = document.getElementById('modalEmail');
+    emailEl.href = 'mailto:' + email;
+    emailEl.querySelector('span').textContent = email;
+
+    const phoneEl = document.getElementById('modalPhone');
+    phoneEl.href = 'tel:' + phone;
+    phoneEl.querySelector('span').textContent = phone;
+
+    document.getElementById('modalMessage').textContent = message;
+    document.getElementById('modalReplyBtn').href = 'mailto:' + email + '?subject=Re: Your message to ClimateWISE Youth';
+
+    document.getElementById('msgModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalBtn() {
+    document.getElementById('msgModal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeModal(e) {
+    if (e.target.id === 'msgModal') closeModalBtn();
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModalBtn();
+});
+</script>
+{% endblock %}

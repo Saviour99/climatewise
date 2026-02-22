@@ -1,0 +1,163 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Admin Login | ClimateWISE Youth{% endblock %}
+
+{% block auth_content %}
+<div class="login-page">
+    <!-- Animated background particles -->
+    <div class="login-bg">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+        <div class="bg-leaves">
+            <i class="fas fa-leaf leaf l1"></i>
+            <i class="fas fa-leaf leaf l2"></i>
+            <i class="fas fa-seedling leaf l3"></i>
+            <i class="fas fa-leaf leaf l4"></i>
+            <i class="fas fa-globe-africa leaf l5"></i>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Brand -->
+            <div class="login-brand">
+                <div class="login-logo">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='images/ClimateWISE-second-logo.png') }}" alt="Logo">
+                    </a>
+                </div>
+                <h1 class="login-title">ClimateWISE</h1>
+                <p class="login-subtitle">Admin Dashboard</p>
+            </div>
+
+            <!-- Welcome text -->
+            <div class="login-welcome">
+                <h2>Welcome back</h2>
+                <p>Sign in to manage your climate impact platform</p>
+            </div>
+
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="login-alert login-alert-{{ 'error' if category == 'error' else 'success' }}">
+                        <i class="fas fa-{{ 'exclamation-triangle' if category == 'error' else 'check-circle' }}"></i>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Login Form -->
+            <form method="POST" action="{{ url_for('admin_login') }}" class="login-form">
+                {{ form.hidden_tag() if form }}
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                <div class="form-field">
+                    <div class="field-icon"><i class="fas fa-envelope"></i></div>
+                    <input
+                        type="email"
+                        name="email"
+                        class="field-input"
+                        placeholder="Admin email address"
+                        required
+                        autocomplete="email"
+                    >
+                    <div class="field-line"></div>
+                </div>
+
+                <div class="form-field">
+                    <div class="field-icon"><i class="fas fa-lock"></i></div>
+                    <input
+                        type="password"
+                        name="password"
+                        id="passwordField"
+                        class="field-input"
+                        placeholder="Password"
+                        required
+                        autocomplete="current-password"
+                    >
+                    <button type="button" class="field-toggle" onclick="togglePassword()">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
+                    </button>
+                    <div class="field-line"></div>
+                </div>
+
+                <div class="form-remember">
+                    <label class="remember-label">
+                        <input type="checkbox" name="remember" class="remember-check">
+                        <span class="remember-custom"></span>
+                        <span class="remember-text">Keep me signed in</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Sign In</span>
+                    <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </form>
+
+            <!-- Stats strip -->
+            <div class="login-stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>{{ stats.total_members if stats else '—' }} Members</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Donations</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Climate Action</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side panel -->
+        <div class="login-panel">
+            <div class="panel-content">
+                <div class="panel-quote">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <blockquote>
+                        The Earth does not belong to us — we belong to the Earth. Every action counts.
+                    </blockquote>
+                </div>
+                <div class="panel-mission">
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to mobilize and equip youth and vulnerable groups to lead climate and WASH solutions that protect ecosystems, confront environmental injustices, and strengthen community resilience.</p>
+                </div>
+                <!-- <div class="panel-sdgs">
+                    <span class="sdg-pill">SDG 13</span>
+                    <span class="sdg-pill">SDG 6</span>
+                    <span class="sdg-pill">SDG 15</span>
+                    <span class="sdg-pill">SDG 17</span>
+                </div> -->
+            </div>
+            <div class="panel-wave">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="rgba(255,255,255,0.07)" d="M44.7,-76.4C58.8,-69.2,71.8,-59.2,79.1,-46.1C86.4,-33,88,-16.5,87,-0.6C86,15.4,82.3,30.7,74.8,43.7C67.3,56.7,56,67.3,43,74.1C30,81,15,84,-0.7,84.9C-16.4,85.9,-32.8,84.7,-46.1,77.9C-59.4,71.1,-69.5,58.7,-76.2,44.8C-82.9,30.9,-86.2,15.5,-84.8,0.8C-83.4,-13.9,-77.3,-27.8,-68.6,-39.5C-59.9,-51.2,-48.6,-60.7,-36,-67.6C-23.4,-74.5,-9.5,-78.8,2.3,-82.6C14,-86.5,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const field = document.getElementById('passwordField');
+    const icon = document.getElementById('eyeIcon');
+    if (field.type === 'password') {
+        field.type = 'text';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        field.type = 'password';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+}
+</script>
+{% endblock %}

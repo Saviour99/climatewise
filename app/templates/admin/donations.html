@@ -1,0 +1,123 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Donations | ClimateWISE Admin{% endblock %}
+{% block page_title %}Verified Donations{% endblock %}
+
+{% block content %}
+
+<!-- Total Banner -->
+<section class="dashboard-section donation-banner">
+    <div class="banner-inner">
+        <div class="banner-icon"><i class="fas fa-donate"></i></div>
+        <div class="banner-text">
+            <span class="banner-label">Total Verified Donations</span>
+            <span class="banner-amount">GH₵{{ "%.2f"|format(total) }}</span>
+        </div>
+        <div class="banner-sub">
+            <i class="fas fa-shield-alt"></i> Paystack verified only &nbsp;·&nbsp;
+            <i class="fas fa-list"></i> {{ donations.total }} transactions
+        </div>
+    </div>
+</section>
+
+<!-- Donations Table -->
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-history"></i> Transaction History
+        </h2>
+    </div>
+
+    {% if donations.items %}
+    <div class="table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Donor</th>
+                    <th>Email</th>
+                    <th>Amount</th>
+                    <th>Reference</th>
+                    <th>Verified</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for don in donations.items %}
+                <tr>
+                    <td class="row-num">{{ loop.index + (donations.page - 1) * donations.per_page }}</td>
+                    <td>
+                        <div class="person-cell">
+                            <div class="person-avatar av-gold">{{ don.donor_name[0].upper() }}</div>
+                            <span class="person-name">{{ don.donor_name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:{{ don.donor_email }}" class="table-link">{{ don.donor_email }}</a>
+                    </td>
+                    <td>
+                        <span class="amount-cell">GH₵{{ "%.2f"|format(don.amount) }}</span>
+                    </td>
+                    <td>
+                        <code class="ref-code">{{ don.paystack_reference }}</code>
+                    </td>
+                    <td>
+                        {% if don.is_verified %}
+                            <span class="status-badge status-success">
+                                <i class="fas fa-check-circle"></i> Verified
+                            </span>
+                        {% else %}
+                            <span class="status-badge status-pending">
+                                <i class="fas fa-clock"></i> Pending
+                            </span>
+                        {% endif %}
+                    </td>
+                    <td class="date-cell">
+                        <i class="fas fa-calendar-alt"></i>
+                        {{ don.created_at.strftime('%b %d, %Y') }}
+                        <span class="date-time">{{ don.created_at.strftime('%H:%M') }}</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if donations.pages > 1 %}
+    <div class="table-pagination">
+        <span class="pagination-info">
+            Showing {{ (donations.page - 1) * donations.per_page + 1 }}–{{ [donations.page * donations.per_page, donations.total] | min }} of {{ donations.total }}
+        </span>
+        <div class="pagination-btns">
+            {% if donations.has_prev %}
+            <a href="{{ url_for('admin.admin_donations', page=donations.prev_num) }}" class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            {% for p in donations.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                {% if p %}
+                <a href="{{ url_for('admin.admin_donations', page=p) }}"
+                   class="page-btn {% if p == donations.page %}active{% endif %}">{{ p }}</a>
+                {% else %}
+                <span class="page-ellipsis">…</span>
+                {% endif %}
+            {% endfor %}
+            {% if donations.has_next %}
+            <a href="{{ url_for('admin.admin_donations', page=donations.next_num) }}" class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="fas fa-donate"></i></div>
+        <h3>No verified donations yet</h3>
+        <p>Paystack-verified donations will appear here once contributors complete their payments.</p>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}

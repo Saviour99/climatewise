@@ -1,104 +1,197 @@
 {% extends 'public/base.html' %}
 {% block title %}CYO - Donation{% endblock %}
 {% block content %}
-    <!-- Donate Page -->
-    <div id="donatePage" class="page-content active donatepage">
-        <!-- Donation Form Section -->
-        <section class="donation-section mt-5">
-            <div class="container">
-                <!-- First Row: Amount + Personal Info -->
-                <div class="row justify-content-center" id="amount-per-info">
-                    <div class="col-lg-10">
-                        <div class="donation-form-container">
-                            <form id="donationForm">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-                                
-                                <div class="row">
-                                    <!-- Left Column: Amount Selection -->
-                                    <div class="col-lg-6">
-                                        <div class="amount-selection">
-                                            <h2 class="form-section-title">Choose Your Donation Amount</h2>
-                                            <div class="amount-buttons">
-                                                <button type="button" class="amount-btn" data-amount="50">GH₵ 50</button>
-                                                <button type="button" class="amount-btn" data-amount="100">GH₵ 100</button>
-                                                <button type="button" class="amount-btn" data-amount="200">GH₵ 200</button>
-                                                <button type="button" class="amount-btn" data-amount="500">GH₵ 500</button>
-                                                <button type="button" class="amount-btn" data-amount="1000">GH₵ 1,000</button>
-                                                <button type="button" class="amount-btn" data-amount="custom" id="customBtn">Custom</button>
-                                            </div>
-                                            <div class="custom-amount" id="customAmountSection" style="display: none;">
-                                                <label>Or enter a custom amount</label>
-                                                <div class="amount-input-group">
-                                                    <span class="currency-symbol">GH₵</span>
-                                                    <input type="number" class="amount-input" id="customAmount" placeholder="Enter amount" min="1">
-                                                </div>
+
+<div id="donatePage" class="page-content active donatepage">
+    <section class="donation-section mt-5">
+        <div class="container">
+            <div class="row justify-content-center" id="amount-per-info">
+                <div class="col-lg-10">
+                    <div class="donation-form-container">
+
+                        <!--
+                            POST to /donation/initialize
+                            Server validates → creates Donation record → redirects to Paystack
+                        -->
+                        <form id="donationForm" method="POST" action="{{ url_for('paystack_initialize') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <!-- JS populates this with the selected amount before submit -->
+                            <input type="hidden" name="amount" id="selectedAmount">
+
+                            <div class="row">
+                                <!-- Amount Selection -->
+                                <div class="col-lg-6">
+                                    <div class="amount-selection">
+                                        <h2 class="form-section-title">Choose Your Donation Amount</h2>
+                                        <div class="amount-buttons">
+                                            <button type="button" class="amount-btn" data-amount="50">GH₵ 50</button>
+                                            <button type="button" class="amount-btn" data-amount="100">GH₵ 100</button>
+                                            <button type="button" class="amount-btn" data-amount="200">GH₵ 200</button>
+                                            <button type="button" class="amount-btn" data-amount="500">GH₵ 500</button>
+                                            <button type="button" class="amount-btn" data-amount="1000">GH₵ 1,000</button>
+                                            <button type="button" class="amount-btn" data-amount="custom" id="customBtn">Custom</button>
+                                        </div>
+                                        <div class="custom-amount" id="customAmountSection" style="display:none;">
+                                            <label>Enter a custom amount</label>
+                                            <div class="amount-input-group">
+                                                <span class="currency-symbol">GH₵</span>
+                                                <input type="number" class="amount-input" id="customAmount"
+                                                    placeholder="Enter amount" min="1" max="100000">
                                             </div>
                                         </div>
+                                        <p id="amountError" style="color:red;font-size:0.85rem;display:none;margin-top:8px;">
+                                            Please select or enter a donation amount.
+                                        </p>
                                     </div>
+                                </div>
 
-                                    <!-- Right Column: Personal Information -->
-                                    <div class="col-lg-6">
-                                        <div class="personal-info">
-                                            <h2 class="form-section-title">Personal Information</h2>
-                                            
-                                            <!-- Anonymous Donation Option -->
-                                            <div class="checkbox-group" style="margin-bottom: 25px; padding: 12px; background: #e8f5e1; border-radius: 10px;">
-                                                <input type="checkbox" id="anonymous" style="width: 17px; height: 17px;">
-                                                <label for="anonymous" style="font-size: 1rem; color: var(--dark-text); font-weight: 600;">
-                                                    <i class="fas fa-user-secret"></i> Make this an anonymous donation
-                                                </label>
+                                <!-- Personal Information -->
+                                <div class="col-lg-6">
+                                    <div class="personal-info">
+                                        <h2 class="form-section-title">Personal Information</h2>
+
+                                        <div class="checkbox-group" style="margin-bottom:25px;padding:12px;background:#e8f5e1;border-radius:10px;">
+                                            <input type="checkbox" name="anonymous" id="anonymous" value="1">
+                                            <label for="anonymous" style="font-size:1rem;color:var(--dark-text);font-weight:600;">
+                                                <i class="fas fa-user-secret"></i> Make this an anonymous donation
+                                            </label>
+                                        </div>
+
+                                        <div id="donorInfoFields">
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">First Name <span class="star">*</span></label>
+                                                    <input type="text" class="form-control" name="firstName" id="firstName" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Last Name <span class="star">*</span></label>
+                                                    <input type="text" class="form-control" name="lastName" id="lastName" required>
+                                                </div>
                                             </div>
-
-                                            <div id="donorInfoFields">
-                                                <div class="form-row">
-                                                    <div class="form-group">
-                                                        <label class="form-label">First Name <span class="star">*</span></label>
-                                                        <input type="text" class="form-control" id="firstName" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="form-label">Last Name <span class="star">*</span></label>
-                                                        <input type="text" class="form-control" id="lastName" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Email Address <span class="star">*</span></label>
-                                                    <input type="email" class="form-control" id="email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Phone Number <span class="star">*</span></label>
-                                                    <input type="tel" class="form-control" id="phone" placeholder="+233" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="form-label">Country <span class="star">*</span></label>
-                                                    <select class="form-select" id="country" required>
-                                                        <option value="">Select Country</option>
-                                                        <option value="GH" selected>Ghana</option>
-                                                        <option value="NG">Nigeria</option>
-                                                        <option value="KE">Kenya</option>
-                                                        <option value="ZA">South Africa</option>
-                                                        <option value="US">United States</option>
-                                                        <option value="GB">United Kingdom</option>
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Email Address <span class="star">*</span></label>
+                                                <input type="email" class="form-control" name="email" id="email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="+233">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Country</label>
+                                                <select class="form-select" name="country" id="country">
+                                                    <option value="">Select Country</option>
+                                                    <option value="GH" selected>Ghana</option>
+                                                    <option value="NG">Nigeria</option>
+                                                    <option value="KE">Kenya</option>
+                                                    <option value="ZA">South Africa</option>
+                                                    <option value="US">United States</option>
+                                                    <option value="GB">United Kingdom</option>
+                                                    <option value="other">Other</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Continue Button -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <button type="button" class="submit-btn" id="continueBtn">
-                                            Continue
-                                        </button>
-                                    </div>
+                            <!-- Payment summary strip -->
+                            <div id="paymentSummary" style="display:none;margin-top:20px;padding:16px;background:#e8f5e1;border-radius:10px;border-left:4px solid var(--primary-green);">
+                                <p style="margin:0;font-size:1rem;color:var(--dark-text);">
+                                    <i class="fas fa-donate" style="color:var(--primary-green);"></i>
+                                    You are donating:
+                                    <strong id="summaryAmount" style="color:var(--primary-green);font-size:1.2rem;"></strong>
+                                </p>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <button type="submit" class="submit-btn" id="continueBtn">
+                                        <i class="fas fa-lock"></i> Proceed to Payment
+                                    </button>
+                                    <p class="text-center mt-2" style="font-size:0.82rem;color:#888;">
+                                        <i class="fas fa-shield-alt"></i> Secured by Paystack &nbsp;·&nbsp;
+                                        <i class="fas fa-mobile-alt"></i> MTN · Vodafone · AirtelTigo MoMo
+                                    </p>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
+
+<script>
+(function () {
+    let selectedAmount = null;
+
+    // Preset amount buttons
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            if (this.dataset.amount === 'custom') {
+                document.getElementById('customAmountSection').style.display = 'block';
+                selectedAmount = null;
+            } else {
+                document.getElementById('customAmountSection').style.display = 'none';
+                selectedAmount = parseFloat(this.dataset.amount);
+                updateSummary(selectedAmount);
+            }
+        });
+    });
+
+    // Custom amount input
+    document.getElementById('customAmount').addEventListener('input', function () {
+        const val = parseFloat(this.value);
+        selectedAmount = (val >= 1 && val <= 100000) ? val : null;
+        updateSummary(selectedAmount);
+    });
+
+    // Anonymous checkbox — hide/show fields and remove required attrs
+    document.getElementById('anonymous').addEventListener('change', function () {
+        const fields = document.getElementById('donorInfoFields');
+        const inputs = fields.querySelectorAll('[required]');
+        if (this.checked) {
+            fields.style.opacity = '0.4';
+            fields.style.pointerEvents = 'none';
+            inputs.forEach(i => i.removeAttribute('required'));
+        } else {
+            fields.style.opacity = '1';
+            fields.style.pointerEvents = '';
+            inputs.forEach(i => i.setAttribute('required', ''));
+        }
+    });
+
+    // Form submit — validate amount, populate hidden field
+    document.getElementById('donationForm').addEventListener('submit', function (e) {
+        const customVisible = document.getElementById('customAmountSection').style.display !== 'none';
+        if (customVisible) {
+            selectedAmount = parseFloat(document.getElementById('customAmount').value) || null;
+        }
+        if (!selectedAmount || selectedAmount < 1) {
+            e.preventDefault();
+            document.getElementById('amountError').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        document.getElementById('amountError').style.display = 'none';
+        document.getElementById('selectedAmount').value = selectedAmount;
+    });
+
+    function updateSummary(amount) {
+        const el = document.getElementById('paymentSummary');
+        if (amount && amount >= 1) {
+            document.getElementById('summaryAmount').textContent =
+                'GH₵' + amount.toLocaleString('en-GH', { minimumFractionDigits: 2 });
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    }
+})();
+</script>
+
 {% endblock %}

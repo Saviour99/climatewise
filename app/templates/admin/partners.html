@@ -1,0 +1,113 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Partners | ClimateWISE Admin{% endblock %}
+{% block page_title %}Partner Applications{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-handshake"></i> All Partners
+        </h2>
+        <span class="section-badge live-badge">
+            <span class="live-dot"></span>
+            {{ partners.total }} Registered
+        </span>
+    </div>
+
+    {% if partners.items %}
+    <div class="table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Organization</th>
+                    <th>Message</th>
+                    <th>Date Joined</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for part in partners.items %}
+                <tr>
+                    <td class="row-num">{{ loop.index + (partners.page - 1) * partners.per_page }}</td>
+                    <td>
+                        <div class="person-cell">
+                            <div class="person-avatar av-teal">{{ part.name[0].upper() }}</div>
+                            <span class="person-name">{{ part.name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="mailto:{{ part.email }}" class="table-link">{{ part.email }}</a>
+                    </td>
+                    <td>
+                        <a href="tel:{{ part.number }}" class="table-link">{{ part.number }}</a>
+                    </td>
+                    <td>
+                        {% if part.organization %}
+                            <span class="org-badge">{{ part.organization }}</span>
+                        {% else %}
+                            <span class="no-data">—</span>
+                        {% endif %}
+                    </td>
+                    <td class="message-preview">
+                        {% if part.message %}
+                            <span class="preview-text" title="{{ part.message }}">
+                                {{ part.message[:70] }}{% if part.message|length > 70 %}…{% endif %}
+                            </span>
+                        {% else %}
+                            <span class="no-data">No message</span>
+                        {% endif %}
+                    </td>
+                    <td class="date-cell">
+                        <i class="fas fa-calendar-alt"></i>
+                        {{ part.date_created.strftime('%b %d, %Y') }}
+                        <span class="date-time">{{ part.date_created.strftime('%H:%M') }}</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if partners.pages > 1 %}
+    <div class="table-pagination">
+        <span class="pagination-info">
+            Showing {{ (partners.page - 1) * partners.per_page + 1 }}–{{ [partners.page * partners.per_page, partners.total] | min }} of {{ partners.total }}
+        </span>
+        <div class="pagination-btns">
+            {% if partners.has_prev %}
+            <a href="{{ url_for('admin.admin_partners', page=partners.prev_num) }}" class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            {% for p in partners.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                {% if p %}
+                <a href="{{ url_for('admin.admin_partners', page=p) }}"
+                   class="page-btn {% if p == partners.page %}active{% endif %}">{{ p }}</a>
+                {% else %}
+                <span class="page-ellipsis">…</span>
+                {% endif %}
+            {% endfor %}
+            {% if partners.has_next %}
+            <a href="{{ url_for('admin.admin_partners', page=partners.next_num) }}" class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="fas fa-handshake"></i></div>
+        <h3>No partner applications yet</h3>
+        <p>When organizations register as partners, their applications will appear here.</p>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}
