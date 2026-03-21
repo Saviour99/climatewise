@@ -1,1 +1,59 @@
-404
+
+404 · HTML
+Copy
+
+{% extends "public/base.html" %}
+
+{% block title %}404 - Page Not Found | ClimateWISE Youth{% endblock %}
+
+{% block content %}
+<div class="error-page">
+
+    <!-- Animated background leaves -->
+    <div class="leaf leaf-1">🌿</div>
+    <div class="leaf leaf-2">🍃</div>
+    <div class="leaf leaf-3">🌱</div>
+    <div class="leaf leaf-4">🍀</div>
+    <div class="leaf leaf-5">🌿</div>
+
+    <div class="error-container">
+
+        <!-- Big 404 -->
+        <div class="error-code">
+            <span class="digit">4</span>
+            <span class="earth">🌍</span>
+            <span class="digit">4</span>
+        </div>
+
+        <div class="error-divider"></div>
+
+        <h1 class="error-title">Lost in the Wild</h1>
+        <p class="error-message">
+            The page you're looking for has wandered off the beaten path —
+            much like a species we haven't discovered yet.
+        </p>
+
+        <!-- Action buttons -->
+        <div class="error-actions">
+            <a href="{{ url_for('home') }}" class="btn-home">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn-report">
+                <i class="fas fa-envelope"></i> Report this Issue
+            </a>
+        </div>
+
+        <!-- Quick links -->
+        <div class="quick-links">
+            <p class="quick-links-title">Or explore these pages:</p>
+            <div class="quick-links-grid">
+                <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="{{ url_for('projects') }}"><i class="fas fa-seedling"></i> Projects</a>
+                <a href="{{ url_for('volunteer') }}"><i class="fas fa-hands-helping"></i> Volunteer</a>
+                <a href="{{ url_for('donate') }}"><i class="fas fa-heart"></i> Donate</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

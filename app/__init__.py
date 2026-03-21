@@ -56,3 +56,7 @@ def milestone_filter(n):
 
 from app import models, views, utils, config, forms
 from app import admin_views
+
+# ---- Security headers on every response ----        
+from app.utils import add_security_headers            
+app.after_request(add_security_headers) 

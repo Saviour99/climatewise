@@ -1,1 +1,71 @@
-500
+{% extends "public/base.html" %}
+
+{% block title %}500 - Server Error | ClimateWISE Youth{% endblock %}
+
+{% block content %}
+<div class="error-page error-500">
+
+    <!-- Background rings -->
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+
+    <div class="error-container">
+
+        <!-- Icon -->
+        <div class="error-icon-wrapper">
+            <div class="error-icon-bg">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="pulse-ring"></div>
+        </div>
+
+        <!-- Code -->
+        <div class="error-code-label">Error 500</div>
+
+        <div class="error-divider"></div>
+
+        <h1 class="error-title">Something went wrong on our end</h1>
+        <p class="error-message">
+            Our server hit an unexpected bump. Don't worry — our team has been
+            notified and we're working to fix it. This has nothing to do with you.
+        </p>
+
+        <!-- Status card -->
+        <div class="status-card">
+            <div class="status-item">
+                <i class="fas fa-check-circle status-ok"></i>
+                <span>Your data is safe</span>
+            </div>
+            <div class="status-divider"></div>
+            <div class="status-item">
+                <i class="fas fa-check-circle status-ok"></i>
+                <span>Our team is notified</span>
+            </div>
+            <div class="status-divider"></div>
+            <div class="status-item">
+                <i class="fas fa-clock status-pending"></i>
+                <span>Fix in progress</span>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="error-actions">
+            <a href="{{ url_for('home') }}" class="btn-home">
+                <i class="fas fa-home"></i> Go to Homepage
+            </a>
+            <button onclick="window.location.reload()" class="btn-retry">
+                <i class="fas fa-redo"></i> Try Again
+            </button>
+        </div>
+
+        <!-- Contact note -->
+        <p class="contact-note">
+            Still having issues?
+            <a href="{{ url_for('contact') }}">Contact our team</a>
+            and we'll help you out.
+        </p>
+
+    </div>
+</div>
+{% endblock %}

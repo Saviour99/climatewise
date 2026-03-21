@@ -1,12 +1,17 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, jsonify
 from app import app, mail, db
-from app.models import ContactMessage, VolunteerApplication, PartnerApplication
+from app.models import ContactMessage, VolunteerApplication, PartnerApplication, Donation
 from app.utils import rate_limit, sanitize_email, sanitize_amount, sanitize_text, sanitize_phone, add_security_headers
 from flask_wtf.csrf import CSRFError
 from flask_mail import Message
+from sqlalchemy import func, select
+from datetime import datetime, timezone
 import os
+import re
+import hmac
+import hashlib
 from threading import Thread
-from sqlalchemy import func
+import requests as http_requests
 
 
 def send_async_email(app, msg):
@@ -273,12 +278,12 @@ def handle_csrf_error(e):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("404.html"), 404
+    return render_template("public/404.html"), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template("500.html"), 500
+    return render_template("public/500.html"), 500
 
 
 @app.errorhandler(429)
@@ -290,8 +295,6 @@ def too_many_requests(e):
 @app.route('/donation/initialize', methods=['POST'])
 @rate_limit(max_requests=5, window=60)  # 5 payment attempts/min per IP
 def paystack_initialize():
-    import requests as http_requests
-
     is_anonymous = bool(request.form.get('anonymous'))
     first_name = sanitize_text(request.form.get('firstName', ''))
     last_name = sanitize_text(request.form.get('lastName', ''))
@@ -381,19 +384,22 @@ def paystack_verify(reference):
     Server-side verification — NEVER trust the client.
     Paystack sends the reference; we verify it against their API.
     """
-    import requests as http_requests
 
     # Sanitize reference to prevent injection
     reference = re.sub(r'[^a-zA-Z0-9_\-]', '', reference)[:200]
 
-    donation = Donation.query.filter_by(paystack_reference=reference).first()
+    donation = db.session.execute(
+        select(Donation)
+        .filter_by(paystack_reference=reference)
+        .with_for_update()
+    ).scalar_one_or_none()
     if not donation:
         flash('Donation record not found.', 'error')
         return redirect(url_for('donate'))
 
     # Prevent double processing
     if donation.is_verified:
-        flash(f'Your donation of GH₵{donation.amount:,.2f} was already confirmed. Thank you! 🌿', 'success')
+        flash(f'Your donation of GH₵{donation.amount:,.2f} was already confirmed. Thank you!', 'success')
         return redirect(url_for('home'))
 
     headers = {'Authorization': f'Bearer {os.getenv("PAYSTACK_SECRET_KEY")}'}
@@ -413,7 +419,7 @@ def paystack_verify(reference):
         donation.verified_at = datetime.now(timezone.utc)
         db.session.commit()
         display = 'Anonymous donor' if donation.is_anonymous else donation.donor_name
-        flash(f'Thank you, {display}! Your donation of GH₵{donation.amount:,.2f} was received. 🌿', 'success')
+        flash(f'Thank you, {display}! Your donation of GH₵{donation.amount:,.2f} was received.', 'success')
     else:
         donation.paystack_status = data['data'].get('status', 'failed')
         db.session.commit()
@@ -449,7 +455,11 @@ def paystack_webhook():
     if event.get('event') == 'charge.success':
         ref = event['data'].get('reference', '')
         ref = re.sub(r'[^a-zA-Z0-9_\-]', '', ref)
-        donation = Donation.query.filter_by(paystack_reference=ref).first()
+        donation = db.session.execute(
+            select(Donation)
+            .filter_by(paystack_reference=ref)
+            .with_for_update()
+        ).scalar_one_or_none()
         if donation and not donation.is_verified:
             donation.paystack_status = 'success'
             donation.is_verified = True

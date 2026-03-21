@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <title>{% block title %}ClimateWISE YOUTH - Championing Sustainable Development{% endblock %}</title>
@@ -179,9 +179,9 @@
                     <a class="footer-brand" href="{{ url_for('home') }}">
                         <img src="{{ url_for('static', filename='images/ClimateWISE-second-logo.png') }}" width="70px" alt="ClimateWISE Logo">
                         <div class="brandname">
-                            <div class="brand-name1">ClimateWISE</div>
-                            <div class="brand-name1">YOUTH</div>
-                            <div class="brand-name1">ORGANIZATION</div>
+                            <div class="brand-name1" style="font-size: 19px">ClimateWISE</div>
+                            <div class="brand-name2" style="font-size: 10px">YOUTH ORGANIZATION</div>
+                            <!-- <div class="brand-name1">ORGANIZATION</div> -->
                         </div>
                     </a>
                     <p class="mt-3">We envision a future where every action, big or small, contributes to the well-being of people, communities, and the environment.</p>
@@ -245,7 +245,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/99a02b1b56.js" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
