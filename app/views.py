@@ -203,7 +203,8 @@ def send_details():
         )
         db.session.add(new_volunteer)
         db.session.commit()
-        flash("Application sent successfully!", category="success")
+        flash(f"Application sent successfully! Welcome {vol_name.title()}", category="success")
+        
     except Exception as e:
         db.session.rollback()
         print(f"Error: {e}")
@@ -247,7 +248,8 @@ def send_detail():
         )
         db.session.add(new_partner)
         db.session.commit()
-        flash("Application sent successfully!", category="success")
+        flash(f"Application sent successfully! Welcome {part_name.title()}", category="success")
+
     except Exception as e:
         db.session.rollback()
         print(f"Error: {e}")
@@ -413,7 +415,23 @@ def paystack_verify(reference):
         flash('Could not verify payment. Please contact us if funds were deducted.', 'error')
         return redirect(url_for('home'))
 
+    paystack_amount = data['data']['amount']
+    expected_amount = int(donation.amount * 100) 
+
     if data.get('status') and data['data']['status'] == 'success':
+        #check if the amount send to paystack is the exact amount received by us
+        paystack_amount_pesewas = data['data'].get('amount', 0)
+        expected_amount_pesewas = int(donation.amount * 100)
+ 
+        if paystack_amount_pesewas < expected_amount_pesewas:
+            donation.paystack_status = 'amount_mismatch'
+            db.session.commit()
+            flash(
+                'Payment amount does not match. Please contact us if funds were deducted.',
+                'error'
+            )
+            return redirect(url_for('home'))
+
         donation.paystack_status = 'success'
         donation.is_verified = True
         donation.verified_at = datetime.now(timezone.utc)
@@ -429,6 +447,7 @@ def paystack_verify(reference):
 
 
 @app.route('/donation/webhook', methods=['POST'])
+@rate_limit(max_requests=20, window=60)
 def paystack_webhook():
     """
     Paystack server-to-server webhook.
@@ -440,9 +459,9 @@ def paystack_webhook():
     signature = request.headers.get('X-Paystack-Signature', '')
 
     computed = hmac.new(
-        paystack_secret.encode('utf-8'),
-        request.data,
-        hashlib.sha512
+        key=paystack_secret.encode('utf-8'),
+        msg=request.data,
+        digestmod=hashlib.sha512
     ).hexdigest()
 
     if not hmac.compare_digest(computed, signature):
